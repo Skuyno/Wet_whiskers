@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://dow4mhq7xg12"]
+
+[ext_resource type="Texture2D" uid="uid://bpkancwh73lu" path="res://assets/sprites/1f3144293564463638b57d08e028270f.jpg" id="1_7lnny"]
+[ext_resource type="Texture2D" uid="uid://dbcym5uq2nx4" path="res://assets/sprites/spr_casualcar_0.png" id="2_dobl6"]
+[ext_resource type="Texture2D" uid="uid://tuufvi3f3yj" path="res://assets/sprites/03 zx 1 1.png" id="3_5ttjs"]
+[ext_resource type="PackedScene" uid="uid://0ab13gkuu5te" path="res://scenes/objects/cat.tscn" id="4_vjl2s"]
+[ext_resource type="PackedScene" uid="uid://buxjdhnwxtsc7" path="res://scenes/objects/pipe_area.tscn" id="5_3n7w0"]
+[ext_resource type="Script" path="res://scenes/prologue/scripts/camera.gd" id="6_2qnka"]
+
+[sub_resource type="Animation" id="Animation_t0jlu"]
+resource_name = "CatArrival"
+length = 5.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ms2bc"]
+_data = {
+"CatArrival": SubResource("Animation_t0jlu")
+}
+
+[node name="Prologue" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(600, 300)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("1_7lnny")
+
+[node name="Car" type="Node2D" parent="."]
+
+[node name="CarSprite" type="Sprite2D" parent="Car"]
+position = Vector2(1500, 600)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_dobl6")
+
+[node name="Person" type="Node2D" parent="."]
+
+[node name="PersonSprite" type="Sprite2D" parent="Person"]
+position = Vector2(712.5, 459.75)
+scale = Vector2(3.04687, 3.08594)
+texture = ExtResource("3_5ttjs")
+
+[node name="Cat" parent="." instance=ExtResource("4_vjl2s")]
+
+[node name="PipeArea" parent="." instance=ExtResource("5_3n7w0")]
+
+[node name="CutsceneCamera" type="Camera2D" parent="."]
+script = ExtResource("6_2qnka")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ms2bc")
+}
+
+[node name="Rain" type="CPUParticles2D" parent="."]
+position = Vector2(576, -105)
+emitting = false
+amount = 150
+lifetime = 1.25
+emission_shape = 3
+emission_rect_extents = Vector2(700, 20)
+direction = Vector2(0, 0)
+gravity = Vector2(100, 980)
+scale_amount_min = 3.0
+scale_amount_max = 4.0
+color = Color(0.44854, 0.546951, 0.999998, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
