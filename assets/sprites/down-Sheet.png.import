@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5j6171adjqxl"
-path="res://.godot/imported/JumpCabt.png-3a8a2a44f1daf3755a5f9b2b6ee477be.ctex"
+uid="uid://627wkn2ugdcj"
+path="res://.godot/imported/down-Sheet.png-fd050c0d2cacceb25d42573a91d1f3fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/JumpCabt.png"
-dest_files=["res://.godot/imported/JumpCabt.png-3a8a2a44f1daf3755a5f9b2b6ee477be.ctex"]
+source_file="res://assets/sprites/down-Sheet.png"
+dest_files=["res://.godot/imported/down-Sheet.png-fd050c0d2cacceb25d42573a91d1f3fb.ctex"]
 
 [params]
 
