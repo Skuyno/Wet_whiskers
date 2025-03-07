@@ -180,6 +180,7 @@ animations = [{
 size = Vector2(25, 20)
 
 [node name="Cat" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_hmrkm")
 
 [node name="CatSprite" type="AnimatedSprite2D" parent="."]
@@ -191,7 +192,8 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_4btjv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+position = Vector2(0, -72)
+zoom = Vector2(5.5, 5.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 script = ExtResource("7_vxwfu")
