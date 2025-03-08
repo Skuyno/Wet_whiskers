@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dow4mhq7xg12"]
+[gd_scene load_steps=16 format=3 uid="uid://dow4mhq7xg12"]
 
 [ext_resource type="Texture2D" uid="uid://bpkancwh73lu" path="res://assets/sprites/1f3144293564463638b57d08e028270f.jpg" id="1_7lnny"]
 [ext_resource type="PackedScene" uid="uid://du8ctq3i01nna" path="res://scenes/objects/cat.tscn" id="4_vjl2s"]
-[ext_resource type="PackedScene" uid="uid://buxjdhnwxtsc7" path="res://scenes/objects/pipe_area.tscn" id="5_3n7w0"]
 [ext_resource type="Script" path="res://scenes/prologue/scripts/camera.gd" id="6_2qnka"]
 [ext_resource type="Texture2D" uid="uid://5du6qafr3bt3" path="res://assets/sprites/Devil'sCoinTileset.png" id="6_856lp"]
 [ext_resource type="PackedScene" uid="uid://cfech1f5l2ybb" path="res://scenes/objects/rain.tscn" id="6_i2p4j"]
+[ext_resource type="PackedScene" uid="uid://bm3e2dr0abth4" path="res://scenes/objects/wind.tscn" id="6_x66q3"]
 
 [sub_resource type="Animation" id="Animation_ftss8"]
 resource_name = "CarArrival"
@@ -1432,6 +1432,9 @@ sources/0 = SubResource("TileSetAtlasSource_cyjvw")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_al6oa"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp4h7"]
+size = Vector2(10, 59)
+
 [node name="Prologue" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -1439,8 +1442,6 @@ visible = false
 position = Vector2(600, 300)
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("1_7lnny")
-
-[node name="PipeArea" parent="." instance=ExtResource("5_3n7w0")]
 
 [node name="CutsceneCamera" type="Camera2D" parent="."]
 script = ExtResource("6_2qnka")
@@ -1480,3 +1481,19 @@ texture = SubResource("CanvasTexture_al6oa")
 position = Vector2(56, 603)
 
 [node name="Rain" parent="." instance=ExtResource("6_i2p4j")]
+
+[node name="Wind" parent="." instance=ExtResource("6_x66q3")]
+
+[node name="Area2D" type="Area2D" parent="." groups=["climbable"]]
+position = Vector2(231, 574)
+collision_layer = 5
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bp4h7")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -5.0
+offset_top = -30.0
+offset_right = 5.0
+offset_bottom = 30.0
