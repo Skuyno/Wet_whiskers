@@ -419,6 +419,7 @@ collision_mask = 5
 script = ExtResource("1_hmrkm")
 
 [node name="CatSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_mi4pu")
 animation = &"climb_idle"
 frame_progress = 1.0
@@ -440,3 +441,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
 shape = SubResource("RectangleShape2D_vfdpa")
+
+[node name="ClimbRay" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+collision_mask = 5
