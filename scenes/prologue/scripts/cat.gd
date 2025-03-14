@@ -23,7 +23,13 @@ enum State {
 
 # Системные переменные
 var is_climbing_possible = false
-var was_on_floor = false
+var can_exit_climb = true
+var exit_delay = 0.2
+var exit_timer = 0.0
+var climb_target: Node2D = null
+var climb_facing_right: bool = true
+var ignore_climb_until_exit = false
+var entered_climb_areas = []
 
 func _ready():
 	# Настройка соединений сигналов
@@ -32,9 +38,6 @@ func _ready():
 	$ClimbArea.area_exited.connect(_on_climb_area_exited)
 
 func _physics_process(delta):
-	# Сохраняем предыдущее состояние пола
-	was_on_floor = is_on_floor()
-	
 	# Обработка состояний
 	match current_state:
 		State.NORMAL:
@@ -45,6 +48,8 @@ func _physics_process(delta):
 			handle_climb_state(delta)
 		State.MEOW, State.LICK:
 			handle_special_animations()
+			
+	print(current_state)
 	
 	# Применяем движение
 	move_and_slide()
@@ -72,7 +77,7 @@ func handle_normal_state(delta):
 		exit_crouch_state()
 	
 	# Лазание
-	if Input.is_action_just_pressed("ui_up") and is_climbing_possible:
+	if is_climbing_possible and not ignore_climb_until_exit:
 		enter_climb_state()
 	
 	# Специальные действия
@@ -95,19 +100,43 @@ func handle_climb_state(delta):
 	var vertical = Input.get_axis("ui_up", "ui_down")
 	velocity = Vector2(0, vertical * CLIMB_SPEED)
 	
-	# Выходи из лазания через спрыгивание
+	# Обновляем направление относительно объекта
+	update_climb_facing()
+	
+	# Обработка выхода через спрыгивание
 	var horizontal = Input.get_axis("ui_left", "ui_right")
-	if horizontal != 0:
-		velocity = Vector2(horizontal * WALK_SPEED, JUMP_FORCE)
-		exit_climb_state()
+	if horizontal != 0 and can_exit_climb:
+		# Устанавливаем направление прыжка
+		velocity = Vector2(
+			horizontal * WALK_SPEED * 1.2, 
+			JUMP_FORCE * 0.8
+		)
+		sprite.flip_h = horizontal < 0
+		exit_climb_state(true)
+		can_exit_climb = false
+		exit_timer = exit_delay
+		return
 	
-	# Выход из лазания
+	# Таймер задержки для спрыгивания
+	if not can_exit_climb:
+		exit_timer -= delta
+		if exit_timer <= 0:
+			can_exit_climb = true
+	
+	# Выход при нажатии вверх (прыжок от стены)
+	if Input.is_action_pressed("ui_up") and not is_climbing_possible:
+		velocity.y = JUMP_FORCE * 1.25
+		exit_climb_state(true)
+		return
+	
+	# Автоматический выход если нет доступных зон
+	if entered_climb_areas.is_empty():
+		exit_climb_state(false)
+		return
+	
+	# Плавный выход при покидании зоны
 	if not is_climbing_possible:
-		exit_climb_state()
-	
-	if not is_climbing_possible and Input.is_action_pressed("ui_up"):
-		exit_climb_state()
-		velocity.y = JUMP_FORCE
+		exit_climb_state(false)
 
 func handle_special_animations():
 	# Блокируем движение во время специальных анимаций
@@ -136,6 +165,13 @@ func update_animations():
 	# Отражаем спрайт
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0
+		
+
+func update_climb_facing():
+	if climb_target:
+		var target_dir = climb_target.global_position.x - global_position.x
+		climb_facing_right = target_dir > 0
+		sprite.flip_h = !climb_facing_right
 
 # ===== СИСТЕМА СОСТОЯНИЙ =====
 func enter_crouch_state():
@@ -152,9 +188,12 @@ func enter_climb_state():
 	sprite.play("climb_start")
 	await sprite.animation_finished
 
-func exit_climb_state():
+func exit_climb_state(forced: bool):
 	current_state = State.NORMAL
-	sprite.play("climb_end")
+	sprite.play("climb_end")	
+	# Принудительный выход сохраняет блокировку
+	if forced:
+		ignore_climb_until_exit = true
 	await sprite.animation_finished
 
 func start_meow():
@@ -171,12 +210,21 @@ func start_lick():
 
 # ===== СИГНАЛЫ =====
 func _on_climb_area_entered(body):
-	if body.is_in_group("climbable"):
+	if body.is_in_group("climbable") and body not in entered_climb_areas:
+		entered_climb_areas.append(body)
 		is_climbing_possible = true
+		climb_target = body
 
 func _on_climb_area_exited(body):
-	if body.is_in_group("climbable"):
-		is_climbing_possible = false
+	if body in entered_climb_areas:
+		entered_climb_areas.erase(body)
+		is_climbing_possible = not entered_climb_areas.is_empty()
+		# Сбрасываем блокировку при выходе из всех зон
+		if entered_climb_areas.is_empty():
+			ignore_climb_until_exit = false
+			climb_target = null
+		else:
+			climb_target = entered_climb_areas[0]
 		
 func _on_sprite_animation_finished():
 	if current_state == State.CROUCHING and sprite.animation == "crouch_start":
