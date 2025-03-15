@@ -93,4 +93,6 @@ lifetime = 0.2
 visibility_rect = Rect2(-750, -300, 1500, 600)
 
 [node name="RainCollider" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 200)
 occluder = SubResource("OccluderPolygon2D_rjt37")

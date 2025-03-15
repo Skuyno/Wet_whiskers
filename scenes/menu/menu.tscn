@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs3ng5j7krhmu"]
+[gd_scene load_steps=12 format=3 uid="uid://bs3ng5j7krhmu"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="1_1tytn"]
+[ext_resource type="Texture2D" uid="uid://ca58b0pm4kj60" path="res://assets/sprites/BackMenu.png" id="2_j5bq8"]
+[ext_resource type="PackedScene" uid="uid://cfech1f5l2ybb" path="res://scenes/objects/rain.tscn" id="3_cuf33"]
+[ext_resource type="Texture2D" uid="uid://di71vcxrqxh8" path="res://assets/sprites/stay-Sheet.png" id="4_dc04f"]
 
 [sub_resource type="Animation" id="Animation_jwhr6"]
 length = 0.001
@@ -63,24 +66,59 @@ _data = {
 "launch": SubResource("Animation_jprdt")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgbh2"]
+atlas = ExtResource("4_dc04f")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqino"]
+atlas = ExtResource("4_dc04f")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxnue"]
+atlas = ExtResource("4_dc04f")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rxdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgbh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqino")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxnue")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_1tytn")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(603.751, 324)
+scale = Vector2(6.48, 6.48)
+texture = ExtResource("2_j5bq8")
+
 [node name="Play" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 100)
-offset_left = 450.0
-offset_top = 200.0
-offset_right = 750.0
-offset_bottom = 300.0
+offset_left = 600.0
+offset_top = 100.0
+offset_right = 900.0
+offset_bottom = 200.0
 theme_override_font_sizes/font_size = 44
 text = "PLAY"
 
 [node name="Exit" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 100)
-offset_left = 450.0
-offset_top = 400.0
-offset_right = 750.0
-offset_bottom = 500.0
+offset_left = 600.0
+offset_top = 325.0
+offset_right = 900.0
+offset_bottom = 425.0
 theme_override_font_sizes/font_size = 44
 text = "EXIT
 "
@@ -89,6 +127,17 @@ text = "EXIT
 libraries = {
 "": SubResource("AnimationLibrary_34gec")
 }
+
+[node name="Cat_idle" type="AnimatedSprite2D" parent="."]
+position = Vector2(175.5, 474.5)
+scale = Vector2(3.35156, 3.35156)
+sprite_frames = SubResource("SpriteFrames_6rxdb")
+animation = &"idle"
+frame_progress = 0.335005
+
+[node name="Rain" parent="." instance=ExtResource("3_cuf33")]
+position = Vector2(-539, -1055)
+scale = Vector2(2, 2)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0

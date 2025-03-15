@@ -23,7 +23,7 @@ enum State {
 
 # Системные переменные
 var is_climbing_possible = false
-var can_exit_climb = true
+var can_exit_climb = false
 var exit_delay = 0.2
 var exit_timer = 0.0
 var climb_target: Node2D = null
@@ -48,8 +48,6 @@ func _physics_process(delta):
 			handle_climb_state(delta)
 		State.MEOW, State.LICK:
 			handle_special_animations()
-			
-	print(current_state)
 	
 	# Применяем движение
 	move_and_slide()
@@ -185,7 +183,7 @@ func exit_crouch_state():
 
 func enter_climb_state():
 	current_state = State.CLIMBING
-	sprite.play("climb_start")
+	sprite.play("climb_idle")
 	await sprite.animation_finished
 
 func exit_climb_state(forced: bool):
