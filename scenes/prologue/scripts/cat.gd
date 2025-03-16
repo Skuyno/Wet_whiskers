@@ -25,7 +25,7 @@ enum State {
 var is_climbing_possible = false
 var can_exit_climb = false
 var exit_delay = 0.2
-var exit_timer = 0.0
+var exit_timer = 0.2
 var climb_target: Node2D = null
 var climb_facing_right: bool = true
 var ignore_climb_until_exit = false
@@ -121,15 +121,19 @@ func handle_climb_state(delta):
 		if exit_timer <= 0:
 			can_exit_climb = true
 	
-	# Выход при нажатии вверх (прыжок от стены)
+	# Выход при нажатии вверх
 	if Input.is_action_pressed("ui_up") and not is_climbing_possible:
 		velocity.y = JUMP_FORCE * 1.25
 		exit_climb_state(true)
+		can_exit_climb = false
+		exit_timer = exit_delay
 		return
 	
 	# Автоматический выход если нет доступных зон
 	if entered_climb_areas.is_empty():
 		exit_climb_state(false)
+		can_exit_climb = false
+		exit_timer = exit_delay
 		return
 	
 	# Плавный выход при покидании зоны
@@ -208,7 +212,8 @@ func start_lick():
 
 # ===== СИГНАЛЫ =====
 func _on_climb_area_entered(body):
-	if body.is_in_group("climbable") and body not in entered_climb_areas:
+	# Такой номер у слоя climbable
+	if body.collision_layer == 4 and body not in entered_climb_areas:
 		entered_climb_areas.append(body)
 		is_climbing_possible = true
 		climb_target = body
