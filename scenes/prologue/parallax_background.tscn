@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgumncpqfnrp6"]
+
+[ext_resource type="Texture2D" uid="uid://bu7jpvuqy76qb" path="res://assets/sprites/parallax_back/layer_1_ground.png" id="1_f48dw"]
+[ext_resource type="Texture2D" uid="uid://cjvjvborlbulp" path="res://assets/sprites/parallax_back/layer_2_stars.png" id="2_86jp8"]
+[ext_resource type="Texture2D" uid="uid://nqh8dhcpbv3k" path="res://assets/sprites/parallax_back/layer_3_moon.png" id="3_sffgc"]
+[ext_resource type="Texture2D" uid="uid://cq6i2s75y6ytt" path="res://assets/sprites/parallax_back/layer_4_clouds_1.png" id="4_aw1r6"]
+[ext_resource type="Texture2D" uid="uid://biraf5ynvq438" path="res://assets/sprites/parallax_back/layer_5_clouds_2.png" id="5_odu0p"]
+[ext_resource type="Texture2D" uid="uid://433r6xsih3gd" path="res://assets/sprites/parallax_back/layer_6_far_buildings.png" id="6_ywtfy"]
+[ext_resource type="Texture2D" uid="uid://djgsel1n78ssu" path="res://assets/sprites/parallax_back/layer_7_bg_buildings.png" id="7_ppcoq"]
+[ext_resource type="Texture2D" uid="uid://c48d20f03k72e" path="res://assets/sprites/parallax_back/layer_8_fg_buildings.png" id="8_7qc4d"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+offset = Vector2(0, 350)
+transform = Transform2D(1, 0, 0, 1, 0, 350)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer1Ground" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(361, 28)
+scale = Vector2(1, 1.78125)
+texture = ExtResource("1_f48dw")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer2Stars" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(361, 28.5)
+scale = Vector2(1, 1.77734)
+texture = ExtResource("2_86jp8")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Layer3Moon" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(361, -68.5)
+scale = Vector2(1, 1.01953)
+texture = ExtResource("3_sffgc")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer4Clouds1" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(361, 28)
+scale = Vector2(1, 1.78125)
+texture = ExtResource("4_aw1r6")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer5Clouds2" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(361, 29)
+scale = Vector2(1, 1.77344)
+texture = ExtResource("5_odu0p")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer6FarBuildings" type="Sprite2D" parent="ParallaxLayer6"]
+position = Vector2(361, 28.5)
+scale = Vector2(1, 1.77734)
+texture = ExtResource("6_ywtfy")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer7BgBuildings" type="Sprite2D" parent="ParallaxLayer7"]
+position = Vector2(361, 27.5)
+scale = Vector2(1, 1.78516)
+texture = ExtResource("7_ppcoq")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+position = Vector2(0, 350)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(723, 0)
+
+[node name="Layer8FgBuildings" type="Sprite2D" parent="ParallaxLayer8"]
+position = Vector2(361, 105.5)
+scale = Vector2(1, 1.17578)
+texture = ExtResource("8_7qc4d")

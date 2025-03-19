@@ -6,6 +6,8 @@ const CROUCH_SPEED = 50.0
 const JUMP_FORCE = -150.0
 const CLIMB_SPEED = 60.0
 const GRAVITY = 980.0
+const INVINCIBILITY_DURATION = 1.5
+const DAMAGE_KNOCKBACK = Vector2(200, -150)
 
 # Состояния персонажа
 enum State {
@@ -13,7 +15,8 @@ enum State {
 	CROUCHING,
 	CLIMBING,
 	MEOW,
-	LICK
+	LICK,
+	DAMAGED
 }
 
 # Экспортируемые переменные
@@ -30,8 +33,16 @@ var climb_target: Node2D = null
 var climb_facing_right: bool = true
 var ignore_climb_until_exit = false
 var entered_climb_areas = []
+var is_invincible = false
+var invincibility_timer: Timer
 
 func _ready():
+	# Инициализация таймера неуязвимости
+	invincibility_timer = Timer.new()
+	invincibility_timer.one_shot = true
+	add_child(invincibility_timer)
+	invincibility_timer.timeout.connect(_end_invincibility)
+	
 	# Настройка соединений сигналов
 	sprite.animation_finished.connect(_on_sprite_animation_finished)
 	$ClimbArea.area_entered.connect(_on_climb_area_entered)
@@ -48,6 +59,8 @@ func _physics_process(delta):
 			handle_climb_state(delta)
 		State.MEOW, State.LICK:
 			handle_special_animations()
+		State.DAMAGED:
+			handle_damaged_state(global_position)
 	
 	# Применяем движение
 	move_and_slide()
@@ -84,7 +97,7 @@ func handle_normal_state(delta):
 	elif Input.is_action_just_pressed("lick"):
 		start_lick()
 
-func handle_crouch_state(delta):
+func handle_crouch_state(_delta):
 	# Движение вприсядку
 	var direction = Input.get_axis("ui_left", "ui_right")
 	velocity.x = direction * CROUCH_SPEED
@@ -175,6 +188,52 @@ func update_climb_facing():
 		climb_facing_right = target_dir > 0
 		sprite.flip_h = !climb_facing_right
 
+func handle_damaged_state(source_position: Vector2):
+	if is_invincible:
+		exit_damaged_state()
+		return
+	
+	# Применяем отбрасывание
+	var knockback_dir = sign(global_position.x - source_position.x)
+	velocity = Vector2(knockback_dir * DAMAGE_KNOCKBACK.x, DAMAGE_KNOCKBACK.y)
+	
+	# Запускаем неуязвимость
+	#start_invincibility()
+	
+	# Уменьшаем жизни
+	Global.lose_life()
+	
+	if Global.lives <= 0:
+		die()
+		
+	exit_damaged_state()
+
+func start_invincibility():
+	is_invincible = true
+	invincibility_timer.start(INVINCIBILITY_DURATION)
+	
+	# Включаем эффект мигания
+	$AnimationPlayer.play("invincibility_flash")
+	
+	# Меняем слой коллизий
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, true)
+
+func _end_invincibility():
+	is_invincible = false
+	$AnimationPlayer.stop()
+	sprite.modulate = Color.WHITE
+	
+	# Восстанавливаем слои коллизий
+	set_collision_layer_value(1, true)
+	set_collision_layer_value(2, false)
+	
+func die():
+	# Анимация смерти
+	#sprite.play("death")
+	#await sprite.animation_finished
+	Global.game_over.emit()
+
 # ===== СИСТЕМА СОСТОЯНИЙ =====
 func enter_crouch_state():
 	current_state = State.CROUCHING
@@ -198,6 +257,14 @@ func exit_climb_state(forced: bool):
 		ignore_climb_until_exit = true
 	await sprite.animation_finished
 
+func enter_damaged_state():
+	current_state = State.DAMAGED
+	#sprite.play("damage")
+	await sprite.animation_finished
+
+func exit_damaged_state():
+	current_state = State.NORMAL
+
 func start_meow():
 	current_state = State.MEOW
 	sprite.play("meow")
@@ -212,6 +279,7 @@ func start_lick():
 
 # ===== СИГНАЛЫ =====
 func _on_climb_area_entered(body):
+	enter_damaged_state()
 	# Такой номер у слоя climbable
 	if body.collision_layer == 4 and body not in entered_climb_areas:
 		entered_climb_areas.append(body)

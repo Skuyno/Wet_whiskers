@@ -83,7 +83,7 @@ sub_emitter = NodePath("../RainSplash")
 process_material = SubResource("ParticleProcessMaterial_643mx")
 preprocess = 0.5
 collision_base_size = 90.0
-visibility_rect = Rect2(-750, -350, 1500, 700)
+visibility_rect = Rect2(-10000, -350, 20000, 2000)
 
 [node name="RainSplash" type="GPUParticles2D" parent="."]
 position = Vector2(650, 500)
