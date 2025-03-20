@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgumncpqfnrp6"]
+[gd_scene load_steps=9 format=3 uid="uid://cm20lcfiboxiq"]
 
 [ext_resource type="Texture2D" uid="uid://bu7jpvuqy76qb" path="res://assets/sprites/parallax_back/layer_1_ground.png" id="1_f48dw"]
 [ext_resource type="Texture2D" uid="uid://cjvjvborlbulp" path="res://assets/sprites/parallax_back/layer_2_stars.png" id="2_86jp8"]

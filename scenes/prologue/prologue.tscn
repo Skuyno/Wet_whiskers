@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cjvjvborlbulp" path="res://assets/sprites/parallax_back/layer_2_stars.png" id="2_fl8pm"]
 [ext_resource type="Script" path="res://scenes/prologue/scripts/ui.gd" id="2_nkrih"]
 [ext_resource type="Texture2D" uid="uid://nqh8dhcpbv3k" path="res://assets/sprites/parallax_back/layer_3_moon.png" id="3_6q7gr"]
-[ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="4_bgk7f"]
+[ext_resource type="PackedScene" path="res://scenes/objects/pipe.tscn" id="4_bgk7f"]
 [ext_resource type="Texture2D" uid="uid://cq6i2s75y6ytt" path="res://assets/sprites/parallax_back/layer_4_clouds_1.png" id="4_vgwhw"]
 [ext_resource type="PackedScene" uid="uid://du8ctq3i01nna" path="res://scenes/objects/cat.tscn" id="4_vjl2s"]
 [ext_resource type="Texture2D" uid="uid://biraf5ynvq438" path="res://assets/sprites/parallax_back/layer_5_clouds_2.png" id="5_2cvfh"]
@@ -1580,7 +1580,6 @@ scale = Vector2(1, 1.17578)
 texture = ExtResource("8_hlitc")
 
 [node name="Cat" parent="." instance=ExtResource("4_vjl2s")]
-modulate = Color(1, 1, 1, 1)
 position = Vector2(501, 566)
 
 [node name="Rain" parent="." instance=ExtResource("6_i2p4j")]

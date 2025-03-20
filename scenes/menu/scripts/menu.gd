@@ -6,6 +6,3 @@ extends Node2D
 func _ready() -> void:
 	anim_player.play("launch")
 	cat_idle.play("idle")
-
-func _on_exit_pressed():
-	get_tree().quit()

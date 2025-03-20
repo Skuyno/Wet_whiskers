@@ -1,9 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://bs3ng5j7krhmu"]
+[gd_scene load_steps=30 format=3 uid="uid://bs3ng5j7krhmu"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="1_1tytn"]
 [ext_resource type="Texture2D" uid="uid://ca58b0pm4kj60" path="res://assets/sprites/BackMenu.png" id="2_j5bq8"]
 [ext_resource type="PackedScene" uid="uid://cfech1f5l2ybb" path="res://scenes/objects/rain.tscn" id="3_cuf33"]
 [ext_resource type="Texture2D" uid="uid://di71vcxrqxh8" path="res://assets/sprites/stay-Sheet.png" id="4_dc04f"]
+[ext_resource type="Script" path="res://scenes/menu/scripts/sbutton.gd" id="5_a68yt"]
+[ext_resource type="Script" path="res://scenes/menu/scripts/obutton.gd" id="7_ewy21"]
+[ext_resource type="Texture2D" uid="uid://b0gs4v7q70ay2" path="res://assets/sprites/234.png" id="7_ilpc0"]
+[ext_resource type="Texture2D" uid="uid://lrdsongv6iji" path="res://assets/sprites/GUI123234234.png" id="8_03p41"]
+[ext_resource type="Texture2D" uid="uid://bqxnm3rqi8eyp" path="res://assets/sprites/GUI123234цукцук.png" id="8_gq8nn"]
+[ext_resource type="Script" path="res://scenes/menu/scripts/qbutton.gd" id="9_750hr"]
 
 [sub_resource type="Animation" id="Animation_jwhr6"]
 length = 0.001
@@ -95,6 +101,147 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1xs6"]
+atlas = ExtResource("7_ilpc0")
+region = Rect2(0, 4, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejtb6"]
+atlas = ExtResource("7_ilpc0")
+region = Rect2(0, 36, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksy4v"]
+atlas = ExtResource("7_ilpc0")
+region = Rect2(0, 20, 32, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcr1s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1xs6")
+}],
+"loop": false,
+"name": &"aimed",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1xs6")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejtb6")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksy4v")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxc0e"]
+atlas = ExtResource("8_03p41")
+region = Rect2(0, 4, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlcdo"]
+atlas = ExtResource("8_03p41")
+region = Rect2(0, 36, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ife07"]
+atlas = ExtResource("8_03p41")
+region = Rect2(0, 20, 32, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlht1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxc0e")
+}],
+"loop": true,
+"name": &"aimed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxc0e")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlcdo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ife07")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eneap"]
+atlas = ExtResource("8_gq8nn")
+region = Rect2(0, 4, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkmxn"]
+atlas = ExtResource("8_gq8nn")
+region = Rect2(0, 36, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrfkl"]
+atlas = ExtResource("8_gq8nn")
+region = Rect2(0, 20, 32, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3321"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eneap")
+}],
+"loop": false,
+"name": &"aimed",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eneap")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkmxn")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrfkl")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 15.0
+}]
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_1tytn")
 
@@ -104,33 +251,14 @@ position = Vector2(603.751, 324)
 scale = Vector2(6.48, 6.48)
 texture = ExtResource("2_j5bq8")
 
-[node name="Play" type="Button" parent="."]
-custom_minimum_size = Vector2(300, 100)
-offset_left = 600.0
-offset_top = 100.0
-offset_right = 900.0
-offset_bottom = 200.0
-theme_override_font_sizes/font_size = 44
-text = "PLAY"
-
-[node name="Exit" type="Button" parent="."]
-custom_minimum_size = Vector2(300, 100)
-offset_left = 600.0
-offset_top = 325.0
-offset_right = 900.0
-offset_bottom = 425.0
-theme_override_font_sizes/font_size = 44
-text = "EXIT
-"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_34gec")
 }
 
 [node name="Cat_idle" type="AnimatedSprite2D" parent="."]
-position = Vector2(175.5, 474.5)
-scale = Vector2(3.35156, 3.35156)
+position = Vector2(154, 466)
+scale = Vector2(4.445, 4.445)
 sprite_frames = SubResource("SpriteFrames_6rxdb")
 animation = &"idle"
 frame_progress = 0.335005
@@ -144,4 +272,60 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[node name="StartButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 493.0
+offset_top = 157.0
+offset_right = 657.0
+offset_bottom = 233.0
+script = ExtResource("5_a68yt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StartButton"]
+position = Vector2(82.3, 36.6094)
+scale = Vector2(5.51875, 5.51875)
+sprite_frames = SubResource("SpriteFrames_dcr1s")
+animation = &"idle"
+
+[node name="OptionsButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 494.0
+offset_top = 239.0
+offset_right = 659.0
+offset_bottom = 316.0
+script = ExtResource("7_ewy21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OptionsButton"]
+position = Vector2(80.5302, 34.7798)
+scale = Vector2(5.49603, 5.49603)
+sprite_frames = SubResource("SpriteFrames_hlht1")
+animation = &"idle"
+
+[node name="QuitButton2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 493.0
+offset_top = 316.0
+offset_right = 656.0
+offset_bottom = 391.0
+script = ExtResource("9_750hr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="QuitButton2"]
+position = Vector2(82.3, 37.6094)
+scale = Vector2(5.51875, 5.51875)
+sprite_frames = SubResource("SpriteFrames_v3321")
+animation = &"idle"
+
+[connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
+[connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="StartButton" to="StartButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton" to="StartButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="button_down" from="OptionsButton" to="OptionsButton" method="_on_button_down"]
+[connection signal="button_up" from="OptionsButton" to="OptionsButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="OptionsButton" to="OptionsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="OptionsButton" to="OptionsButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="OptionsButton" to="OptionsButton" method="_on_pressed"]
+[connection signal="button_down" from="QuitButton2" to="QuitButton2" method="_on_button_down"]
+[connection signal="button_up" from="QuitButton2" to="QuitButton2" method="_on_button_up"]
+[connection signal="mouse_entered" from="QuitButton2" to="QuitButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton2" to="QuitButton2" method="_on_mouse_exited"]
+[connection signal="pressed" from="QuitButton2" to="QuitButton2" method="_on_pressed"]
