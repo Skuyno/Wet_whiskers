@@ -17,6 +17,7 @@ func _on_mouse_exited():
 # Когда кнопка нажата
 func _on_pressed():
 	anim.play("pressed")  
+	get_tree().change_scene_to_file("res://scenes/prologue/prologue.tscn")
 
 # Когда кнопка отпущена
 func _on_button_up():
