@@ -1580,6 +1580,7 @@ scale = Vector2(1, 1.17578)
 texture = ExtResource("8_hlitc")
 
 [node name="Cat" parent="." instance=ExtResource("4_vjl2s")]
+modulate = Color(1, 1, 1, 1)
 position = Vector2(501, 566)
 
 [node name="Rain" parent="." instance=ExtResource("6_i2p4j")]

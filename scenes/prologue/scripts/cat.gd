@@ -198,7 +198,7 @@ func handle_damaged_state(source_position: Vector2):
 	velocity = Vector2(knockback_dir * DAMAGE_KNOCKBACK.x, DAMAGE_KNOCKBACK.y)
 	
 	# Запускаем неуязвимость
-	#start_invincibility()
+	start_invincibility()
 	
 	# Уменьшаем жизни
 	Global.lose_life()
@@ -222,7 +222,6 @@ func start_invincibility():
 func _end_invincibility():
 	is_invincible = false
 	$AnimationPlayer.stop()
-	sprite.modulate = Color.WHITE
 	
 	# Восстанавливаем слои коллизий
 	set_collision_layer_value(1, true)
