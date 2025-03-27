@@ -453,13 +453,13 @@ _data = {
 }
 
 [node name="Cat" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_hmrkm")
 
 [node name="CatSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_mi4pu")
-animation = &"idle"
+animation = &"meow"
 
 [node name="CatCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4btjv")

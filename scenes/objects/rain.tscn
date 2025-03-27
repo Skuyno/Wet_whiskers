@@ -71,7 +71,7 @@ gravity = Vector3(0, 500, 0)
 alpha_curve = SubResource("CurveTexture_bgvcr")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rjt37"]
-polygon = PackedVector2Array(-65, 624, 1263, 624, 1263, 687, -64, 687)
+polygon = PackedVector2Array(-1596, 627, 2514, 624, 2512, 684, -1579, 686)
 
 [node name="Rain" type="Node2D"]
 

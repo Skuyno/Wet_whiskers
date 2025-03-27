@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dv4yvf16kscyy"
+path="res://.godot/imported/Voicy_Sound Of The Door Opening From The Car Interior.ogg-bb181c81b972caab6c0ff27c1201e4c6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/Voicy_Sound Of The Door Opening From The Car Interior.ogg"
+dest_files=["res://.godot/imported/Voicy_Sound Of The Door Opening From The Car Interior.ogg-bb181c81b972caab6c0ff27c1201e4c6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

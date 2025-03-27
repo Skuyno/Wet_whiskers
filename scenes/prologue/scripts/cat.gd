@@ -278,7 +278,6 @@ func start_lick():
 
 # ===== СИГНАЛЫ =====
 func _on_climb_area_entered(body):
-	enter_damaged_state()
 	# Такой номер у слоя climbable
 	if body.collision_layer == 4 and body not in entered_climb_areas:
 		entered_climb_areas.append(body)
