@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo8e65l7u4wox"
-path="res://.godot/imported/man_with_bag-Sheet.png-74f1ac917615e3df85478099401c5fcc.ctex"
+uid="uid://dxkxnljel4wb4"
+path="res://.godot/imported/man_with_bag (2)-Sheet.png-48c9f51e0b410bfd54067d51c8c4fb8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/man/man_with_bag-Sheet.png"
-dest_files=["res://.godot/imported/man_with_bag-Sheet.png-74f1ac917615e3df85478099401c5fcc.ctex"]
+source_file="res://assets/sprites/man/man_with_bag (2)-Sheet.png"
+dest_files=["res://.godot/imported/man_with_bag (2)-Sheet.png-48c9f51e0b410bfd54067d51c8c4fb8b.ctex"]
 
 [params]
 
