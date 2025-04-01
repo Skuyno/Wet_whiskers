@@ -11,6 +11,7 @@ func lose_life():
 	
 	if lives <= 0:
 		emit_signal("game_over")
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/menu.tscn")
 
 func reset():
 	lives = 3

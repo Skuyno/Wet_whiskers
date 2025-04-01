@@ -3,10 +3,10 @@ extends Node2D
 func _ready():
 	# Начальная настройка
 	set_audio_volume_rain_car(-30.0)  # Начальная громкость
-	Global.connect("game_over", Callable(self, "_on_end"))
 	$UI/BlackSquare.visible = true
 	
 	$Car/Camera2D.make_current()
+	$AudioPlayers/Music.play()
 	$AudioPlayers/RainAndEngineInCarSound.play()
 	$AnimationPlayer.play("CarArrival")
 	create_fade_tween_in_car(6.0)
@@ -75,9 +75,6 @@ func create_fade_out_tween_outside(duration: float):
 	tween.tween_property($UI/BlackSquare, "color:a", 1.0, duration)\
 		 .set_ease(Tween.EASE_IN_OUT)\
 		 .set_trans(Tween.TRANS_SINE)
-
-func _on_end():
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/menu/menu.tscn")
 
 func spawn_character():
 	# 1. Инициализация персонажа

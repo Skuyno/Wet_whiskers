@@ -202,9 +202,6 @@ func handle_damaged_state(source_position: Vector2):
 	
 	# Уменьшаем жизни
 	Global.lose_life()
-	
-	if Global.lives <= 0:
-		die()
 		
 	exit_damaged_state()
 
@@ -226,12 +223,6 @@ func _end_invincibility():
 	# Восстанавливаем слои коллизий
 	set_collision_layer_value(1, true)
 	set_collision_layer_value(2, false)
-	
-func die():
-	# Анимация смерти
-	#sprite.play("death")
-	#await sprite.animation_finished
-	Global.game_over.emit()
 
 # ===== СИСТЕМА СОСТОЯНИЙ =====
 func enter_crouch_state():
@@ -279,6 +270,7 @@ func start_lick():
 # ===== СИГНАЛЫ =====
 func _on_climb_area_entered(body):
 	# Такой номер у слоя climbable
+	enter_damaged_state()
 	if body.collision_layer == 4 and body not in entered_climb_areas:
 		entered_climb_areas.append(body)
 		is_climbing_possible = true

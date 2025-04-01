@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bs3ng5j7krhmu"]
+[gd_scene load_steps=34 format=3 uid="uid://bs3ng5j7krhmu"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="1_1tytn"]
 [ext_resource type="Texture2D" uid="uid://ca58b0pm4kj60" path="res://assets/sprites/BackMenu.png" id="2_j5bq8"]
@@ -10,67 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://lrdsongv6iji" path="res://assets/sprites/GUI123234234.png" id="8_03p41"]
 [ext_resource type="Texture2D" uid="uid://bqxnm3rqi8eyp" path="res://assets/sprites/GUI123234цукцук.png" id="8_gq8nn"]
 [ext_resource type="Script" path="res://scenes/menu/scripts/qbutton.gd" id="9_750hr"]
-
-[sub_resource type="Animation" id="Animation_jwhr6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_jprdt"]
-resource_name = "launch"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2, 5),
-"transitions": PackedFloat32Array(0.378929, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_34gec"]
-_data = {
-"RESET": SubResource("Animation_jwhr6"),
-"launch": SubResource("Animation_jprdt")
-}
+[ext_resource type="Texture2D" uid="uid://dlodwwns5jowf" path="res://assets/sprites/black_back.png" id="11_qqxiu"]
+[ext_resource type="Texture2D" uid="uid://fr0gbsmfvqqk" path="res://assets/sprites/asdfasdfasdfasdf.png" id="12_o326m"]
+[ext_resource type="AudioStream" uid="uid://bgwqg4nay3tub" path="res://assets/audioLayout/Hanz Zimmer - Stay (Interstellar).mp3" id="13_oh2w0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgbh2"]
 atlas = ExtResource("4_dc04f")
@@ -242,19 +184,73 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="Animation" id="Animation_17jy6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sbce7"]
+resource_name = "bloom"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_41r8c"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6yyg"]
+_data = {
+"RESET": SubResource("Animation_17jy6"),
+"bloom": SubResource("Animation_sbce7"),
+"fade": SubResource("Animation_41r8c")
+}
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_1tytn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(603.751, 324)
 scale = Vector2(6.48, 6.48)
 texture = ExtResource("2_j5bq8")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_34gec")
-}
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(626, 145)
+scale = Vector2(0.872263, 0.872263)
+texture = ExtResource("12_o326m")
 
 [node name="Cat_idle" type="AnimatedSprite2D" parent="."]
 position = Vector2(154, 466)
@@ -269,10 +265,10 @@ scale = Vector2(2, 2)
 
 [node name="StartButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 493.0
-offset_top = 157.0
-offset_right = 657.0
-offset_bottom = 233.0
+offset_left = 522.0
+offset_top = 296.0
+offset_right = 686.0
+offset_bottom = 372.0
 script = ExtResource("5_a68yt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StartButton"]
@@ -283,10 +279,10 @@ animation = &"idle"
 
 [node name="OptionsButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 494.0
-offset_top = 239.0
-offset_right = 659.0
-offset_bottom = 316.0
+offset_left = 523.0
+offset_top = 378.0
+offset_right = 688.0
+offset_bottom = 455.0
 script = ExtResource("7_ewy21")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OptionsButton"]
@@ -295,24 +291,42 @@ scale = Vector2(5.49603, 5.49603)
 sprite_frames = SubResource("SpriteFrames_hlht1")
 animation = &"idle"
 
-[node name="QuitButton2" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 493.0
-offset_top = 316.0
-offset_right = 656.0
-offset_bottom = 391.0
+offset_left = 522.0
+offset_top = 455.0
+offset_right = 685.0
+offset_bottom = 530.0
 script = ExtResource("9_750hr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="QuitButton2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="QuitButton"]
 position = Vector2(82.3, 37.6094)
 scale = Vector2(5.51875, 5.51875)
 sprite_frames = SubResource("SpriteFrames_v3321")
 animation = &"idle"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 1)
+[node name="Launching" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Launching"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -285.0
+offset_top = -48.0
+offset_right = 1390.0
+offset_bottom = 723.0
+mouse_filter = 2
+texture = ExtResource("11_qqxiu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Launching"]
+libraries = {
+"": SubResource("AnimationLibrary_e6yyg")
+}
+autoplay = "fade"
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("13_oh2w0")
+autoplay = true
 
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
 [connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
@@ -324,8 +338,8 @@ color = Color(0, 0, 0, 1)
 [connection signal="mouse_entered" from="OptionsButton" to="OptionsButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="OptionsButton" to="OptionsButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="OptionsButton" to="OptionsButton" method="_on_pressed"]
-[connection signal="button_down" from="QuitButton2" to="QuitButton2" method="_on_button_down"]
-[connection signal="button_up" from="QuitButton2" to="QuitButton2" method="_on_button_up"]
-[connection signal="mouse_entered" from="QuitButton2" to="QuitButton2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="QuitButton2" to="QuitButton2" method="_on_mouse_exited"]
-[connection signal="pressed" from="QuitButton2" to="QuitButton2" method="_on_pressed"]
+[connection signal="button_down" from="QuitButton" to="QuitButton" method="_on_button_down"]
+[connection signal="button_up" from="QuitButton" to="QuitButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="QuitButton" to="QuitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton" to="QuitButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bw8yfthlcnqgl"
+path="res://.godot/imported/my head is empty - i was only temporary 2 u.mp3-e4262736a914aa399773ec108a09c5fb.mp3str"
+
+[deps]
+
+source_file="res://assets/audioLayout/my head is empty - i was only temporary 2 u.mp3"
+dest_files=["res://.godot/imported/my head is empty - i was only temporary 2 u.mp3-e4262736a914aa399773ec108a09c5fb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

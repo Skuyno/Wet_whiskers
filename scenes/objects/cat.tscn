@@ -465,7 +465,7 @@ animation = &"meow"
 shape = SubResource("RectangleShape2D_4btjv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -72)
+position = Vector2(0, -37.7778)
 zoom = Vector2(5.5, 5.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
