@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://scenes/menu/scripts/qbutton.gd" id="9_750hr"]
 [ext_resource type="Texture2D" uid="uid://dlodwwns5jowf" path="res://assets/sprites/black_back.png" id="11_qqxiu"]
 [ext_resource type="Texture2D" uid="uid://fr0gbsmfvqqk" path="res://assets/sprites/asdfasdfasdfasdf.png" id="12_o326m"]
-[ext_resource type="AudioStream" uid="uid://bgwqg4nay3tub" path="res://assets/audioLayout/Hanz Zimmer - Stay (Interstellar).mp3" id="13_oh2w0"]
+[ext_resource type="AudioStream" uid="uid://bggxod03alhlc" path="res://assets/audioLayout/Winter_Aid_-_The_Wisp_Sings_64678376 (mp3cut (mp3cut.net).mp3" id="13_eno3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgbh2"]
 atlas = ExtResource("4_dc04f")
@@ -325,7 +325,8 @@ autoplay = "fade"
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("13_oh2w0")
+position = Vector2(602, 372)
+stream = ExtResource("13_eno3j")
 autoplay = true
 
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]

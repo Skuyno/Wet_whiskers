@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bggxod03alhlc"
+path="res://.godot/imported/Winter_Aid_-_The_Wisp_Sings_64678376 (mp3cut (mp3cut.net).mp3-eddc0b7266ac56aa266efa0c0e521bbe.mp3str"
+
+[deps]
+
+source_file="res://assets/audioLayout/Winter_Aid_-_The_Wisp_Sings_64678376 (mp3cut (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Winter_Aid_-_The_Wisp_Sings_64678376 (mp3cut (mp3cut.net).mp3-eddc0b7266ac56aa266efa0c0e521bbe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

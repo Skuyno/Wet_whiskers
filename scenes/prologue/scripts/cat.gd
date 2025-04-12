@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 # Настройки движения
 const WALK_SPEED = 70.0
+const RUN_SPEED = 120.0
 const CROUCH_SPEED = 50.0
-const JUMP_FORCE = -150.0
+const JUMP_FORCE = -200.0
 const CLIMB_SPEED = 60.0
 const GRAVITY = 980.0
 const INVINCIBILITY_DURATION = 1.5
@@ -76,10 +77,15 @@ func handle_normal_state(delta):
 	# Прыжок
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_FORCE
+		
+	# Учёт возможности бегать
+	var target_speed = WALK_SPEED
+	if Input.is_action_pressed("sprint"):
+		target_speed = RUN_SPEED
 	
 	# Горизонтальное движение
 	var direction = Input.get_axis("ui_left", "ui_right")
-	velocity.x = direction * WALK_SPEED
+	velocity.x = direction * target_speed
 	
 	# Приседание
 	if Input.is_action_just_pressed("ui_down") and is_on_floor():
@@ -166,7 +172,13 @@ func update_animations():
 			if not is_on_floor():
 				sprite.play("jump" if velocity.y < 0 else "fall")
 			else:
-				sprite.play("walk" if abs(velocity.x) > 0 else "idle")
+				if abs(velocity.x) > 0:
+					if Input.is_action_pressed("sprint"):
+						sprite.play("run")
+					else:
+						sprite.play("walk")
+				else:
+					sprite.play("idle")
 		
 		State.CROUCHING:
 			if abs(velocity.x) > 0:
