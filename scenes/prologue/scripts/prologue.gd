@@ -193,6 +193,8 @@ func pipe_climb_sequence():
 	
 	# Финал анимации
 	cat.play("sitting")
+	await get_tree().create_timer(3).timeout
+	$AudioPlayers/CatMeowSound.play()
 	
 	await get_tree().create_timer(3.0).timeout
 	

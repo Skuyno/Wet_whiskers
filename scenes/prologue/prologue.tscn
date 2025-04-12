@@ -39,7 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://d3ej2rioc6jt" path="res://assets/sounds/zvuk-monet-monety (mp3cut.net).mp3" id="29_yys2v"]
 [ext_resource type="AudioStream" uid="uid://dolhgapgdjboy" path="res://assets/sounds/meow2.mp3" id="35_i6wkx"]
 [ext_resource type="AudioStream" uid="uid://bw8yfthlcnqgl" path="res://assets/audioLayout/my head is empty - i was only temporary 2 u.mp3" id="38_nwj3r"]
-[ext_resource type="Texture2D" uid="uid://co21iaft281tl" path="res://assets/sprites/roof_back1.jpg" id="41_3cv3i"]
+[ext_resource type="Texture2D" uid="uid://cwe4fevi7q46c" path="res://assets/sprites/mocha1.jpg" id="40_a78tu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skvdy"]
 texture = ExtResource("6_856lp")
@@ -2342,7 +2342,7 @@ sprite_frames = SubResource("SpriteFrames_b81u2")
 animation = &"sitting"
 
 [node name="Camera2D" type="Camera2D" parent="Cat/AnimatedSprite2D"]
-position = Vector2(-3.33337, -1.11108)
+position = Vector2(-3.3333, -42.2222)
 zoom = Vector2(4, 4)
 
 [node name="ClimbableObjects" type="Node2D" parent="."]
@@ -2429,6 +2429,6 @@ position = Vector2(267, 592)
 position = Vector2(-731, -69)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(49, 59)
-scale = Vector2(1.77778, 1.77778)
-texture = ExtResource("41_3cv3i")
+position = Vector2(-127, 101)
+scale = Vector2(0.702442, 0.759583)
+texture = ExtResource("40_a78tu")
