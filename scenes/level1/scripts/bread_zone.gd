@@ -1,11 +1,9 @@
 extends Area2D
 
-# Добавляем экспорт переменной для зоны хлеба
-@export var bread_zone: Area2D
-
-var is_cat_detected = false
+var is_cat_detected := false
+var has_bread := false
 var attack_timer: Timer
-var shake_intensity: float = 0.0
+var shake_intensity := 0.0
 
 func _ready():
 	attack_timer = Timer.new()
@@ -14,60 +12,60 @@ func _ready():
 	add_child(attack_timer)
 	attack_timer.timeout.connect(_on_attack_start)
 	
-	# Связываем сигналы зоны хлеба
-	bread_zone.body_entered.connect(_on_bread_entered)
-	bread_zone.body_exited.connect(_on_bread_exited)
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Cat" && !bread_zone.has_bread():
-		start_cat_detection()
+	print(body)
+	if body.name == "Cat":
+		is_cat_detected = true
+		if !has_bread:
+			start_attack_sequence()
+	elif body.is_in_group("bread"):
+		has_bread = true
+		stop_attack_sequence()
+		for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
+			pigeon.start_gathering(body.global_position)
 
 func _on_body_exited(body):
 	if body.name == "Cat":
-		stop_cat_detection()
+		is_cat_detected = false
+		stop_attack_sequence()
+	elif body.is_in_group("bread"):
+		has_bread = false
+		if is_cat_detected:
+			start_attack_sequence()
 
-func start_cat_detection():
-	is_cat_detected = true
+func start_attack_sequence():
 	attack_timer.start()
-	$"../Sounds/PidgeonCurlikanieSound".play()
-	update_pigeons_state()
+	$"../Sounds/PigeonCurlikanieSound".play()
+	for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
+		pigeon.play("nervous")
 
-func stop_cat_detection():
-	is_cat_detected = false
+func stop_attack_sequence():
 	attack_timer.stop()
-	$"../Sounds/PidgeonCurlikanieSound".stop()
-	update_pigeons_state()
+	$"../Sounds/PigeonCurlikanieSound".stop()
+	for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
+		print("nihua")
+		if has_bread:
+			pigeon.start_gathering(get_bread_position())
+		else:
+			pigeon.play("idle")
+
+func get_bread_position() -> Vector2:
+	var bread = get_tree().get_first_node_in_group("bread")
+	return bread.global_position if bread else Vector2.ZERO
 
 func _process(delta):
-	# Обновляем дрожание только при атаке на кота
-	if is_cat_detected && !bread_zone.has_bread():
-		shake_intensity = min(shake_intensity + delta / 3.0, 1.0)
-	else:
-		shake_intensity = max(shake_intensity - delta * 2.0, 0.0)
+	var target_intensity = 1.0 if (is_cat_detected && !has_bread) else 0.0
+	shake_intensity = lerp(shake_intensity, target_intensity, delta * (3.0 if is_cat_detected else 2.0))
 	
-	$"../Cat/Camera2D".offset = Vector2(
+	$"../Cat"/Camera2D.offset = Vector2(
 		randf_range(-shake_intensity * 10, shake_intensity * 10),
 		randf_range(-shake_intensity * 10, shake_intensity * 10)
 	)
 
 func _on_attack_start():
-	if is_cat_detected && !bread_zone.has_bread():
-		for pigeon in get_tree().get_nodes_in_group("pigeons"):
+	if is_cat_detected && !has_bread:
+		for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
 			pigeon.start_attack($"../Cat")
-
-func update_pigeons_state():
-	for pigeon in get_tree().get_nodes_in_group("pigeons"):
-		if bread_zone.has_bread():
-			pigeon.start_gathering(bread_zone.global_position)
-		else:
-			pigeon.return_to_idle()
-
-# Обработчики для зоны хлеба
-func _on_bread_entered(body):
-	if body.is_in_group("bread"):
-		stop_cat_detection()
-		update_pigeons_state()
-
-func _on_bread_exited(body):
-	if body.is_in_group("bread"):
-		update_pigeons_state()

@@ -14,7 +14,7 @@ func take_off():
 	attack_timer.one_shot = true
 	add_child(attack_timer)
 	
-	$"../../Sounds/PidgeonAttackSound".play()
+	$"../../Sounds/PigeonAttackSound".play()
 	
 	cat = $"../../Cat"
 	if !cat:

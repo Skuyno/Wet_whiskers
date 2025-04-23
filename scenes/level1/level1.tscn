@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=51 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Texture2D" uid="uid://clxp4gb7h2hfu" path="res://assets/sprites/level1/first_level.png" id="2_no566"]
@@ -21,7 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://wf8n3dequ07h" path="res://assets/sprites/level1/брэд-Sheet.png" id="18_covd4"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/vent_portal_2.gd" id="19_01k45"]
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="19_11k3g"]
+[ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_574w4"]
 [ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="22_aeq13"]
+[ext_resource type="Script" path="res://scenes/level1/scripts/bread_zone.gd" id="23_ujg1b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -9767,8 +9769,6 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i1q5"]
 size = Vector2(949, 101)
 
-[sub_resource type="TileSet" id="TileSet_bl6bb"]
-
 [node name="Level1" type="Node2D"]
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
@@ -9875,10 +9875,10 @@ shape = SubResource("RectangleShape2D_lchvi")
 
 [node name="Sounds" type="Node2D" parent="."]
 
-[node name="PidgeonAttackSound" type="AudioStreamPlayer" parent="Sounds"]
+[node name="PigeonAttackSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_lpbrd")
 
-[node name="PidgeonCurlikanieSound" type="AudioStreamPlayer" parent="Sounds"]
+[node name="PigeonCurlikanieSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("13_gwlwf")
 
 [node name="Pigeons" type="Node2D" parent="."]
@@ -10189,11 +10189,11 @@ frame = 1
 frame_progress = 0.563518
 script = ExtResource("15_ose14")
 
-[node name="Bread" type="RigidBody2D" parent="." groups=["Items"]]
-position = Vector2(2618, 813)
-collision_layer = 4
-collision_mask = 4
-gravity_scale = 0.0
+[node name="Bread" type="RigidBody2D" parent="." groups=["Items", "bread"]]
+position = Vector2(2434, 404)
+collision_layer = 7
+collision_mask = 7
+gravity_scale = 0.805
 script = ExtResource("17_e18by")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bread"]
@@ -10277,23 +10277,21 @@ texture = ExtResource("10_u7jpl")
 
 [node name="Angry pigeons" type="Node2D" parent="."]
 
-[node name="Pigeon" type="AnimatedSprite2D" parent="Angry pigeons" groups=["angry pidgeons"]]
+[node name="Pigeon" type="AnimatedSprite2D" parent="Angry pigeons" groups=["angry pigeons"]]
 position = Vector2(2507, 275)
 scale = Vector2(0.6875, 0.6875)
 sprite_frames = SubResource("SpriteFrames_iwqsh")
 animation = &"nervous"
 frame = 1
 frame_progress = 0.563518
+script = ExtResource("22_574w4")
 
 [node name="BreadZone" type="Area2D" parent="."]
+script = ExtResource("23_ujg1b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BreadZone"]
 position = Vector2(2939.5, 365.5)
 shape = SubResource("RectangleShape2D_7i1q5")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_bl6bb")
-format = 2
 
 [node name="Pipe" parent="." instance=ExtResource("22_aeq13")]
 position = Vector2(3612, 409)

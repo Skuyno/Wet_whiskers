@@ -27,7 +27,6 @@ func _process(delta):
 		# Плавное уменьшение дрожания
 		shake_intensity = max(shake_intensity - delta * 2.0, 0.0)
 	
-	# Применение дрожания
 	$"../Cat"/Camera2D.offset = Vector2(
 		randf_range(-shake_intensity * 10, shake_intensity * 10),
 		randf_range(-shake_intensity * 10, shake_intensity * 10)
