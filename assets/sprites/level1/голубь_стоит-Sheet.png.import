@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clxp4gb7h2hfu"
-path="res://.godot/imported/first_level.png-222ecf2c7406af1a1324c364f9fe1513.ctex"
+uid="uid://ceq01k6wkcyl5"
+path="res://.godot/imported/голубь_стоит-Sheet.png-12f0687296738300ad6925f27c1ee4e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1/first_level.png"
-dest_files=["res://.godot/imported/first_level.png-222ecf2c7406af1a1324c364f9fe1513.ctex"]
+source_file="res://assets/sprites/level1/голубь_стоит-Sheet.png"
+dest_files=["res://.godot/imported/голубь_стоит-Sheet.png-12f0687296738300ad6925f27c1ee4e9.ctex"]
 
 [params]
 

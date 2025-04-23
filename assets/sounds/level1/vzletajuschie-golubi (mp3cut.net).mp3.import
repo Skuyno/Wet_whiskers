@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpmxmwmtew10w"
+path="res://.godot/imported/vzletajuschie-golubi (mp3cut.net).mp3-46d72d874ff6dc644c379ed99707490e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/level1/vzletajuschie-golubi (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/vzletajuschie-golubi (mp3cut.net).mp3-46d72d874ff6dc644c379ed99707490e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

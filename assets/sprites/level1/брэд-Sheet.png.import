@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clxp4gb7h2hfu"
-path="res://.godot/imported/first_level.png-222ecf2c7406af1a1324c364f9fe1513.ctex"
+uid="uid://wf8n3dequ07h"
+path="res://.godot/imported/брэд-Sheet.png-82cd94c76644976cccfcacaf6ee99873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/level1/first_level.png"
-dest_files=["res://.godot/imported/first_level.png-222ecf2c7406af1a1324c364f9fe1513.ctex"]
+source_file="res://assets/sprites/level1/брэд-Sheet.png"
+dest_files=["res://.godot/imported/брэд-Sheet.png-82cd94c76644976cccfcacaf6ee99873.ctex"]
 
 [params]
 

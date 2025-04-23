@@ -17,13 +17,16 @@ enum State {
 	CLIMBING,
 	MEOW,
 	LICK,
-	DAMAGED
+	DAMAGED,
+	INTERACTION
 }
 
 # Экспортируемые переменные
 @export var current_state: State = State.NORMAL
 @onready var sprite = $CatSprite
 @onready var climb_detector = $ClimbArea
+@onready var carry_position = $CarryPosition  # Маркер позиции в зубах
+@onready var item_parent = get_tree().current_scene
 
 # Системные переменные
 var is_climbing_possible = false
@@ -36,6 +39,9 @@ var ignore_climb_until_exit = false
 var entered_climb_areas = []
 var is_invincible = false
 var invincibility_timer: Timer
+var carried_item: RigidBody2D = null
+var original_item_collision_layer: int
+var original_item_parent: Node
 
 func _ready():
 	# Инициализация таймера неуязвимости
@@ -62,6 +68,8 @@ func _physics_process(delta):
 			handle_special_animations()
 		State.DAMAGED:
 			handle_damaged_state(global_position)
+		State.INTERACTION:
+			handle_interaction_state()
 	
 	# Применяем движение
 	move_and_slide()
@@ -73,6 +81,10 @@ func handle_normal_state(delta):
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+	
+	# Подбор предметов
+	if Input.is_action_just_pressed("interact"):
+		enter_interaction_state()
 	
 	# Прыжок
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -192,6 +204,16 @@ func update_animations():
 	# Отражаем спрайт
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0
+	
+	if carried_item:
+		var item_sprite = carried_item.get_node("Sprite2D")
+		item_sprite.flip_h = sprite.flip_h
+		
+		# Корректируем позицию относительно направления
+		if sprite.flip_h:
+			carried_item.position = Vector2(-carry_position.position.x, carry_position.position.y)
+		else:
+			carried_item.position = carry_position.position
 		
 
 func update_climb_facing():
@@ -217,6 +239,15 @@ func handle_damaged_state(source_position: Vector2):
 		
 	exit_damaged_state()
 
+func handle_interaction_state():	
+	if carried_item:
+		# Бросаем предмет
+		release_item()
+	else:
+		# Пытаемся подобрать предмет
+		try_pickup_item()
+	exit_interaction_state()
+
 func start_invincibility():
 	is_invincible = true
 	invincibility_timer.start(INVINCIBILITY_DURATION)
@@ -235,6 +266,73 @@ func _end_invincibility():
 	# Восстанавливаем слои коллизий
 	set_collision_layer_value(1, true)
 	set_collision_layer_value(2, false)
+	
+func try_pickup_item():
+	var nearest_item = get_nearest_collectible()
+	if nearest_item:
+		if nearest_item.is_in_group("Memory"):
+			print("Pensilpoe")
+		elif nearest_item.is_in_group("Items"):
+			pickup_item(nearest_item)
+	
+func get_nearest_collectible() -> Node2D:
+	var closest_distance = INF
+	var closest_item = null
+	
+	for item in $ItemDetector.get_overlapping_bodies():
+		print(item)
+		var distance = global_position.distance_to(item.global_position)
+		if distance < closest_distance and (item.is_in_group("Items") or item.is_in_group("Memory")):
+			closest_distance = distance
+			closest_item = item
+	return closest_item
+
+func pickup_item(item: RigidBody2D):
+	if carried_item != null:
+		return
+
+	print("Подбираем: ", item.name, " | Видимый: ", item.visible)
+	
+	# Сохраняем исходные параметры
+	original_item_parent = item.get_parent()
+	original_item_collision_layer = item.collision_layer
+	
+	# Переносим объект к коту
+	original_item_parent.remove_child(item)
+	add_child(item)
+	
+	# Настраиваем позицию и физику
+	item.global_position = $CarryPosition.global_position
+	item.rotation = 0
+	item.freeze = true
+	item.collision_layer = 0
+	item.visible = true
+	
+	carried_item = item
+
+func release_item():
+	if carried_item == null:
+		return
+	
+	print("Отпускаем: ", carried_item.name, " | Видимый: ", carried_item.visible)
+	
+	# Рассчитываем позицию с учетом направления кота
+	var release_pos = carry_position.global_position
+	if sprite.flip_h:
+		# Инвертируем позицию маркера относительно кота
+		release_pos.x -= carry_position.position.x * 2
+	
+	# Возвращаем в исходного родителя
+	remove_child(carried_item)
+	original_item_parent.add_child(carried_item)
+	
+	# Обновляем позицию
+	carried_item.global_position = release_pos
+	carried_item.freeze = false
+	carried_item.collision_layer = original_item_collision_layer
+	carried_item.visible = true
+	
+	carried_item = null	
 
 # ===== СИСТЕМА СОСТОЯНИЙ =====
 func enter_crouch_state():
@@ -245,6 +343,12 @@ func exit_crouch_state():
 	current_state = State.NORMAL
 	sprite.play("crouch_end")
 	await sprite.animation_finished
+
+func enter_interaction_state():
+	current_state = State.INTERACTION
+
+func exit_interaction_state():
+	current_state = State.NORMAL
 
 func enter_climb_state():
 	current_state = State.CLIMBING
@@ -282,7 +386,6 @@ func start_lick():
 # ===== СИГНАЛЫ =====
 func _on_climb_area_entered(body):
 	# Такой номер у слоя climbable
-	enter_damaged_state()
 	if body.collision_layer == 4 and body not in entered_climb_areas:
 		entered_climb_areas.append(body)
 		is_climbing_possible = true
@@ -298,7 +401,7 @@ func _on_climb_area_exited(body):
 			climb_target = null
 		else:
 			climb_target = entered_climb_areas[0]
-		
+
 func _on_sprite_animation_finished():
 	if current_state == State.CROUCHING and sprite.animation == "crouch_start":
 		# Фиксируем последний кадр
