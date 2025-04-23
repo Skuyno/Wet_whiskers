@@ -10283,6 +10283,16 @@ frame = 1
 frame_progress = 0.563518
 script = ExtResource("22_1cpno")
 
+[node name="Pigeon2" type="AnimatedSprite2D" parent="Angry pigeons" groups=["angry pigeons"]]
+position = Vector2(2642, 292)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("22_1cpno")
+
 [node name="BreadZone" type="Area2D" parent="."]
 script = ExtResource("23_n55o7")
 
