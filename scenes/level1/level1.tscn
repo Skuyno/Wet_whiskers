@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=48 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Texture2D" uid="uid://clxp4gb7h2hfu" path="res://assets/sprites/level1/first_level.png" id="2_no566"]
@@ -21,8 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://wf8n3dequ07h" path="res://assets/sprites/level1/брэд-Sheet.png" id="18_covd4"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/vent_portal_2.gd" id="19_01k45"]
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="19_11k3g"]
-[ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_1cpno"]
-[ext_resource type="Script" path="res://scenes/level1/scripts/bread_zone.gd" id="23_n55o7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -10282,10 +10280,8 @@ sprite_frames = SubResource("SpriteFrames_iwqsh")
 animation = &"nervous"
 frame = 1
 frame_progress = 0.563518
-script = ExtResource("22_1cpno")
 
 [node name="BreadZone" type="Area2D" parent="."]
-script = ExtResource("23_n55o7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BreadZone"]
 position = Vector2(2939.5, 365.5)
