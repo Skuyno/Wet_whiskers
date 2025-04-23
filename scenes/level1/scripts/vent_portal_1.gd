@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var progress_bar = $ProgressBar
-@onready var timer = $Timer
 
 var progress: float = 0.0
 var cat_in_zone: bool = false

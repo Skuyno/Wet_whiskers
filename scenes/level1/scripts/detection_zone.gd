@@ -15,7 +15,7 @@ func _on_body_entered(body):
 	if body.name == "Cat":
 		is_cat_detected = true
 		attack_timer.start()
-		$"../Sounds/PidgeonCurlikanieSound".play()
+		$"../Sounds/PigeonCurlikanieSound".play()
 		for pigeon in get_tree().get_nodes_in_group("pigeons"):
 			pigeon.play("nervous")
 			
@@ -39,7 +39,7 @@ func _on_body_exited(body):
 		attack_timer.stop()
 		for pigeon in get_tree().get_nodes_in_group("pigeons"):
 			pigeon.play("idle")
-		$"../Sounds/PidgeonCurlikanieSound".stop()
+		$"../Sounds/PigeonCurlikanieSound".stop()
 
 func _on_attack_start():
 	if is_cat_detected:

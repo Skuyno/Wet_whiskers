@@ -63,6 +63,7 @@ func _physics_process(delta):
 		State.CROUCHING:
 			handle_crouch_state(delta)
 		State.CLIMBING:
+			print("efoefkl")
 			handle_climb_state(delta)
 		State.MEOW, State.LICK:
 			handle_special_animations()
@@ -290,8 +291,6 @@ func get_nearest_collectible() -> Node2D:
 func pickup_item(item: RigidBody2D):
 	if carried_item != null:
 		return
-
-	print("Подбираем: ", item.name, " | Видимый: ", item.visible)
 	
 	# Сохраняем исходные параметры
 	original_item_parent = item.get_parent()
@@ -313,8 +312,6 @@ func pickup_item(item: RigidBody2D):
 func release_item():
 	if carried_item == null:
 		return
-	
-	print("Отпускаем: ", carried_item.name, " | Видимый: ", carried_item.visible)
 	
 	# Рассчитываем позицию с учетом направления кота
 	var release_pos = carry_position.global_position
