@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bs3ng5j7krhmu"]
+[gd_scene load_steps=51 format=3 uid="uid://bs3ng5j7krhmu"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="1_1tytn"]
 [ext_resource type="Texture2D" uid="uid://ca58b0pm4kj60" path="res://assets/sprites/BackMenu.png" id="2_j5bq8"]
@@ -13,6 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://dlodwwns5jowf" path="res://assets/sprites/black_back.png" id="11_qqxiu"]
 [ext_resource type="Texture2D" uid="uid://fr0gbsmfvqqk" path="res://assets/sprites/asdfasdfasdfasdf.png" id="12_o326m"]
 [ext_resource type="AudioStream" uid="uid://bggxod03alhlc" path="res://assets/audioLayout/Winter_Aid_-_The_Wisp_Sings_64678376 (mp3cut (mp3cut.net).mp3" id="13_eno3j"]
+[ext_resource type="Script" path="res://scenes/menu/options_menu.gd" id="14_62lrx"]
+[ext_resource type="Script" path="res://scenes/menu/audio_options.gd" id="15_1walw"]
+[ext_resource type="Texture2D" uid="uid://dcj4h2wyinkym" path="res://assets/sprites/element3234234.png" id="15_leawu"]
+[ext_resource type="Texture2D" uid="uid://bmgkjsh2bf7fh" path="res://assets/sprites/MUSIC.png" id="16_m8302"]
+[ext_resource type="Texture2D" uid="uid://d4mwoj0edvxaq" path="res://assets/sprites/mode.png" id="17_heber"]
+[ext_resource type="Texture2D" uid="uid://cikwxicxxtxtt" path="res://assets/sprites/MUSSSSSSIC.png" id="18_e0gj7"]
+[ext_resource type="Script" path="res://scenes/menu/back_button.gd" id="19_1iaqn"]
+[ext_resource type="Texture2D" uid="uid://cfgsddnxrlvtr" path="res://assets/sprites/backqwe.png" id="20_amn4y"]
+[ext_resource type="Script" path="res://scenes/menu/option_button.gd" id="21_1k4o3"]
+[ext_resource type="Texture2D" uid="uid://dsr501h6p2f6" path="res://assets/sprites/arrow.png" id="22_oro6t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgbh2"]
 atlas = ExtResource("4_dc04f")
@@ -238,17 +248,107 @@ _data = {
 "fade": SubResource("Animation_41r8c")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6b57"]
+atlas = ExtResource("20_amn4y")
+region = Rect2(0, 2, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imfqa"]
+atlas = ExtResource("20_amn4y")
+region = Rect2(0, 34, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x1rw"]
+atlas = ExtResource("20_amn4y")
+region = Rect2(0, 18, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1pt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6b57")
+}],
+"loop": true,
+"name": &"aimed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6b57")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imfqa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x1rw")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3t34"]
+atlas = ExtResource("22_oro6t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jq2u"]
+atlas = ExtResource("22_oro6t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo3gt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3t34")
+}],
+"loop": true,
+"name": &"aimed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3t34")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3t34")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jq2u")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_1tytn")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(603.751, 324)
-scale = Vector2(6.48, 6.48)
+position = Vector2(640, 324)
+scale = Vector2(6.4, 6.48)
 texture = ExtResource("2_j5bq8")
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(626, 145)
+position = Vector2(592, 144)
 scale = Vector2(0.872263, 0.872263)
 texture = ExtResource("12_o326m")
 
@@ -265,9 +365,9 @@ scale = Vector2(2, 2)
 
 [node name="StartButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 522.0
+offset_left = 496.0
 offset_top = 296.0
-offset_right = 686.0
+offset_right = 660.0
 offset_bottom = 372.0
 script = ExtResource("5_a68yt")
 
@@ -279,9 +379,9 @@ animation = &"idle"
 
 [node name="OptionsButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 523.0
+offset_left = 497.0
 offset_top = 378.0
-offset_right = 688.0
+offset_right = 662.0
 offset_bottom = 455.0
 script = ExtResource("7_ewy21")
 
@@ -289,13 +389,13 @@ script = ExtResource("7_ewy21")
 position = Vector2(80.5302, 34.7798)
 scale = Vector2(5.49603, 5.49603)
 sprite_frames = SubResource("SpriteFrames_hlht1")
-animation = &"idle"
+animation = &"aimed"
 
 [node name="QuitButton" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 522.0
+offset_left = 496.0
 offset_top = 455.0
-offset_right = 685.0
+offset_right = 659.0
 offset_bottom = 530.0
 script = ExtResource("9_750hr")
 
@@ -306,8 +406,10 @@ sprite_frames = SubResource("SpriteFrames_v3321")
 animation = &"idle"
 
 [node name="Launching" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Launching"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -285.0
 offset_top = -48.0
@@ -315,6 +417,7 @@ offset_right = 1390.0
 offset_bottom = 723.0
 mouse_filter = 2
 texture = ExtResource("11_qqxiu")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Launching"]
 libraries = {
@@ -328,6 +431,87 @@ autoplay = "fade"
 position = Vector2(602, 372)
 stream = ExtResource("13_eno3j")
 autoplay = true
+
+[node name="OptionsMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_62lrx")
+
+[node name="Sprite2D" type="Sprite2D" parent="OptionsMenu"]
+position = Vector2(1008, 296)
+scale = Vector2(5.90761, 5.90761)
+texture = ExtResource("15_leawu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="OptionsMenu"]
+position = Vector2(1008, 72)
+scale = Vector2(6.33333, 6.33333)
+texture = ExtResource("16_m8302")
+
+[node name="Sprite2D3" type="Sprite2D" parent="OptionsMenu"]
+position = Vector2(936, 232)
+scale = Vector2(3.05326, 3.05325)
+texture = ExtResource("17_heber")
+
+[node name="AudioOptions" type="Control" parent="OptionsMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 112.0
+script = ExtResource("15_1walw")
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/AudioOptions"]
+layout_mode = 2
+offset_left = 899.0
+offset_top = 174.0
+offset_right = 1097.0
+offset_bottom = 190.0
+min_value = -20.0
+max_value = 10.0
+step = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="OptionsMenu/AudioOptions"]
+position = Vector2(928, 152)
+scale = Vector2(3.13333, 3.13333)
+texture = ExtResource("18_e0gj7")
+
+[node name="BackButton" type="Button" parent="OptionsMenu"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 960.0
+offset_top = 488.0
+offset_right = 1066.0
+offset_bottom = 536.0
+script = ExtResource("19_1iaqn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OptionsMenu/BackButton"]
+position = Vector2(56, 24)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_m1pt5")
+animation = &"aimed"
+
+[node name="OptionButton" type="OptionButton" parent="OptionsMenu"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 907.0
+offset_top = 216.0
+offset_right = 1022.0
+offset_bottom = 248.0
+selected = 0
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Full screen"
+popup/item_1/id = 1
+script = ExtResource("21_1k4o3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OptionsMenu/OptionButton"]
+position = Vector2(93, 16)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_fo3gt")
+animation = &"aimed"
 
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
 [connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
@@ -344,3 +528,14 @@ autoplay = true
 [connection signal="mouse_entered" from="QuitButton" to="QuitButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="QuitButton" to="QuitButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]
+[connection signal="value_changed" from="OptionsMenu/AudioOptions/HSlider" to="OptionsMenu/AudioOptions" method="_on_h_slider_value_changed"]
+[connection signal="button_down" from="OptionsMenu/BackButton" to="OptionsMenu/BackButton" method="_on_button_down"]
+[connection signal="button_up" from="OptionsMenu/BackButton" to="OptionsMenu/BackButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="OptionsMenu/BackButton" to="OptionsMenu/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="OptionsMenu/BackButton" to="OptionsMenu/BackButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="OptionsMenu/BackButton" to="OptionsMenu/BackButton" method="_on_pressed"]
+[connection signal="button_down" from="OptionsMenu/OptionButton" to="OptionsMenu/OptionButton" method="_on_button_down"]
+[connection signal="button_up" from="OptionsMenu/OptionButton" to="OptionsMenu/OptionButton" method="_on_button_up"]
+[connection signal="item_selected" from="OptionsMenu/OptionButton" to="OptionsMenu/OptionButton" method="_on_item_selected"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionButton" to="OptionsMenu/OptionButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="OptionsMenu/OptionButton" to="OptionsMenu/OptionButton" method="_on_pressed"]
