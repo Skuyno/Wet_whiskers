@@ -1,5 +1,7 @@
 extends Control
 
+@onready var sound = $ClickSound
+
 func _ready():
 	visible = false
 	set_process_input(false)
@@ -24,16 +26,19 @@ func testEsc():
 		resume()
 
 func _on_button_3_pressed() -> void:
+	sound.play()
 	resume()
 	get_tree().reload_current_scene()
 
 
 func _on_button_2_pressed() -> void:
+	sound.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
 
 
 func _on_button_pressed() -> void:
+	sound.play()
 	resume()
 
 func _process(delta):
