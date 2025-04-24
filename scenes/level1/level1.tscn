@@ -10343,10 +10343,6 @@ position = Vector2(3599, 410)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("27_h4g7m")]
-offset_left = -875.0
-offset_top = -269.0
-offset_right = -875.0
-offset_bottom = -269.0
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
