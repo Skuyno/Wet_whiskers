@@ -1,30 +1,25 @@
 extends Button
 
-
-@onready var anim = $AnimatedSprite2D  # Получаем ссылку на анимацию
+@onready var anim = $AnimatedSprite2D  
 @onready var sound = $"../Sounds/ClickSound"
 
 func _ready():
-	anim.play("idle")  # Запускаем анимацию ожидания
+	anim.play("idle")  
 
-# Когда курсор наводится на кнопку
 func _on_mouse_entered():
 	anim.play("hover")  
 
-# Когда курсор уходит с кнопки
 func _on_mouse_exited():
 	anim.play("idle")  
 
-# Когда кнопка нажата
 func _on_pressed():
 	sound.play()
-	anim.play("pressed")  
+	anim.play("pressed")
+	await get_tree().create_timer(0.3).timeout  # Даем звуку проиграться
 	get_tree().change_scene_to_file("res://scenes/prologue/prologue.tscn")
 
-# Когда кнопка отпущена
 func _on_button_up():
-	anim.play("aimed")  # Возвращаемся к анимации наведения
-	
+	anim.play("aimed")  
+
 func _on_button_down():
 	anim.play("pressed")
-	

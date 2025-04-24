@@ -1,11 +1,21 @@
 extends Control
 
 @onready var sound = $ClickSound
+@onready var delay_timer = Timer.new()
+
+var pending_action: Callable = func(): pass  # Пустая заглушка
 
 func _ready():
 	visible = false
 	set_process_input(false)
 	$AnimationPlayer.play("RESET")
+	
+	sound.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	add_child(delay_timer)
+	delay_timer.one_shot = true
+	delay_timer.wait_time = 0.2
+	delay_timer.timeout.connect(_on_delay_timeout)
 
 func pause():
 	visible = true
@@ -18,7 +28,7 @@ func resume():
 	visible = false
 	set_process_input(false)
 	$AnimationPlayer.play_backwards("blur")
-	
+
 func testEsc():
 	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
 		pause()
@@ -27,19 +37,25 @@ func testEsc():
 
 func _on_button_3_pressed() -> void:
 	sound.play()
-	resume()
-	get_tree().reload_current_scene()
-
+	pending_action = func():
+		resume()
+		get_tree().reload_current_scene()
+	delay_timer.start()
 
 func _on_button_2_pressed() -> void:
 	sound.play()
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
-
+	pending_action = func():
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
+	delay_timer.start()
 
 func _on_button_pressed() -> void:
 	sound.play()
-	resume()
+	pending_action = resume
+	delay_timer.start()
+
+func _on_delay_timeout():
+	pending_action.call()
 
 func _process(delta):
 	testEsc()
