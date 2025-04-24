@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://du8ctq3i01nna"]
+[gd_scene load_steps=70 format=3 uid="uid://du8ctq3i01nna"]
 
 [ext_resource type="Texture2D" uid="uid://b6skya3erctyv" path="res://assets/sprites/walk-Sheet.png" id="1_2pgsl"]
 [ext_resource type="Script" path="res://scenes/prologue/scripts/cat.gd" id="1_hmrkm"]
@@ -452,6 +452,9 @@ _data = {
 "invincibility_flash": SubResource("Animation_m1e7e")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs5fg"]
+size = Vector2(35.5556, 28.8889)
+
 [node name="Cat" type="CharacterBody2D"]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_hmrkm")
@@ -489,3 +492,14 @@ shape = SubResource("RectangleShape2D_jmbcs")
 libraries = {
 "": SubResource("AnimationLibrary_xp180")
 }
+
+[node name="ItemDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemDetector"]
+position = Vector2(-2.6491e-07, 0)
+shape = SubResource("RectangleShape2D_fs5fg")
+
+[node name="CarryPosition" type="Marker2D" parent="."]
+position = Vector2(10, 1.11111)
