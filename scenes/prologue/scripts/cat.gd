@@ -86,14 +86,16 @@ func handle_normal_state(delta):
 	if Input.is_action_just_pressed("interact"):
 		enter_interaction_state()
 	
-	# Прыжок
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_FORCE
+	
 		
 	# Учёт возможности бегать
 	var target_speed = WALK_SPEED
 	if Input.is_action_pressed("sprint"):
 		target_speed = RUN_SPEED
+		
+	# Прыжок
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_FORCE
 	
 	# Горизонтальное движение
 	var direction = Input.get_axis("ui_left", "ui_right")
