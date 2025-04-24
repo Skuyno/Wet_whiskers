@@ -6,6 +6,7 @@ extends CanvasLayer
 func _ready():
 	Global.connect("lives_updated", Callable(self, "_update_hearts"))
 	_update_hearts(Global.lives)
+	$AnimationPlayer.play("skip")
 
 func _update_hearts(new_lives: int):
 	for i in range(hearts.size()):

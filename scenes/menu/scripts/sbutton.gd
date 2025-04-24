@@ -2,6 +2,7 @@ extends Button
 
 
 @onready var anim = $AnimatedSprite2D  # Получаем ссылку на анимацию
+@onready var sound = $"../Sounds/ClickSound"
 
 func _ready():
 	anim.play("idle")  # Запускаем анимацию ожидания
@@ -16,6 +17,7 @@ func _on_mouse_exited():
 
 # Когда кнопка нажата
 func _on_pressed():
+	sound.play()
 	anim.play("pressed")  
 	get_tree().change_scene_to_file("res://scenes/prologue/prologue.tscn")
 

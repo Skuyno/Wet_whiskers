@@ -1,6 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxc4obtdffn4"]
+[gd_scene load_steps=14 format=3 uid="uid://bxc4obtdffn4"]
 
 [ext_resource type="Script" path="res://scenes/pause_menu/pause_menu.gd" id="1_3oami"]
+[ext_resource type="Texture2D" uid="uid://ddn1bnmi6boaw" path="res://assets/sprites/element.png" id="2_r4ejs"]
+[ext_resource type="Texture2D" uid="uid://kfbg7k41bxsd" path="res://assets/sprites/restart.png" id="3_yufkf"]
+[ext_resource type="Texture2D" uid="uid://bc678g36otid3" path="res://assets/sprites/GUI234234.png" id="4_0tsya"]
+[ext_resource type="Texture2D" uid="uid://cb4enwnaxioa7" path="res://assets/sprites/resume.png" id="4_reit7"]
+[ext_resource type="Script" path="res://scenes/pause_menu/music.gd" id="6_46ag2"]
+[ext_resource type="Texture2D" uid="uid://cikwxicxxtxtt" path="res://assets/sprites/MUSSSSSSIC.png" id="7_p52gr"]
+[ext_resource type="Texture2D" uid="uid://p6s2vm8j5ny4" path="res://assets/sprites/sfx.png" id="8_igrfl"]
+[ext_resource type="Script" path="res://scenes/pause_menu/sfx.gd" id="8_vhmj7"]
+[ext_resource type="Texture2D" uid="uid://fr0gbsmfvqqk" path="res://assets/sprites/asdfasdfasdfasdf.png" id="9_py4vq"]
 
 [sub_resource type="Animation" id="Animation_mbfy1"]
 length = 0.001
@@ -136,6 +145,11 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 368)
+scale = Vector2(8.94205, 8.94205)
+texture = ExtResource("2_r4ejs")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5lcpt")
@@ -143,32 +157,105 @@ libraries = {
 
 [node name="Button3" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = 432.0
-offset_top = 256.0
-offset_right = 744.0
-offset_bottom = 320.0
+offset_left = 496.0
+offset_top = 278.0
+offset_right = 664.0
+offset_bottom = 336.0
 text = "restart"
 
-[node name="Button2" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-offset_left = 432.0
-offset_top = 352.0
-offset_right = 744.0
-offset_bottom = 416.0
-text = "quit"
+[node name="Sprite2D" type="Sprite2D" parent="Button3"]
+position = Vector2(80, 26)
+scale = Vector2(5.47581, 5.4758)
+texture = ExtResource("3_yufkf")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-offset_left = 432.0
-offset_top = 160.0
-offset_right = 744.0
-offset_bottom = 224.0
+offset_left = 490.0
+offset_top = 208.0
+offset_right = 664.0
+offset_bottom = 272.0
 text = "resume
 "
 
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(86, 32)
+scale = Vector2(5.38462, 5.38462)
+texture = ExtResource("4_reit7")
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 488.0
+offset_top = 336.0
+offset_right = 664.0
+offset_bottom = 408.0
+text = "quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="Button2"]
+position = Vector2(88, 24)
+scale = Vector2(5.90625, 5.90625)
+texture = ExtResource("4_0tsya")
+
+[node name="Music" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 176.0
+offset_bottom = 160.0
+script = ExtResource("6_46ag2")
+
+[node name="HSlider" type="HSlider" parent="Music"]
+layout_mode = 2
+offset_left = 471.267
+offset_top = 393.867
+offset_right = 669.267
+offset_bottom = 409.867
+min_value = -20.0
+max_value = 10.0
+step = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="Music"]
+position = Vector2(498.133, 381.933)
+scale = Vector2(3.13333, 3.13333)
+texture = ExtResource("7_p52gr")
+
+[node name="Sfx" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 176.0
+offset_bottom = 160.0
+script = ExtResource("8_vhmj7")
+
+[node name="HSlider" type="HSlider" parent="Sfx"]
+layout_mode = 2
+offset_left = 471.267
+offset_top = 441.867
+offset_right = 669.267
+offset_bottom = 457.867
+min_value = -20.0
+max_value = 10.0
+step = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="Sfx"]
+position = Vector2(490.133, 429.933)
+scale = Vector2(3.13333, 3.13333)
+texture = ExtResource("8_igrfl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(576, 112)
+scale = Vector2(0.383212, 0.383212)
+texture = ExtResource("9_py4vq")
+
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="value_changed" from="Music/HSlider" to="Music" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Sfx/HSlider" to="Sfx" method="_on_h_slider_value_changed"]
