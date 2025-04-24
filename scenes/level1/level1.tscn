@@ -9878,9 +9878,11 @@ shape = SubResource("RectangleShape2D_lchvi")
 
 [node name="PigeonAttackSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_lpbrd")
+bus = &"Sfx"
 
 [node name="PigeonCurlikanieSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("13_gwlwf")
+bus = &"Sfx"
 
 [node name="Pigeons" type="Node2D" parent="."]
 
