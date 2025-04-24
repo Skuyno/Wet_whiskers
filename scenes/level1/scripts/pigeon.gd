@@ -27,7 +27,7 @@ func take_off():
 		flip_h = true
 	
 	# Переключаемся на полёт
-	#play("fly")
+	play("fly")
 	is_flying = true
 	attack_timer.start(3.0)
 

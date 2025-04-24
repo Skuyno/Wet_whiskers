@@ -20,17 +20,10 @@ func _on_body_entered(body):
 			pigeon.play("nervous")
 			
 func _process(delta):
-	if is_cat_detected:
-		# Плавное увеличение дрожания до 1.0 за 3 секунды
-		shake_intensity = min(shake_intensity + delta / 3.0, 1.0)
-	else:
-		# Плавное уменьшение дрожания
-		shake_intensity = max(shake_intensity - delta * 2.0, 0.0)
+	var target_intensity = 1.0 if (is_cat_detected) else 0.0
+	shake_intensity = lerp(shake_intensity, target_intensity, delta * 3.0)
 	
-	$"../Cat"/Camera2D.offset = Vector2(
-		randf_range(-shake_intensity * 10, shake_intensity * 10),
-		randf_range(-shake_intensity * 10, shake_intensity * 10)
-	)
+	$"../Cat"/Camera2D.add_shake(shake_intensity/8)
 
 func _on_body_exited(body):
 	if body.name == "Cat":

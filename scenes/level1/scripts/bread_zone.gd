@@ -16,7 +16,6 @@ func _ready():
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	print(body)
 	if body.name == "Cat":
 		is_cat_detected = true
 		if !has_bread:
@@ -25,7 +24,7 @@ func _on_body_entered(body):
 		has_bread = true
 		stop_attack_sequence()
 		for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
-			pigeon.start_gathering(body.global_position)
+			pigeon.start_gathering(body)  # Передаем сам объект хлеба
 
 func _on_body_exited(body):
 	if body.name == "Cat":
@@ -33,7 +32,11 @@ func _on_body_exited(body):
 		stop_attack_sequence()
 	elif body.is_in_group("bread"):
 		has_bread = false
-		if is_cat_detected:
+		# Возвращаем голубей только если хлеб полностью исчез
+		if get_tree().get_nodes_in_group("bread").size() == 0:
+			for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
+				pigeon.return_to_original_position()
+		elif is_cat_detected:
 			start_attack_sequence()
 
 func start_attack_sequence():
@@ -46,24 +49,20 @@ func stop_attack_sequence():
 	attack_timer.stop()
 	$"../Sounds/PigeonCurlikanieSound".stop()
 	for pigeon in get_tree().get_nodes_in_group("angry pigeons"):
-		print("nihua")
 		if has_bread:
-			pigeon.start_gathering(get_bread_position())
+			pigeon.start_gathering(get_bread())
 		else:
-			pigeon.play("idle")
+			pigeon.return_to_original_position()  # Возвращаем при остановке
 
-func get_bread_position() -> Vector2:
+func get_bread():
 	var bread = get_tree().get_first_node_in_group("bread")
-	return bread.global_position if bread else Vector2.ZERO
+	return bread
 
 func _process(delta):
 	var target_intensity = 1.0 if (is_cat_detected && !has_bread) else 0.0
-	shake_intensity = lerp(shake_intensity, target_intensity, delta * (3.0 if is_cat_detected else 2.0))
+	shake_intensity = lerp(shake_intensity, target_intensity, delta * 3.0)
 	
-	$"../Cat"/Camera2D.offset = Vector2(
-		randf_range(-shake_intensity * 10, shake_intensity * 10),
-		randf_range(-shake_intensity * 10, shake_intensity * 10)
-	)
+	$"../Cat"/Camera2D.add_shake(shake_intensity/8)
 
 func _on_attack_start():
 	if is_cat_detected && !has_bread:

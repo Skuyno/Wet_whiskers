@@ -81,13 +81,11 @@ func handle_normal_state(delta):
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-	
+		
 	# Подбор предметов
 	if Input.is_action_just_pressed("interact"):
 		enter_interaction_state()
 	
-	
-		
 	# Учёт возможности бегать
 	var target_speed = WALK_SPEED
 	if Input.is_action_pressed("sprint"):
