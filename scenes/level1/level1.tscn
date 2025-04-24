@@ -1,7 +1,4 @@
-
 [gd_scene load_steps=53 format=3 uid="uid://cm4lrw2l8gdh1"]
-
-
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Texture2D" uid="uid://clxp4gb7h2hfu" path="res://assets/sprites/level1/first_level.png" id="2_no566"]
@@ -27,12 +24,8 @@
 [ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_574w4"]
 [ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="22_aeq13"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/bread_zone.gd" id="23_ujg1b"]
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://be1uunixufmcs" path="res://assets/sprites/petuhi2.jpg" id="25_ferdf"]
 [ext_resource type="Texture2D" uid="uid://m5okgn6hvkma" path="res://assets/sprites/petuhi.jpg" id="25_pe8ih"]
-=======
-[ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="25_gb7ir"]
->>>>>>> 91d77b1c8ec0babf103f3aa72d5c83ab76d82e34
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -10327,7 +10320,6 @@ position = Vector2(3612, 422)
 [node name="Pipe" parent="Pipe" instance=ExtResource("22_aeq13")]
 position = Vector2(3612, 409)
 
-<<<<<<< HEAD
 [node name="Pipe2" parent="." instance=ExtResource("22_aeq13")]
 position = Vector2(4411, 387)
 
@@ -10350,11 +10342,6 @@ position = Vector2(4570, 451)
 
 [node name="Pipe" parent="Pipe3" instance=ExtResource("22_aeq13")]
 position = Vector2(3599, 410)
-=======
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("25_gb7ir")]
->>>>>>> 91d77b1c8ec0babf103f3aa72d5c83ab76d82e34
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
