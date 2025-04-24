@@ -2,6 +2,7 @@ extends Button
 
 
 @onready var anim = $AnimatedSprite2D  
+@onready var sound = $"../Sounds/ClickSound"
 
 func _ready():
 	anim.play("idle")  
@@ -13,6 +14,7 @@ func _on_mouse_exited():
 	anim.play("idle")  
 	
 func _on_pressed():
+	sound.play()
 	anim.play("pressed")  
 	await anim.animation_finished  
 	get_tree().quit()  

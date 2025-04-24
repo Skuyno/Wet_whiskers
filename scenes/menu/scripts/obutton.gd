@@ -2,6 +2,7 @@ extends Button
 
 @onready var anim = $AnimatedSprite2D
 @onready var options_menu = $"../OptionsMenu" # Путь до окна настроек (подстрой под своё дерево)
+@onready var sound = $"../Sounds/ClickSound"
 
 func _ready():
 	anim.play("idle")
@@ -14,6 +15,7 @@ func _on_mouse_exited():
 	anim.play("idle")
 
 func _on_pressed():
+	sound.play()
 	anim.play("pressed")
 	options_menu.visible = true
 

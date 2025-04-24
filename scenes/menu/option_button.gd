@@ -3,6 +3,7 @@ extends OptionButton
 
 @onready var window_mode_option = $OptionButton
 @onready var anim = $AnimatedSprite2D
+@onready var sound = $"../../Sounds/ClickSound"
 
 func _ready():
 	anim.play("idle")  # Запускаем анимацию ожидания
@@ -17,6 +18,7 @@ func _on_mouse_exited():
 
 # Когда кнопка нажата
 func _on_pressed():
+	sound.play()
 	anim.play("pressed")  
 
 # Когда кнопка отпущена

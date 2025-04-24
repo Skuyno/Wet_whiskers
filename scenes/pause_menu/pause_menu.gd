@@ -1,15 +1,21 @@
 extends Control
 
 func _ready():
+	visible = false
+	set_process_input(false)
 	$AnimationPlayer.play("RESET")
+
+func pause():
+	visible = true
+	set_process_input(true)
+	get_tree().paused = true
+	$AnimationPlayer.play("blur")
 
 func resume():
 	get_tree().paused = false
+	visible = false
+	set_process_input(false)
 	$AnimationPlayer.play_backwards("blur")
-	
-func pause():
-	get_tree().paused = true
-	$AnimationPlayer.play("blur")
 	
 func testEsc():
 	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
@@ -23,6 +29,7 @@ func _on_button_3_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
 
 

@@ -91,6 +91,10 @@ func spawn_character():
 	
 	await tween.finished
 	
+func _process(delta):
+	if Input.is_action_just_pressed("skip"):
+		get_tree().change_scene_to_file("res://scenes/level1/level1.tscn")
+
 func character_actions():
 	# Запуск анимации ходьбы
 	var character = $Person/AnimatedSprite2D

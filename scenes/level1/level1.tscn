@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=52 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Texture2D" uid="uid://clxp4gb7h2hfu" path="res://assets/sprites/level1/first_level.png" id="2_no566"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_574w4"]
 [ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="22_aeq13"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/bread_zone.gd" id="23_ujg1b"]
+[ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="25_gb7ir"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -10295,6 +10296,10 @@ shape = SubResource("RectangleShape2D_7i1q5")
 
 [node name="Pipe" parent="." instance=ExtResource("22_aeq13")]
 position = Vector2(3612, 409)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("25_gb7ir")]
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
