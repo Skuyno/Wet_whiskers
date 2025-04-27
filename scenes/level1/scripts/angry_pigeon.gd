@@ -9,7 +9,6 @@ var bread_ref: WeakRef  # Ссылка на хлеб для отслеживан
 var patrol_radius = 75.0
 var patrol_target: Vector2
 var original_position: Vector2
-var attack_timer: Timer
 
 func _ready():
 	original_position = global_position

@@ -1,6 +1,7 @@
-[gd_scene load_steps=61 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=62 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
+[ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
 [ext_resource type="Texture2D" uid="uid://clxp4gb7h2hfu" path="res://assets/sprites/level1/first_level.png" id="2_no566"]
 [ext_resource type="Texture2D" uid="uid://dqvndf6sep6fg" path="res://assets/sprites/level1/тайлсет (6).png" id="3_mr1t0"]
 [ext_resource type="Texture2D" uid="uid://b7jk2g4imy030" path="res://assets/sprites/level1/fsm_Town01_Da.png" id="3_sc1jt"]
@@ -9801,6 +9802,7 @@ size = Vector2(1826, 20)
 size = Vector2(2210, 20)
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_2ymuc")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 position = Vector2(-1, 0)
@@ -9814,10 +9816,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(2112, 403)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1001, 333)
+position = Vector2(181, 338)
 
 [node name="Poles" type="Node2D" parent="."]
 
