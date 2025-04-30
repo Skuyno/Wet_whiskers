@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://du8ctq3i01nna"]
+[gd_scene load_steps=71 format=3 uid="uid://du8ctq3i01nna"]
 
 [ext_resource type="Texture2D" uid="uid://b6skya3erctyv" path="res://assets/sprites/walk-Sheet.png" id="1_2pgsl"]
 [ext_resource type="Script" path="res://scenes/prologue/scripts/cat.gd" id="1_hmrkm"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scenes/prologue/scripts/cat_camera.gd" id="7_vxwfu"]
 [ext_resource type="Texture2D" uid="uid://dyeoxaqxky6uu" path="res://assets/sprites/liking-Sheet.png" id="11_0kxr3"]
 [ext_resource type="Texture2D" uid="uid://bq1yqjjaynymt" path="res://assets/sprites/meow-Sheet.png" id="12_55qgr"]
+[ext_resource type="AudioStream" uid="uid://dolhgapgdjboy" path="res://assets/sounds/meow2.mp3" id="16_gw68e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8svmm"]
 atlas = ExtResource("2_7rujm")
@@ -503,3 +504,10 @@ shape = SubResource("RectangleShape2D_fs5fg")
 
 [node name="CarryPosition" type="Marker2D" parent="."]
 position = Vector2(10, 1.11111)
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="CatMeowSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("16_gw68e")
+volume_db = -5.0
+bus = &"Sfx"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=64 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="27_h4g7m"]
 [ext_resource type="Texture2D" uid="uid://1j6vfasag7pp" path="res://assets/sprites/petuhi6.jpg" id="28_lg1vo"]
 [ext_resource type="Texture2D" uid="uid://5icqpjim6jls" path="res://assets/sprites/cherdak.jpg" id="29_ylrlq"]
+[ext_resource type="Script" path="res://scenes/level1/scripts/death_zone.gd" id="34_7wm04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -9803,7 +9804,7 @@ size = Vector2(949, 101)
 size = Vector2(1826, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew503"]
-size = Vector2(2210, 20)
+size = Vector2(2001, 20)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_2ymuc")
@@ -9820,7 +9821,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(1658, 404)
+position = Vector2(726, 336)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1001, 333)
@@ -10473,12 +10474,6 @@ position = Vector2(4411, 387)
 [node name="Pipe3" parent="." instance=ExtResource("22_aeq13")]
 position = Vector2(4570, 451)
 
-[node name="Pipe4" parent="." instance=ExtResource("22_aeq13")]
-position = Vector2(7224, 831)
-
-[node name="Pipe5" parent="." instance=ExtResource("22_aeq13")]
-position = Vector2(8169, 861)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -10510,13 +10505,14 @@ visible = false
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(16, 696)
+script = ExtResource("34_7wm04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(903, 0)
 shape = SubResource("RectangleShape2D_16dnu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(4023, 0)
+position = Vector2(3918.5, 0)
 shape = SubResource("RectangleShape2D_ew503")
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]

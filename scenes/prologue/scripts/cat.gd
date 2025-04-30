@@ -373,6 +373,7 @@ func exit_damaged_state():
 
 func start_meow():
 	current_state = State.MEOW
+	$Sounds/CatMeowSound.play()
 	sprite.play("meow")
 	await sprite.animation_finished
 	current_state = State.NORMAL
