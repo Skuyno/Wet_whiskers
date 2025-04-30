@@ -10514,7 +10514,7 @@ visible = false
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(16, 696)
-script = ExtResource("29_udcrs")
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(903, 0)
