@@ -10491,13 +10491,10 @@ scale = Vector2(0.555823, 0.504875)
 texture = ExtResource("25_s38gv")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-<<<<<<< HEAD
+
 position = Vector2(2399, 353)
 scale = Vector2(0.238367, 0.252157)
-=======
-position = Vector2(1764.67, 281)
-scale = Vector2(0.7237, 0.601797)
->>>>>>> 654ad969b2bd31d5ca6917d095af729e64ff8f54
+
 texture = ExtResource("26_cvvhr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
