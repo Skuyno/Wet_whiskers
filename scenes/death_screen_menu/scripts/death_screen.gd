@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var delay_timer = $DelayTimer
 
 func _ready():
+	$AudioStreamPlayer2D.play()
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	dead_cat_sprite.modulate.a = 0
