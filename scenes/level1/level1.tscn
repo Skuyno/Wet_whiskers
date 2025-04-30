@@ -19,8 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://cpmxmwmtew10w" path="res://assets/sounds/level1/vzletajuschie-golubi (mp3cut.net).mp3" id="14_lpbrd"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/pigeon.gd" id="15_ose14"]
 [ext_resource type="Texture2D" uid="uid://86ydh7ut0ru4" path="res://assets/sprites/level1/голубь11 (2)-Sheet.png" id="15_qqfa8"]
-[ext_resource type="AudioStream" uid="uid://cmd3fwwmisgur" path="res://assets/sounds/level1/my head is empty - i was only temporary (1).mp3" id="16_wtj3c"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/bread.gd" id="17_e18by"]
+[ext_resource type="AudioStream" uid="uid://dkrdxik42flko" path="res://assets/sounds/pidorasia.mp3" id="17_l5fc6"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/vent_portal_1.gd" id="18_8mly3"]
 [ext_resource type="Texture2D" uid="uid://wf8n3dequ07h" path="res://assets/sprites/level1/брэд-Sheet.png" id="18_covd4"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/vent_portal_2.gd" id="19_01k45"]
@@ -9918,9 +9918,10 @@ stream = ExtResource("13_gwlwf")
 bus = &"Sfx"
 
 [node name="Music" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("16_wtj3c")
+stream = ExtResource("17_l5fc6")
 volume_db = -10.0
 bus = &"Music"
+parameters/looping = true
 
 [node name="Pigeons" type="Node2D" parent="."]
 
