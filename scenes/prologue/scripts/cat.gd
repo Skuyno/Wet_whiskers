@@ -18,7 +18,8 @@ enum State {
 	MEOW,
 	LICK,
 	DAMAGED,
-	INTERACTION
+	INTERACTION,
+	DEAD
 }
 
 # Экспортируемые переменные
@@ -176,6 +177,9 @@ func handle_special_animations():
 	velocity = Vector2.ZERO
 
 func update_animations():
+	if current_state == State.DEAD:
+		return
+	
 	if current_state == State.MEOW or current_state == State.LICK:
 		return  # Не прерываем специальные анимации
 	
@@ -373,6 +377,7 @@ func exit_damaged_state():
 
 func start_meow():
 	current_state = State.MEOW
+	$Sounds/CatMeowSound.play()
 	sprite.play("meow")
 	await sprite.animation_finished
 	current_state = State.NORMAL
@@ -406,3 +411,14 @@ func _on_sprite_animation_finished():
 	if current_state == State.CROUCHING and sprite.animation == "crouch_start":
 		# Фиксируем последний кадр
 		sprite.frame = sprite.sprite_frames.get_frame_count("crouch_start") - 1
+func die():
+	var music_player = get_node("Sounds/Music")  # Путь к вашей ноде с музыкой
+	if music_player:
+		music_player.stop()
+	
+	current_state = State.DEAD
+	sprite.play("death")
+	await get_tree().create_timer(2).timeout
+
+	Global.lose_life() 
+	  
