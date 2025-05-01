@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://du8ctq3i01nna"]
+[gd_scene load_steps=72 format=3 uid="uid://du8ctq3i01nna"]
 
 [ext_resource type="Texture2D" uid="uid://b6skya3erctyv" path="res://assets/sprites/walk-Sheet.png" id="1_2pgsl"]
 [ext_resource type="Script" path="res://scenes/prologue/scripts/cat.gd" id="1_hmrkm"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dyeoxaqxky6uu" path="res://assets/sprites/liking-Sheet.png" id="11_0kxr3"]
 [ext_resource type="Texture2D" uid="uid://bq1yqjjaynymt" path="res://assets/sprites/meow-Sheet.png" id="12_55qgr"]
 [ext_resource type="AudioStream" uid="uid://dolhgapgdjboy" path="res://assets/sounds/meow2.mp3" id="16_gw68e"]
+[ext_resource type="Texture2D" uid="uid://c2tc4txdurlfv" path="res://assets/sprites/death_cat.png" id="17_u8yr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8svmm"]
 atlas = ExtResource("2_7rujm")
@@ -280,6 +281,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("17_u8yr6")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hntvp")
 }, {
 "duration": 1.0,
@@ -463,7 +472,7 @@ script = ExtResource("1_hmrkm")
 [node name="CatSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_mi4pu")
-animation = &"fall"
+animation = &"death"
 
 [node name="CatCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4btjv")

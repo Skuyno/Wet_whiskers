@@ -9806,7 +9806,7 @@ size = Vector2(16, 16)
 size = Vector2(949, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16dnu"]
-size = Vector2(1826, 20)
+size = Vector2(1826, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew503"]
 size = Vector2(2001, 25)
@@ -10530,7 +10530,7 @@ position = Vector2(16, 696)
 script = ExtResource("34_7wm04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(904, 46)
+position = Vector2(904, 43)
 shape = SubResource("RectangleShape2D_16dnu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
