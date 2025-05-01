@@ -5,3 +5,4 @@ func _on_body_entered(body):
 	if body.name == "Cat":
 		Global.lose_life()
 		
+		
