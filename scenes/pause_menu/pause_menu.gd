@@ -2,9 +2,10 @@ extends Control
 
 @onready var sound = $ClickSound
 @onready var delay_timer = Timer.new()
+@onready var player = $"../../Cat"
 
 var pending_action: Callable = func(): pass  # Пустая заглушка
-
+var save_path = "res://savegame.save"
 func _ready():
 	visible = false
 	set_process_input(false)
@@ -59,3 +60,21 @@ func _on_delay_timeout():
 
 func _process(delta):
 	testEsc()
+	
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(player.position.x)
+	file.store_var(player.position.y)
+	
+func load_game():
+	var file = FileAccess.open(save_path, FileAccess.READ)
+	player.position.x = file.get_var(player.position.x)
+	player.position.y = file.get_var(player.position.y)
+
+
+func _on_button_5_pressed() -> void:
+	load_game()
+
+
+func _on_button_4_pressed() -> void:
+	save_game()
