@@ -204,3 +204,4 @@ func pipe_climb_sequence():
 	
 	create_fade_out_tween_outside(5.0)
 	await get_tree().create_timer(5.0).timeout
+	get_tree().change_scene_to_file("res://scenes/level1/level1.tscn")

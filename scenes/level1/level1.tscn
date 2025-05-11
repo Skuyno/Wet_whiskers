@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=78 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -32,9 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://dq6ti3cd2igpu" path="res://assets/sprites/petuhi4.jpg" id="25_s38gv"]
 [ext_resource type="Texture2D" uid="uid://dtrnf01x5ulvl" path="res://assets/sprites/petuhi3.png" id="26_cvvhr"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="27_h4g7m"]
+[ext_resource type="Texture2D" uid="uid://cj6oup83wv4tl" path="res://assets/sprites/переноска.png" id="27_w8qeu"]
 [ext_resource type="Texture2D" uid="uid://1j6vfasag7pp" path="res://assets/sprites/petuhi6.jpg" id="28_lg1vo"]
 [ext_resource type="Texture2D" uid="uid://5icqpjim6jls" path="res://assets/sprites/cherdak.jpg" id="29_ylrlq"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/death_zone.gd" id="34_7wm04"]
+[ext_resource type="Script" path="res://scenes/level1/cletka.gd" id="35_672wx"]
 [ext_resource type="Texture2D" uid="uid://c3qynq0vhdtkl" path="res://assets/sprites/venta1.png" id="35_ceqim"]
 [ext_resource type="Texture2D" uid="uid://c4auuf82eijbg" path="res://assets/sprites/venta2.png" id="36_8grdf"]
 [ext_resource type="Script" path="res://scenes/level1/ventilation.gd" id="37_oacxs"]
@@ -9805,6 +9807,47 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i1q5"]
 size = Vector2(949, 101)
 
+[sub_resource type="Animation" id="Animation_1itmu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v8mn3"]
+resource_name = "cletka"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.690196), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcn21"]
+_data = {
+"RESET": SubResource("Animation_1itmu"),
+"cletka": SubResource("Animation_v8mn3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvoqm"]
+size = Vector2(32, 17)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16dnu"]
 size = Vector2(1826, 26)
 
@@ -9824,6 +9867,67 @@ animations = [{
 "name": &"ventilation",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_jsyfr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Launching/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Launching/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xhqab"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Launching/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Launching/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sjc2u"]
+_data = {
+"RESET": SubResource("Animation_jsyfr"),
+"fade_in": SubResource("Animation_xhqab")
+}
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_2ymuc")
@@ -10523,7 +10627,27 @@ texture = ExtResource("29_ylrlq")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("27_h4g7m")]
-visible = false
+
+[node name="cletka" type="Node2D" parent="."]
+script = ExtResource("35_672wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="cletka"]
+position = Vector2(2362, 812)
+scale = Vector2(0.710938, 0.710938)
+texture = ExtResource("27_w8qeu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cletka/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lcn21")
+}
+
+[node name="Area2D" type="Area2D" parent="cletka"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cletka/Area2D"]
+position = Vector2(2349, 805)
+shape = SubResource("RectangleShape2D_qvoqm")
+one_way_collision_margin = 0.0
+debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(16, 696)
@@ -10602,6 +10726,21 @@ sprite_frames = SubResource("SpriteFrames_5vh18")
 animation = &"ventilation"
 frame_progress = 0.407283
 script = ExtResource("37_oacxs")
+
+[node name="Launching" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Launching"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_sjc2u")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Launching"]
+visible = false
+offset_right = 1158.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
