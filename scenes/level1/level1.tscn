@@ -9944,7 +9944,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(619, 321)
+position = Vector2(67, 342)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1001, 333)
@@ -10615,8 +10615,8 @@ scale = Vector2(0.238367, 0.252157)
 texture = ExtResource("26_cvvhr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(850, 645)
-scale = Vector2(0.4222, 0.557031)
+position = Vector2(752.812, 611.312)
+scale = Vector2(0.472819, 0.599141)
 texture = ExtResource("28_lg1vo")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
