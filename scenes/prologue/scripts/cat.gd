@@ -19,7 +19,8 @@ enum State {
 	LICK,
 	DAMAGED,
 	INTERACTION,
-	DEAD
+	DEAD,
+	LOCK
 }
 
 # Экспортируемые переменные
@@ -72,7 +73,8 @@ func _physics_process(delta):
 			handle_damaged_state(global_position)
 		State.INTERACTION:
 			handle_interaction_state()
-	
+		State.LOCK:
+			handle_lock_state()
 	# Применяем движение
 	move_and_slide()
 	
@@ -252,6 +254,10 @@ func handle_interaction_state():
 		# Пытаемся подобрать предмет
 		try_pickup_item()
 	exit_interaction_state()
+	
+func handle_lock_state():
+	velocity = Vector2.ZERO
+	sprite.play("idle")
 
 func start_invincibility():
 	is_invincible = true
@@ -338,8 +344,21 @@ func release_item():
 	carried_item.visible = true
 	
 	carried_item = null	
+	
+func lock_movement():
+	print("FLELF")
+	current_state = State.LOCK
+	
+func unlock_movement():
+	current_state = State.NORMAL
 
 # ===== СИСТЕМА СОСТОЯНИЙ =====
+func enter_lock_state():
+	current_state = State.LOCK
+
+func exit_lock_state():
+	current_state = State.NORMAL
+
 func enter_crouch_state():
 	current_state = State.CROUCHING
 	sprite.play("crouch_start")
@@ -412,6 +431,7 @@ func _on_sprite_animation_finished():
 	if current_state == State.CROUCHING and sprite.animation == "crouch_start":
 		# Фиксируем последний кадр
 		sprite.frame = sprite.sprite_frames.get_frame_count("crouch_start") - 1
+
 func die():
 	var music_player = get_node("Sounds/Music")  # Путь к вашей ноде с музыкой
 	if music_player:
