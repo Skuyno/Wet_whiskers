@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=151 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -32,9 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://dq6ti3cd2igpu" path="res://assets/sprites/petuhi4.jpg" id="25_s38gv"]
 [ext_resource type="Texture2D" uid="uid://dtrnf01x5ulvl" path="res://assets/sprites/petuhi3.png" id="26_cvvhr"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="27_h4g7m"]
+[ext_resource type="Texture2D" uid="uid://cj6oup83wv4tl" path="res://assets/sprites/переноска.png" id="27_w8qeu"]
 [ext_resource type="Texture2D" uid="uid://1j6vfasag7pp" path="res://assets/sprites/petuhi6.jpg" id="28_lg1vo"]
 [ext_resource type="Texture2D" uid="uid://5icqpjim6jls" path="res://assets/sprites/cherdak.jpg" id="29_ylrlq"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/death_zone.gd" id="34_7wm04"]
+[ext_resource type="Script" path="res://scenes/level1/cletka.gd" id="35_672wx"]
 [ext_resource type="Texture2D" uid="uid://c3qynq0vhdtkl" path="res://assets/sprites/venta1.png" id="35_ceqim"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/cinematic_bars.gd" id="35_i6cj1"]
 [ext_resource type="Texture2D" uid="uid://c4auuf82eijbg" path="res://assets/sprites/venta2.png" id="36_8grdf"]
@@ -9827,6 +9829,47 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i1q5"]
 size = Vector2(949, 101)
 
+[sub_resource type="Animation" id="Animation_1itmu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v8mn3"]
+resource_name = "cletka"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.690196), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcn21"]
+_data = {
+"RESET": SubResource("Animation_1itmu"),
+"cletka": SubResource("Animation_v8mn3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvoqm"]
+size = Vector2(32, 17)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16dnu"]
 size = Vector2(1826, 26)
 
@@ -10294,7 +10337,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(3940, 354)
+position = Vector2(78, 305)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1004, 334)
@@ -10965,8 +11008,8 @@ scale = Vector2(0.238367, 0.252157)
 texture = ExtResource("26_cvvhr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(850, 613.812)
-scale = Vector2(0.4222, 0.596015)
+position = Vector2(752.812, 611.312)
+scale = Vector2(0.472819, 0.599141)
 texture = ExtResource("28_lg1vo")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -10977,7 +11020,27 @@ texture = ExtResource("29_ylrlq")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("27_h4g7m")]
-visible = false
+
+[node name="cletka" type="Node2D" parent="."]
+script = ExtResource("35_672wx")
+
+[node name="Sprite2D" type="Sprite2D" parent="cletka"]
+position = Vector2(2362, 812)
+scale = Vector2(0.710938, 0.710938)
+texture = ExtResource("27_w8qeu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cletka/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lcn21")
+}
+
+[node name="Area2D" type="Area2D" parent="cletka"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cletka/Area2D"]
+position = Vector2(2349, 805)
+shape = SubResource("RectangleShape2D_qvoqm")
+one_way_collision_margin = 0.0
+debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(16, 696)

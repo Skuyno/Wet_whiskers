@@ -73,8 +73,10 @@ func load_game():
 
 
 func _on_button_5_pressed() -> void:
+	sound.play()
 	load_game()
 
 
 func _on_button_4_pressed() -> void:
+	sound.play()
 	save_game()

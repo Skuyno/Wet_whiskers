@@ -56,6 +56,7 @@ func _ready():
 	sprite.animation_finished.connect(_on_sprite_animation_finished)
 	$ClimbArea.area_entered.connect(_on_climb_area_entered)
 	$ClimbArea.area_exited.connect(_on_climb_area_exited)
+	add_to_group("player")
 
 func _physics_process(delta):
 	# Обработка состояний

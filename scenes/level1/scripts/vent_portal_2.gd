@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var progress_bar = $ProgressBar
+@onready var cletka = $"../../cletka/Sprite2D/AnimationPlayer"
 
 var progress: float = 0.0
 var cat_in_zone: bool = false
@@ -9,6 +10,7 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	progress_bar.visible = false
+	cletka.play("cletka")
 
 func _process(delta):
 	if cat_in_zone:

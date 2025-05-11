@@ -3,6 +3,9 @@ extends Node
 var lives: int = 1
 var collected_memories := []  # Список собранных воспоминаний
 
+var player_position: Vector2
+var return_scene_path = "res://scenes/level1/level1.tscn"
+
 signal game_over
 
 func check_secret_ending():
