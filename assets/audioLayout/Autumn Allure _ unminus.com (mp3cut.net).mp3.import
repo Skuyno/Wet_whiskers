@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cb7f63wfoktkh"
+path="res://.godot/imported/Autumn Allure _ unminus.com (mp3cut.net).mp3-2f34b837a1a3f630da670d7d9871b653.mp3str"
+
+[deps]
+
+source_file="res://assets/audioLayout/Autumn Allure _ unminus.com (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Autumn Allure _ unminus.com (mp3cut.net).mp3-2f34b837a1a3f630da670d7d9871b653.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

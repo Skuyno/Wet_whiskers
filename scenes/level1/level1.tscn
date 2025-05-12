@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://gw0wt2fa5588" path="res://assets/sounds/my head is empty - i was only temporary (1).mp3" id="18_8uous"]
 [ext_resource type="Texture2D" uid="uid://wf8n3dequ07h" path="res://assets/sprites/level1/брэд-Sheet.png" id="18_covd4"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/vent_portal_2.gd" id="19_01k45"]
+[ext_resource type="AudioStream" uid="uid://cb7f63wfoktkh" path="res://assets/audioLayout/Autumn Allure _ unminus.com (mp3cut.net).mp3" id="19_3iaco"]
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="19_11k3g"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_574w4"]
 [ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="22_aeq13"]
@@ -40,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://c3qynq0vhdtkl" path="res://assets/sprites/venta1.png" id="35_ceqim"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/cinematic_bars.gd" id="35_i6cj1"]
 [ext_resource type="Texture2D" uid="uid://c4auuf82eijbg" path="res://assets/sprites/venta2.png" id="36_8grdf"]
-[ext_resource type="AudioStream" uid="uid://bw8yfthlcnqgl" path="res://assets/audioLayout/my head is empty - i was only temporary 2 u.mp3" id="37_5kla2"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/ventilation.gd" id="37_oacxs"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/chase_trigger.gd" id="39_455ym"]
 [ext_resource type="Texture2D" uid="uid://dkqpaspojwhiw" path="res://assets/sprites/level1/straycats/cat№1/по трубе вверх 1 (2)-Sheet.png" id="42_1xgmd"]
@@ -10391,7 +10391,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(78, 305)
+position = Vector2(2285, 767)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1004, 334)
@@ -10498,7 +10498,7 @@ parameters/looping = true
 stream = ExtResource("18_8uous")
 
 [node name="Memory" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("37_5kla2")
+stream = ExtResource("19_3iaco")
 
 [node name="Pigeons" type="Node2D" parent="."]
 
@@ -10805,7 +10805,7 @@ frame_progress = 0.563518
 script = ExtResource("15_ose14")
 
 [node name="Bread" type="RigidBody2D" parent="." groups=["Items", "bread"]]
-position = Vector2(2332, 383)
+position = Vector2(2191, 809)
 collision_layer = 7
 collision_mask = 7
 gravity_scale = 0.805
