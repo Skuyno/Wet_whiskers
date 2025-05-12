@@ -1,7 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=24 format=3 uid="uid://crjv3oxk6xlvs"]
 
+[ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
 [ext_resource type="Texture2D" uid="uid://dsbusfofaxuji" path="res://assets/sprites/level2/тайлсет (6).png" id="2_jk3wu"]
+[ext_resource type="Texture2D" uid="uid://j6mr5biwpvw5" path="res://assets/sprites/level2/фон.png" id="2_yfodd"]
 [ext_resource type="PackedScene" uid="uid://du8ctq3i01nna" path="res://scenes/objects/cat.tscn" id="3_ajq7l"]
 [ext_resource type="Texture2D" uid="uid://bsvjif6ww8igb" path="res://assets/sprites/level2/дом3тайл.png" id="3_hkv6t"]
 [ext_resource type="Texture2D" uid="uid://bp3yhix7f2abb" path="res://assets/sprites/level2/дом1.png" id="4_fuiau"]
@@ -12,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cyhospo6nuodx" path="res://assets/sprites/level2/Без-названия.jpg" id="9_b633t"]
 [ext_resource type="Texture2D" uid="uid://bqyy4xj0ofjip" path="res://assets/sprites/level2/аптека1.png" id="10_ai5cl"]
 [ext_resource type="Texture2D" uid="uid://bhtp37n6oq016" path="res://assets/sprites/level2/бар.png" id="12_ly5ak"]
-[ext_resource type="Script" path="res://scenes/level2/car_spawner.gd" id="13_y0qdi"]
+[ext_resource type="Script" path="res://scenes/level2/scripts/car_spawner.gd" id="13_y0qdi"]
 [ext_resource type="PackedScene" uid="uid://dsgn2khjdtvcf" path="res://scenes/objects/car.tscn" id="14_8j5xq"]
+[ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="17_xjwvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -638,6 +641,13 @@ sources/4 = SubResource("TileSetAtlasSource_27t0w")
 sources/5 = SubResource("TileSetAtlasSource_6gojt")
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_j820d")
+
+[node name="Фон" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3130.5, 186)
+scale = Vector2(32.805, 12.36)
+texture = ExtResource("2_yfodd")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kfkhg")
@@ -714,5 +724,10 @@ script = ExtResource("13_y0qdi")
 car_scene = ExtResource("14_8j5xq")
 
 [node name="Timer" type="Timer" parent="CarSpawner"]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("17_xjwvj")
 
 [connection signal="timeout" from="CarSpawner/Timer" to="CarSpawner" method="_on_timer_timeout"]
