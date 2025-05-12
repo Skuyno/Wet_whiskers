@@ -20,6 +20,7 @@ func _ready():
 
 func pause():
 	visible = true
+	player.visible = false
 	set_process_input(true)
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
@@ -27,6 +28,7 @@ func pause():
 func resume():
 	get_tree().paused = false
 	visible = false
+	player.visible = true
 	set_process_input(false)
 	$AnimationPlayer.play_backwards("blur")
 

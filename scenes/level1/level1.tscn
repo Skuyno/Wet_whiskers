@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=157 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://c3qynq0vhdtkl" path="res://assets/sprites/venta1.png" id="35_ceqim"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/cinematic_bars.gd" id="35_i6cj1"]
 [ext_resource type="Texture2D" uid="uid://c4auuf82eijbg" path="res://assets/sprites/venta2.png" id="36_8grdf"]
+[ext_resource type="AudioStream" uid="uid://bw8yfthlcnqgl" path="res://assets/audioLayout/my head is empty - i was only temporary 2 u.mp3" id="37_5kla2"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/ventilation.gd" id="37_oacxs"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/chase_trigger.gd" id="39_455ym"]
 [ext_resource type="Texture2D" uid="uid://dkqpaspojwhiw" path="res://assets/sprites/level1/straycats/cat№1/по трубе вверх 1 (2)-Sheet.png" id="42_1xgmd"]
@@ -62,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://bhut53dnp5oe6" path="res://assets/sprites/level1/straycats/cat№3/бег3 (2)-Sheet.png" id="57_lsumv"]
 [ext_resource type="Texture2D" uid="uid://cx3v08jjl1l2n" path="res://assets/sprites/level1/straycats/cat№3/walk3-Sheet.png" id="58_sdjmu"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/finish_zone.gd" id="60_cphj5"]
+[ext_resource type="Texture2D" uid="uid://c2v05e3mn538s" path="res://assets/sprites/первое воспоминание.png" id="63_1755f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdgjx"]
 texture = ExtResource("1_2d51u")
@@ -9870,6 +9872,58 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvoqm"]
 size = Vector2(32, 17)
 
+[sub_resource type="Animation" id="Animation_y3ty8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e2qg0"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f8ixh"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iw6pt"]
+_data = {
+"RESET": SubResource("Animation_y3ty8"),
+"appear": SubResource("Animation_e2qg0"),
+"disappear": SubResource("Animation_f8ixh")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16dnu"]
 size = Vector2(1826, 26)
 
@@ -10442,6 +10496,9 @@ parameters/looping = true
 
 [node name="DeadCat" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("18_8uous")
+
+[node name="Memory" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("37_5kla2")
 
 [node name="Pigeons" type="Node2D" parent="."]
 
@@ -11041,6 +11098,21 @@ position = Vector2(2349, 805)
 shape = SubResource("RectangleShape2D_qvoqm")
 one_way_collision_margin = 0.0
 debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
+
+[node name="Memory" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Memory"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 2025.0
+offset_top = 644.0
+offset_right = 2553.0
+offset_bottom = 908.0
+texture = ExtResource("63_1755f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Memory/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_iw6pt")
+}
 
 [node name="DeathZone" type="Area2D" parent="."]
 position = Vector2(16, 696)

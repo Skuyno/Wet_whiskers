@@ -1,53 +1,72 @@
 extends Node2D
 
-# Если true, игрок может взаимодействовать
 var can_interact = false
-var save_path = "res://savegame.save"
-@onready var player = $"../Cat"
-
-# Настройка формы коллизии (если она меняется)
+@onready var player = get_tree().get_first_node_in_group("player") # Более надежный способ
 @onready var collision_shape = $Area2D/CollisionShape2D
 
+@onready var animation_player = $"../Memory/TextureRect/AnimationPlayer"
+@onready var texture_rect = $"../Memory/TextureRect"
+
+var is_cutscene_playing = false
+@export var cutscene_duration = 10
 func _ready():
-	# Подключаем сигналы Area2D
+	texture_rect.z_index = 100  # Делаем поверх всех элементов
+	
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 
-
-# Игрок вошел в зону взаимодействия
 func _on_body_entered(body):
-	if body.is_in_group("player"):  # Проверяем, что это игрок
+	if body.is_in_group("player"):
 		can_interact = true
+		print("Player can interact")
 
-
-# Игрок вышел из зоны
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		can_interact = false
 
-
-# Вызывается при нажатии E
-func interact():
-	save_game()
-	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		Global.player_position = player.global_position
-		Global.return_scene_path = get_tree().current_scene.scene_file_path  # <-- путь, не объект
-	
-	var cutscene_scene = load("res://scenes/memories/memory1.tscn")
-	get_tree().change_scene_to_packed(cutscene_scene)
-
-
-func save_game():
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_var(player.position.x)
-	file.store_var(player.position.y)
-	
-func load_game():
-	var file = FileAccess.open(save_path, FileAccess.READ)
-	player.position.x = file.get_var(player.position.x)
-	player.position.y = file.get_var(player.position.y)
-
-func _process(delta):
-	if can_interact and Input.is_action_just_pressed("interact"):
+func _input(event):
+	if event.is_action_pressed("interact") and can_interact and not is_cutscene_playing:
 		interact()
+
+func interact():
+	is_cutscene_playing = true
+	
+	# Блокируем управление персонажем
+	if player:
+		player.set_process_input(false)
+		player.set_physics_process(false)
+	
+	# Запускаем катсцену
+	start_cutscene()
+	
+	# Ждем окончания катсцены
+	await get_tree().create_timer(cutscene_duration).timeout
+	end_cutscene()
+
+func start_cutscene():
+	# Делаем TextureRect на весь экран (на случай изменения размера окна)
+	$"../Sounds/Music".stop()
+
+	texture_rect.visible = true
+	$"../Sounds/Memory".play()
+	
+	if animation_player.has_animation("appear"):
+		animation_player.play("appear")
+		await animation_player.animation_finished
+		
+		await get_tree().create_timer(5).timeout
+		
+		if animation_player.has_animation("disappear"):
+			animation_player.play("disappear")
+			await animation_player.animation_finished
+	
+	texture_rect.visible = false
+
+func end_cutscene():
+	is_cutscene_playing = false
+	$"../Sounds/Memory".stop()
+	$"../Sounds/Music".play()
+	# Восстанавливаем управление персонажем
+	if player:
+		player.set_process_input(true)
+		player.set_physics_process(true)
