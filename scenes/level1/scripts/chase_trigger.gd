@@ -18,6 +18,8 @@ func _on_body_entered(body):
 		start_chase_sequence(body)
 
 func start_chase_sequence(player: CharacterBody2D):
+	$"../../Sounds/Music".stop()
+	
 	chase_active = true
 	player.lock_movement()
 	
@@ -36,3 +38,4 @@ func start_chase_sequence(player: CharacterBody2D):
 	
 	cinematic_bars.animate_out()
 	player.unlock_movement()
+	$"../../Sounds/ChaseMusic".play()

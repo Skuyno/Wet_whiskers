@@ -28,6 +28,7 @@ enum State {
 @onready var sprite = $CatSprite
 @onready var climb_detector = $ClimbArea
 @onready var carry_position = $CarryPosition  # Маркер позиции в зубах
+@onready var cat_collision = $CatCollision
 @onready var item_parent = get_tree().current_scene
 
 # Системные переменные
@@ -141,7 +142,7 @@ func handle_climb_state(delta):
 	if horizontal != 0 and can_exit_climb:
 		# Устанавливаем направление прыжка
 		velocity = Vector2(
-			horizontal * WALK_SPEED * 1.2, 
+			horizontal * WALK_SPEED * 1.2,
 			JUMP_FORCE * 0.8
 		)
 		sprite.flip_h = horizontal < 0
@@ -203,7 +204,7 @@ func update_animations():
 			if abs(velocity.x) > 0:
 				sprite.play("crouch_walk")
 			elif(sprite.animation != "crouch_start" or not sprite.is_playing()):
-				sprite.play("crouch_start")
+				sprite.pause()
 		
 		State.CLIMBING:
 			sprite.play("climb_up" if abs(velocity.y) > 0 else "climb_idle")
@@ -246,7 +247,7 @@ func handle_damaged_state(source_position: Vector2):
 		
 	exit_damaged_state()
 
-func handle_interaction_state():	
+func handle_interaction_state():
 	if carried_item:
 		# Бросаем предмет
 		release_item()
@@ -343,7 +344,7 @@ func release_item():
 	carried_item.collision_layer = original_item_collision_layer
 	carried_item.visible = true
 	
-	carried_item = null	
+	carried_item = null
 	
 func lock_movement():
 	print("FLELF")
@@ -361,10 +362,12 @@ func exit_lock_state():
 
 func enter_crouch_state():
 	current_state = State.CROUCHING
+	cat_collision.shape.size.y = 15;
 	sprite.play("crouch_start")
 
 func exit_crouch_state():
 	current_state = State.NORMAL
+	cat_collision.shape.size.y = 20;
 	sprite.play("crouch_end")
 	await sprite.animation_finished
 
@@ -381,7 +384,7 @@ func enter_climb_state():
 
 func exit_climb_state(forced: bool):
 	current_state = State.NORMAL
-	sprite.play("climb_end")	
+	sprite.play("climb_end")
 	# Принудительный выход сохраняет блокировку
 	if forced:
 		ignore_climb_until_exit = true
@@ -441,5 +444,5 @@ func die():
 	sprite.play("death")
 	await get_tree().create_timer(2).timeout
 
-	Global.lose_life() 
+	Global.lose_life()
 	  
