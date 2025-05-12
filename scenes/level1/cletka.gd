@@ -54,7 +54,7 @@ func start_cutscene():
 		animation_player.play("appear")
 		await animation_player.animation_finished
 		
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(7).timeout
 		
 		if animation_player.has_animation("disappear"):
 			animation_player.play("disappear")
