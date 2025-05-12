@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsgn2khjdtvcf"]
+
+[ext_resource type="Script" path="res://scenes/level2/scripts/car.gd" id="1_ls2bw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0g7e"]
+
+[node name="Car" type="CharacterBody2D"]
+script = ExtResource("1_ls2bw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k0g7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
