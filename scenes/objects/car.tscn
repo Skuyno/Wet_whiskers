@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/car.gd" id="1_ls2bw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0g7e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yga2"]
 
-[node name="Car" type="CharacterBody2D"]
+[node name="Car" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_ls2bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_k0g7e")
+position = Vector2(8, 11)
+shape = SubResource("RectangleShape2D_7yga2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

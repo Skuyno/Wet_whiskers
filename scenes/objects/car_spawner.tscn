@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpi7qmiburrdd"]
+
+[ext_resource type="Script" path="res://scenes/level2/scripts/car_spawner.gd" id="1_kq2en"]
+[ext_resource type="PackedScene" path="res://scenes/objects/car.tscn" id="2_nanb4"]
+
+[node name="CarSpawner" type="Node2D"]
+script = ExtResource("1_kq2en")
+car_scene = ExtResource("2_nanb4")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="leftSpawn" type="Marker2D" parent="."]
+position = Vector2(-35, 0)
+
+[node name="rightSpawn" type="Marker2D" parent="."]
+position = Vector2(35, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

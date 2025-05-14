@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=30 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -18,10 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://cyhospo6nuodx" path="res://assets/sprites/level2/Без-названия.jpg" id="9_b633t"]
 [ext_resource type="Texture2D" uid="uid://bqyy4xj0ofjip" path="res://assets/sprites/level2/аптека1.png" id="10_ai5cl"]
 [ext_resource type="Texture2D" uid="uid://bhtp37n6oq016" path="res://assets/sprites/level2/бар.png" id="12_ly5ak"]
-[ext_resource type="Script" path="res://scenes/level2/scripts/car_spawner.gd" id="13_y0qdi"]
-[ext_resource type="PackedScene" uid="uid://dsgn2khjdtvcf" path="res://scenes/objects/car.tscn" id="14_8j5xq"]
 [ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="17_xjwvj"]
 [ext_resource type="Texture2D" uid="uid://83o1f8y8rvix" path="res://assets/sprites/level2/мусорка.png" id="19_h6o8t"]
+[ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -2467,27 +2466,77 @@ size = Vector2(3, 20)
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_j820d")
 
-[node name="Фон4" type="Sprite2D" parent="."]
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Фон4" type="Sprite2D" parent="Decorations"]
 z_index = -1
 position = Vector2(712, 501)
 scale = Vector2(0.810418, 0.721801)
 texture = ExtResource("2_lnwif")
 
-[node name="Фон3" type="Sprite2D" parent="."]
+[node name="Фон3" type="Sprite2D" parent="Decorations"]
 z_index = -1
 position = Vector2(2365, 527)
 scale = Vector2(0.841192, 0.510812)
 texture = ExtResource("3_dycmv")
 
-[node name="Фон" type="Sprite2D" parent="."]
+[node name="Фон" type="Sprite2D" parent="Decorations"]
 z_index = -1
 position = Vector2(280.339, 589.132)
 scale = Vector2(2.19238, 1.33132)
 texture = ExtResource("3_4idwb")
 
-[node name="Фон2" type="Sprite2D" parent="."]
+[node name="Фон2" type="Sprite2D" parent="Decorations"]
 position = Vector2(1659, 519)
 texture = ExtResource("3_kcptu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Decorations"]
+show_behind_parent = true
+visibility_layer = 2
+position = Vector2(194, 620)
+scale = Vector2(3.68164, 3.60352)
+texture = ExtResource("4_fuiau")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Decorations"]
+show_behind_parent = true
+position = Vector2(630, 643)
+scale = Vector2(3.79688, 2.75781)
+texture = ExtResource("5_ro1t7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Decorations"]
+position = Vector2(243, 639)
+scale = Vector2(0.350861, 0.391668)
+texture = ExtResource("8_wd2jg")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Decorations"]
+show_behind_parent = true
+position = Vector2(195.41, 677.375)
+scale = Vector2(0.151644, 0.156888)
+texture = ExtResource("9_b633t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Decorations"]
+show_behind_parent = true
+position = Vector2(297, 677)
+scale = Vector2(0.151644, 0.156888)
+texture = ExtResource("9_b633t")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Decorations"]
+position = Vector2(592, 635)
+scale = Vector2(0.0476667, 0.0469435)
+texture = ExtResource("10_ai5cl")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Decorations"]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 4
+position = Vector2(2591, 619)
+scale = Vector2(3.68164, 3.60352)
+texture = ExtResource("4_fuiau")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Decorations"]
+position = Vector2(2642, 641)
+scale = Vector2(0.0738497, 0.0835351)
+texture = ExtResource("12_ly5ak")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kfkhg")
@@ -2500,70 +2549,6 @@ layer_1/tile_data = PackedInt32Array(2293869, 4, 1, 2359405, 4, 2, 2424941, 4, 3
 [node name="Cat" parent="." instance=ExtResource("3_ajq7l")]
 z_index = 1
 position = Vector2(104, 623)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-show_behind_parent = true
-visibility_layer = 2
-position = Vector2(194, 620)
-scale = Vector2(3.68164, 3.60352)
-texture = ExtResource("4_fuiau")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(630, 643)
-scale = Vector2(3.79688, 2.75781)
-texture = ExtResource("5_ro1t7")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(243, 639)
-scale = Vector2(0.350861, 0.391668)
-texture = ExtResource("8_wd2jg")
-
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(195.41, 677.375)
-scale = Vector2(0.151644, 0.156888)
-texture = ExtResource("9_b633t")
-
-[node name="Sprite2D5" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(297, 677)
-scale = Vector2(0.151644, 0.156888)
-texture = ExtResource("9_b633t")
-
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-position = Vector2(592, 635)
-scale = Vector2(0.0476667, 0.0469435)
-texture = ExtResource("10_ai5cl")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-show_behind_parent = true
-position = Vector2(1210, 486)
-scale = Vector2(9.95926, 5.8877)
-
-[node name="Sprite2D7" type="Sprite2D" parent="."]
-show_behind_parent = true
-light_mask = 2
-visibility_layer = 4
-position = Vector2(2591, 619)
-scale = Vector2(3.68164, 3.60352)
-texture = ExtResource("4_fuiau")
-
-[node name="Sprite2D8" type="Sprite2D" parent="."]
-position = Vector2(2642, 641)
-scale = Vector2(0.0738497, 0.0835351)
-texture = ExtResource("12_ly5ak")
-
-[node name="CarSpawner" type="Node2D" parent="."]
-position = Vector2(441, 345)
-script = ExtResource("13_y0qdi")
-car_scene = ExtResource("14_8j5xq")
-
-[node name="Timer" type="Timer" parent="CarSpawner"]
 
 [node name="Sounds" type="Node2D" parent="."]
 
@@ -2585,4 +2570,16 @@ shape = SubResource("RectangleShape2D_k2rq6")
 position = Vector2(-49, -4)
 shape = SubResource("RectangleShape2D_k2rq6")
 
-[connection signal="timeout" from="CarSpawner/Timer" to="CarSpawner" method="_on_timer_timeout"]
+[node name="MachinkiSpawners" type="Node2D" parent="."]
+
+[node name="CarSpawner" parent="MachinkiSpawners" instance=ExtResource("21_oe3yw")]
+position = Vector2(884, 690)
+
+[node name="CarSpawner2" parent="MachinkiSpawners" instance=ExtResource("21_oe3yw")]
+position = Vector2(1496, 690)
+
+[node name="CarSpawner3" parent="MachinkiSpawners" instance=ExtResource("21_oe3yw")]
+position = Vector2(1654, 690)
+
+[node name="CarSpawner4" parent="MachinkiSpawners" instance=ExtResource("21_oe3yw")]
+position = Vector2(2409, 690)
