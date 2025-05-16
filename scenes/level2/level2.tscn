@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=32 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cke0lg5tocsow" path="res://assets/sprites/level2/1633877877_71-pro-dachnikov-com-p-doma-pitera-foto-78.jpg" id="3_dycmv"]
 [ext_resource type="Texture2D" uid="uid://bsvjif6ww8igb" path="res://assets/sprites/level2/дом3тайл.png" id="3_hkv6t"]
 [ext_resource type="Texture2D" uid="uid://coe4f3s1gtuu8" path="res://assets/sprites/level2/жижа.jpg" id="3_kcptu"]
+[ext_resource type="Texture2D" uid="uid://cula7bffao6hq" path="res://assets/sprites/level2/1633877876_56-pro-dachnikov-com-p-doma-pitera-foto-62.jpg" id="3_v6gwg"]
 [ext_resource type="Texture2D" uid="uid://bp3yhix7f2abb" path="res://assets/sprites/level2/дом1.png" id="4_fuiau"]
 [ext_resource type="Texture2D" uid="uid://bq0h7eunulsia" path="res://assets/sprites/level2/дом4.png" id="4_o7v12"]
 [ext_resource type="Texture2D" uid="uid://chnmhsi41p1lg" path="res://assets/sprites/level1/london_window.png" id="5_bv8ta"]
@@ -2472,6 +2473,12 @@ z_index = -1
 position = Vector2(712, 501)
 scale = Vector2(0.810418, 0.721801)
 texture = ExtResource("2_lnwif")
+
+[node name="Фон5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2924, 575)
+scale = Vector2(0.543232, 0.329876)
+texture = ExtResource("3_v6gwg")
 
 [node name="Фон3" type="Sprite2D" parent="."]
 z_index = -1
