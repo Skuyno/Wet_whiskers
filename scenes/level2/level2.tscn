@@ -2476,17 +2476,9 @@ position = Vector2(712, 501)
 scale = Vector2(0.810418, 0.721801)
 texture = ExtResource("2_lnwif")
 
-<<<<<<< HEAD
-[node name="Фон5" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(2924, 575)
-scale = Vector2(0.543232, 0.329876)
-texture = ExtResource("3_v6gwg")
 
-[node name="Фон3" type="Sprite2D" parent="."]
-=======
 [node name="Фон3" type="Sprite2D" parent="Decorations"]
->>>>>>> c63578a8a4e184e5b19cc6ec8e3f097a63c48f34
+
 z_index = -1
 position = Vector2(2365, 527)
 scale = Vector2(0.841192, 0.510812)
