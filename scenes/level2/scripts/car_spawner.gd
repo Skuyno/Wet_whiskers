@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var car_scene: PackedScene
-@export var spawn_interval: float = 1.5
+@export var spawn_interval: float = 3
 @export var lane_offset: float = 50.0  # Увеличьте это значение при необходимости
 
 func _ready():
@@ -10,15 +10,11 @@ func _ready():
 func _on_timer_timeout():
 	var car = car_scene.instantiate()
 	
-	# Используем глобальные координаты спавнера
-	var spawn_position = global_position
-	var lane = 1 if randi() % 2 == 0 else -1
-	spawn_position.x += lane * lane_offset
-	spawn_position.y = global_position.y
+	var spawn_point = $leftSpawn if randi() % 2 == 0 else $rightSpawn
 	
-	# Устанавливаем глобальную позицию машине
-	car.global_position = spawn_position
+	car.global_position = spawn_point.global_position
 	
-	add_child(car)
+	get_tree().current_scene.add_child(car)
+	
 	$Timer.wait_time = randf_range(spawn_interval * 0.7, spawn_interval * 1.3)
 	$Timer.start()
