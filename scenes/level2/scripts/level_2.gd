@@ -19,3 +19,7 @@ func load_game():
 	player.position.x = file.get_var(player.position.x)
 	player.position.y = file.get_var(player.position.y)
 	
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
