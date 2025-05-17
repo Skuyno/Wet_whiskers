@@ -95,6 +95,7 @@ offset_bottom = 40.0
 
 [node name="MenuButton" type="Button" parent="ButtonsContainer2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 512.0
 offset_top = 172.0
 offset_right = 634.0
@@ -109,6 +110,7 @@ texture = ExtResource("4_ui3w0")
 
 [node name="RestartButton" type="Button" parent="ButtonsContainer2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 512.0
 offset_top = 109.0
 offset_right = 634.0
@@ -123,6 +125,7 @@ texture = ExtResource("3_kwhuv")
 
 [node name="Load" type="Button" parent="ButtonsContainer2"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 543.0
 offset_top = 144.0
 offset_right = 602.0
