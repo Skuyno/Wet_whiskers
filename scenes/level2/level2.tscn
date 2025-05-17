@@ -2480,16 +2480,7 @@ sources/2 = SubResource("TileSetAtlasSource_g4lr5")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2rq6"]
 size = Vector2(3, 20)
 
-<<<<<<< HEAD
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgf7w"]
-size = Vector2(13, 31)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx3ys"]
-size = Vector2(49, 90)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21jsu"]
-size = Vector2(27, 29)
-=======
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6pyr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ijtp"]
