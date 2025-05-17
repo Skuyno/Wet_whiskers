@@ -6,6 +6,9 @@ var save_path = "res://savegame.save"
 func _ready():
 	$Sounds/Music.play()
 	Global.game_over.connect(show_death_screen)
+	$Cat.enter_lock_state()
+	await get_tree().create_timer(1.0).timeout
+	$Cat.exit_lock_state()
 	
 
 func show_death_screen():

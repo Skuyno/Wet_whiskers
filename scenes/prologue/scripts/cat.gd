@@ -45,6 +45,7 @@ var invincibility_timer: Timer
 var carried_item: RigidBody2D = null
 var original_item_collision_layer: int
 var original_item_parent: Node
+var locked: bool = false
 
 func _ready():
 	# Инициализация таймера неуязвимости
@@ -60,6 +61,11 @@ func _ready():
 	add_to_group("player")
 
 func _physics_process(delta):
+	if locked:
+		handle_lock_state(delta)
+		move_and_slide()  # Только один вызов здесь
+		return  # Полный выход из обработки
+	
 	# Обработка состояний
 	match current_state:
 		State.NORMAL:
@@ -74,8 +80,7 @@ func _physics_process(delta):
 			handle_damaged_state(global_position)
 		State.INTERACTION:
 			handle_interaction_state()
-		State.LOCK:
-			handle_lock_state()
+	
 	# Применяем движение
 	move_and_slide()
 	
@@ -83,6 +88,8 @@ func _physics_process(delta):
 	update_animations()
 
 func handle_normal_state(delta):
+	if locked:
+		return
 	# Гравитация
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
@@ -256,9 +263,25 @@ func handle_interaction_state():
 		try_pickup_item()
 	exit_interaction_state()
 	
-func handle_lock_state():
-	velocity = Vector2.ZERO
+func handle_lock_state(delta):
+	# Гравитация с ограничением скорости
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+		velocity.y = min(velocity.y, GRAVITY * 2)
+	else:
+		velocity.y = 0
+	
+	# Плавное остановка горизонтального движения
+	velocity.x = move_toward(velocity.x, 0, delta * 200)
+	
+	# Анимация и синхронизация направления
 	sprite.play("idle")
+	if is_on_floor():
+		sprite.flip_h = sprite.flip_h  # Сохраняем направление
+	
+	# Дополнительная проверка коллизий
+	if get_slide_collision_count() > 0:
+		velocity = Vector2.ZERO
 
 func start_invincibility():
 	is_invincible = true
@@ -303,8 +326,6 @@ func pickup_item(item: RigidBody2D):
 	if carried_item != null:
 		return
 
-	print("Подбираем: ", item.name, " | Видимый: ", item.visible)
-	
 	# Сохраняем исходные параметры
 	original_item_parent = item.get_parent()
 	original_item_collision_layer = item.collision_layer
@@ -326,8 +347,6 @@ func release_item():
 	if carried_item == null:
 		return
 	
-	print("Отпускаем: ", carried_item.name, " | Видимый: ", carried_item.visible)
-	
 	# Рассчитываем позицию с учетом направления кота
 	var release_pos = carry_position.global_position
 	if sprite.flip_h:
@@ -345,19 +364,18 @@ func release_item():
 	carried_item.visible = true
 	
 	carried_item = null
-	
-func lock_movement():
-	print("FLELF")
-	current_state = State.LOCK
-	
-func unlock_movement():
-	current_state = State.NORMAL
 
 # ===== СИСТЕМА СОСТОЯНИЙ =====
 func enter_lock_state():
+	locked = true
 	current_state = State.LOCK
+	Input.action_release("ui_left")
+	Input.action_release("ui_right")
+	Input.action_release("ui_up")
+	Input.action_release("ui_down")
 
 func exit_lock_state():
+	locked = false
 	current_state = State.NORMAL
 
 func enter_crouch_state():
