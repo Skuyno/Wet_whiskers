@@ -3030,45 +3030,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_egh6i"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(0, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_73lcl"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(64, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xf65a"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(128, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfqoh"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(192, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ey7kt"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(256, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v05td"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(320, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uqxwq"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(384, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qmc0y"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(448, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jtg87"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(512, 0, 64, 67)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixcxa"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(576, 0, 64, 67)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0625"]
 animations = [{
