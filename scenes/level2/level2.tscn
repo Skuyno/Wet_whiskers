@@ -3034,10 +3034,7 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c0625"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_egh6i")
-}, {
+"frames": [ {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_73lcl")
 }, {
