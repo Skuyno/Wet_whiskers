@@ -3186,6 +3186,11 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqyw0"]
+size = Vector2(30, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2ab"]
+size = Vector2(20, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbelt"]
 size = Vector2(53.5, 39)
