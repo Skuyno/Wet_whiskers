@@ -3030,9 +3030,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_egh6i"]
-atlas = ExtResource("35_ktb52")
-region = Rect2(0, 0, 64, 67)
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73lcl"]
 atlas = ExtResource("35_ktb52")
