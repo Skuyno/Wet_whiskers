@@ -3032,40 +3032,6 @@ animations = [{
 
 
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_c0625"]
-animations = [{
-"frames": [ {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_73lcl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xf65a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yfqoh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ey7kt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v05td")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uqxwq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qmc0y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jtg87")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixcxa")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 1.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ppxc"]
 atlas = ExtResource("27_ls2n8")
