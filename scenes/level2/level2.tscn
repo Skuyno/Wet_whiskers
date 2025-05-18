@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=161 format=3 uid="uid://crjv3oxk6xlvs"]
-
+[gd_scene load_steps=175 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -23,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtp37n6oq016" path="res://assets/sprites/level2/бар.png" id="12_ly5ak"]
 [ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="17_xjwvj"]
 [ext_resource type="Texture2D" uid="uid://83o1f8y8rvix" path="res://assets/sprites/level2/мусорка.png" id="19_h6o8t"]
-[ext_resource type="PackedScene" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
+[ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="22_nld4c"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/NPC_walking.gd" id="24_0oo7j"]
 [ext_resource type="Texture2D" uid="uid://dm4f64ljdsdiw" path="res://assets/sprites/OldMan/OldMan_Idle.png" id="25_0tjac"]
@@ -39,7 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="35_kjlgl"]
 [ext_resource type="Texture2D" uid="uid://btno8a4nabs25" path="res://assets/sprites/PeopleBoy2/PeopleBoy2_Talk.png" id="35_ktb52"]
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="36_6dbrd"]
-
 [ext_resource type="Script" path="res://scenes/level2/scripts/old_woman_2.gd" id="36_37kcm"]
 [ext_resource type="Texture2D" uid="uid://yj8v5mln768y" path="res://assets/sprites/OldWoman1/OldWoman1_Walk.png" id="36_bnpkb"]
 [ext_resource type="Texture2D" uid="uid://dftssc5hlntau" path="res://assets/sprites/OldWoman1/OldWoman1_Idle.png" id="37_ss8u4"]
@@ -50,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://chs2g6jn4ufui" path="res://scenes/objects/FallenItems/remoteControl.tscn" id="43_hbogo"]
 [ext_resource type="PackedScene" uid="uid://d3bdl63rk2yjd" path="res://scenes/objects/FallenItems/doll.tscn" id="44_pxhdf"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/disappear_zone.gd" id="46_scdon"]
+[ext_resource type="Texture2D" uid="uid://dcti5wdpxckov" path="res://assets/sprites/level2/бблб1.png" id="48_ilka8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -3522,6 +3520,30 @@ shape = SubResource("RectangleShape2D_nxaq7")
 sprite_frames = SubResource("SpriteFrames_u2wl8")
 animation = &"walk"
 
+[node name="Boy3" type="CharacterBody2D" parent="Peoplez"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy3"]
+position = Vector2(2055, 673)
+scale = Vector2(-0.983335, 1.04393)
+sprite_frames = SubResource("SpriteFrames_c0625")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.146323
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peoplez/Boy3"]
+
+[node name="Boy2" type="CharacterBody2D" parent="Peoplez"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy2"]
+position = Vector2(2011, 677)
+scale = Vector2(0.92, 0.902985)
+sprite_frames = SubResource("SpriteFrames_p2680")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0389957
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peoplez/Boy2"]
+
 [node name="Бич у пивнухи" type="StaticBody2D" parent="."]
 
 [node name="Бомж" type="Sprite2D" parent="Бич у пивнухи"]
@@ -3536,28 +3558,6 @@ shape = SubResource("RectangleShape2D_fqyw0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Бич у пивнухи"]
 position = Vector2(2713, 706)
 shape = SubResource("RectangleShape2D_ae2ab")
-
-[node name="Boy3" type="CharacterBody2D" parent="Peoplez"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy3"]
-position = Vector2(2055, 673)
-scale = Vector2(-0.983335, 1.04393)
-sprite_frames = SubResource("SpriteFrames_c0625")
-animation = &"idle"
-frame_progress = 0.146323
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peoplez/Boy3"]
-
-[node name="Boy2" type="CharacterBody2D" parent="Peoplez"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy2"]
-position = Vector2(2011, 677)
-scale = Vector2(0.92, 0.902985)
-sprite_frames = SubResource("SpriteFrames_p2680")
-animation = &"idle"
-frame_progress = 0.985362
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peoplez/Boy2"]
 
 [node name="PharmacyArea" type="Area2D" parent="."]
 position = Vector2(595, 682)
@@ -3583,7 +3583,6 @@ shape = SubResource("RectangleShape2D_2fotm")
 position = Vector2(392.5, 6.25003)
 sprite_frames = SubResource("SpriteFrames_hfyhw")
 animation = &"idle"
-
 
 [node name="Dormitory" type="Node2D" parent="."]
 script = ExtResource("40_ogepr")
@@ -3633,5 +3632,10 @@ script = ExtResource("46_scdon")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dormitory/DisappearZone"]
 position = Vector2(-12, -10)
 shape = SubResource("RectangleShape2D_v4hue")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2045, 635)
+scale = Vector2(0.168688, 0.164179)
+texture = ExtResource("48_ilka8")
 
 [connection signal="timeout" from="Dormitory/Timer" to="Dormitory" method="_on_timer_timeout"]

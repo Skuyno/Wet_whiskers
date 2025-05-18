@@ -51,7 +51,7 @@ func _start_hiding():
 	var tween = create_tween()
 	tween.tween_property(animated_sprite, "modulate:a", 0.0, fade_duration)
 	tween.tween_callback(func(): is_hidden = true)
-	tween.tween_interval(15.0)  # 20 секунд невидимости
+	tween.tween_interval(5.0)  # 20 секунд невидимости
 	tween.tween_callback(_start_appearing)
 
 func _start_appearing():
