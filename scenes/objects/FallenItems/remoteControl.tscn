@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://chs2g6jn4ufui"]
+
+[ext_resource type="Script" path="res://scenes/objects/FallenItems/remote_control.gd" id="1_oqeoh"]
+[ext_resource type="Texture2D" uid="uid://dl2tx3n347qpw" path="res://assets/sprites/level2/пульт.png" id="2_p3yeo"]
+[ext_resource type="Script" path="res://scenes/objects/FallenItems/area_2d.gd" id="3_3fg0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c74e7"]
+size = Vector2(6, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw60h"]
+size = Vector2(6, 15)
+
+[node name="RemoteControl" type="RigidBody2D"]
+script = ExtResource("1_oqeoh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999999, 0.999999)
+scale = Vector2(0.012207, 0.012207)
+texture = ExtResource("2_p3yeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_c74e7")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_3fg0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_uw60h")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

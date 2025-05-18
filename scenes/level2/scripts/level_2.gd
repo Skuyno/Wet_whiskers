@@ -3,6 +3,7 @@ extends Node2D
 var save_path = "res://savegame.save"
 @onready var player = $Cat
 
+
 func _ready():
 	$Sounds/Music.play()
 	Global.game_over.connect(show_death_screen)
@@ -22,7 +23,3 @@ func load_game():
 	player.position.x = file.get_var(player.position.x)
 	player.position.y = file.get_var(player.position.y)
 	
-
-
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.

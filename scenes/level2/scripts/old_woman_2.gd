@@ -27,8 +27,6 @@ func _ready():
 	timer.timeout.connect(_on_timer_timeout)
 
 func _physics_process(delta):
-	# Выводим текущие координаты каждый кадр
-	print("Текущие координаты: X = ", global_position.x, ", Y = ", global_position.y)
 	
 	if is_hidden:
 		return

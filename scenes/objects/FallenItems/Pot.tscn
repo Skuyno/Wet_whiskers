@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://q80wha2v2bl6"]
+
+[ext_resource type="Script" path="res://scenes/objects/FallenItems/falling_item.gd" id="1_cw4hi"]
+[ext_resource type="Texture2D" uid="uid://y6bokidb5pfs" path="res://assets/sprites/level2/горшок.png" id="1_en8vl"]
+[ext_resource type="Script" path="res://scenes/objects/FallenItems/area_2d.gd" id="3_tul3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmnrh"]
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awp1v"]
+size = Vector2(15, 15)
+
+[node name="Pot" type="RigidBody2D"]
+script = ExtResource("1_cw4hi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0175781, 0.0204925)
+texture = ExtResource("1_en8vl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fmnrh")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_tul3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_awp1v")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
