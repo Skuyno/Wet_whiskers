@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=133 format=3 uid="uid://crjv3oxk6xlvs"]
-
+[gd_scene load_steps=153 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -37,12 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://cpn7dnovk7i3p" path="res://assets/sprites/OldWoman/OldWoman_Walk.png" id="33_3b7xc"]
 [ext_resource type="Texture2D" uid="uid://dq04wacue40da" path="res://assets/sprites/PeopleBoy/PeopleBoy_Idle.png" id="34_2vs18"]
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="35_kjlgl"]
-
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="36_6dbrd"]
 [ext_resource type="Script" path="res://scenes/level2/old_woman_2.gd" id="36_37kcm"]
 [ext_resource type="Texture2D" uid="uid://yj8v5mln768y" path="res://assets/sprites/OldWoman1/OldWoman1_Walk.png" id="36_bnpkb"]
 [ext_resource type="Texture2D" uid="uid://dftssc5hlntau" path="res://assets/sprites/OldWoman1/OldWoman1_Idle.png" id="37_ss8u4"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -3098,7 +3094,6 @@ animations = [{
 "speed": 5.0
 }]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqyw0"]
 size = Vector2(30, 18)
 
@@ -3226,7 +3221,6 @@ animations = [{
 "speed": 5.0
 }]
 
-
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_j820d")
 
@@ -3335,7 +3329,6 @@ texture = ExtResource("19_h6o8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Musoirka/StaticBody2D"]
 position = Vector2(-19, -3.09521)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k2rq6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Musoirka/StaticBody2D"]
@@ -3432,7 +3425,6 @@ shape = SubResource("RectangleShape2D_nxaq7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy"]
 sprite_frames = SubResource("SpriteFrames_u2wl8")
-
 animation = &"walk"
 
 [node name="Бич у пивнухи" type="StaticBody2D" parent="."]
@@ -3449,8 +3441,6 @@ shape = SubResource("RectangleShape2D_fqyw0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Бич у пивнухи"]
 position = Vector2(2713, 706)
 shape = SubResource("RectangleShape2D_ae2ab")
-
-animation = &"idle"
 
 [node name="PharmacyArea" type="Area2D" parent="."]
 position = Vector2(595, 682)
@@ -3470,11 +3460,9 @@ script = ExtResource("36_37kcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OldWoman2"]
 position = Vector2(390, 6.25)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2fotm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="OldWoman2"]
 position = Vector2(392.5, 6.25003)
 sprite_frames = SubResource("SpriteFrames_hfyhw")
 animation = &"idle"
-
