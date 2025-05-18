@@ -37,11 +37,9 @@
 [ext_resource type="Texture2D" uid="uid://cpn7dnovk7i3p" path="res://assets/sprites/OldWoman/OldWoman_Walk.png" id="33_3b7xc"]
 [ext_resource type="Texture2D" uid="uid://dq04wacue40da" path="res://assets/sprites/PeopleBoy/PeopleBoy_Idle.png" id="34_2vs18"]
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="35_kjlgl"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://btno8a4nabs25" path="res://assets/sprites/PeopleBoy2/PeopleBoy2_Talk.png" id="35_ktb52"]
-=======
+
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="36_6dbrd"]
->>>>>>> 070ff89941cd7fd871464198eb86f83f841aa93c
+
 [ext_resource type="Script" path="res://scenes/level2/old_woman_2.gd" id="36_37kcm"]
 [ext_resource type="Texture2D" uid="uid://yj8v5mln768y" path="res://assets/sprites/OldWoman1/OldWoman1_Walk.png" id="36_bnpkb"]
 [ext_resource type="Texture2D" uid="uid://dftssc5hlntau" path="res://assets/sprites/OldWoman1/OldWoman1_Idle.png" id="37_ss8u4"]
@@ -3026,7 +3024,6 @@ animations = [{
 "speed": 5.0
 }]
 
-<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_egh6i"]
 atlas = ExtResource("35_ktb52")
 region = Rect2(0, 0, 64, 67)
@@ -3182,13 +3179,7 @@ animations = [{
 "name": &"idle",
 "speed": 1.0
 }]
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqyw0"]
-size = Vector2(30, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2ab"]
-size = Vector2(20, 9.5)
->>>>>>> 070ff89941cd7fd871464198eb86f83f841aa93c
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbelt"]
 size = Vector2(53.5, 39)
