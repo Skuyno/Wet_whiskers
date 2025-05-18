@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=164 format=3 uid="uid://crjv3oxk6xlvs"]
+
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -21,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtp37n6oq016" path="res://assets/sprites/level2/бар.png" id="12_ly5ak"]
 [ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="17_xjwvj"]
 [ext_resource type="Texture2D" uid="uid://83o1f8y8rvix" path="res://assets/sprites/level2/мусорка.png" id="19_h6o8t"]
-[ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
+[ext_resource type="PackedScene" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="22_nld4c"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/NPC_walking.gd" id="24_0oo7j"]
 [ext_resource type="Texture2D" uid="uid://dm4f64ljdsdiw" path="res://assets/sprites/OldMan/OldMan_Idle.png" id="25_0tjac"]
@@ -35,7 +37,11 @@
 [ext_resource type="Texture2D" uid="uid://cpn7dnovk7i3p" path="res://assets/sprites/OldWoman/OldWoman_Walk.png" id="33_3b7xc"]
 [ext_resource type="Texture2D" uid="uid://dq04wacue40da" path="res://assets/sprites/PeopleBoy/PeopleBoy_Idle.png" id="34_2vs18"]
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="35_kjlgl"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://btno8a4nabs25" path="res://assets/sprites/PeopleBoy2/PeopleBoy2_Talk.png" id="35_ktb52"]
+=======
+[ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="36_6dbrd"]
+>>>>>>> 070ff89941cd7fd871464198eb86f83f841aa93c
 [ext_resource type="Script" path="res://scenes/level2/old_woman_2.gd" id="36_37kcm"]
 [ext_resource type="Texture2D" uid="uid://yj8v5mln768y" path="res://assets/sprites/OldWoman1/OldWoman1_Walk.png" id="36_bnpkb"]
 [ext_resource type="Texture2D" uid="uid://dftssc5hlntau" path="res://assets/sprites/OldWoman1/OldWoman1_Idle.png" id="37_ss8u4"]
@@ -2480,7 +2486,7 @@ sources/5 = SubResource("TileSetAtlasSource_6gojt")
 sources/2 = SubResource("TileSetAtlasSource_g4lr5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2rq6"]
-size = Vector2(3, 20)
+size = Vector2(3, 18.1904)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6pyr"]
 
@@ -3020,6 +3026,7 @@ animations = [{
 "speed": 5.0
 }]
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_egh6i"]
 atlas = ExtResource("35_ktb52")
 region = Rect2(0, 0, 64, 67)
@@ -3175,6 +3182,13 @@ animations = [{
 "name": &"idle",
 "speed": 1.0
 }]
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqyw0"]
+size = Vector2(30, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2ab"]
+size = Vector2(20, 9.5)
+>>>>>>> 070ff89941cd7fd871464198eb86f83f841aa93c
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbelt"]
 size = Vector2(53.5, 39)
@@ -3404,7 +3418,7 @@ texture = ExtResource("19_h6o8t")
 [node name="StaticBody2D" type="StaticBody2D" parent="Musoirka"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Musoirka/StaticBody2D"]
-position = Vector2(-19, -4)
+position = Vector2(-19, -3.09521)
 shape = SubResource("RectangleShape2D_k2rq6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Musoirka/StaticBody2D"]
@@ -3501,7 +3515,22 @@ shape = SubResource("RectangleShape2D_nxaq7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy"]
 sprite_frames = SubResource("SpriteFrames_u2wl8")
-animation = &"idle"
+animation = &"walk"
+
+[node name="Бич у пивнухи" type="StaticBody2D" parent="."]
+
+[node name="Бомж" type="Sprite2D" parent="Бич у пивнухи"]
+position = Vector2(2696, 703)
+scale = Vector2(0.354666, 0.354666)
+texture = ExtResource("36_6dbrd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Бич у пивнухи"]
+position = Vector2(2688, 705)
+shape = SubResource("RectangleShape2D_fqyw0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Бич у пивнухи"]
+position = Vector2(2713, 706)
+shape = SubResource("RectangleShape2D_ae2ab")
 
 [node name="Boy3" type="CharacterBody2D" parent="Peoplez"]
 
