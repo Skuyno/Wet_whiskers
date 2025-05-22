@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://1j6vfasag7pp" path="res://assets/sprites/petuhi6.jpg" id="28_lg1vo"]
 [ext_resource type="Texture2D" uid="uid://5icqpjim6jls" path="res://assets/sprites/cherdak.jpg" id="29_ylrlq"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/death_zone.gd" id="34_7wm04"]
-[ext_resource type="Script" path="res://scenes/level1/cletka.gd" id="35_672wx"]
+[ext_resource type="Script" path="res://scenes/level1/scripts/cletka.gd" id="35_672wx"]
 [ext_resource type="Texture2D" uid="uid://c3qynq0vhdtkl" path="res://assets/sprites/venta1.png" id="35_ceqim"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/cinematic_bars.gd" id="35_i6cj1"]
 [ext_resource type="Texture2D" uid="uid://c4auuf82eijbg" path="res://assets/sprites/venta2.png" id="36_8grdf"]
@@ -10392,7 +10392,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(3994, 342)
+position = Vector2(75, 339)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1004, 334)
@@ -10816,7 +10816,7 @@ shape = SubResource("RectangleShape2D_7pnfd")
 [node name="Portals" type="Node2D" parent="."]
 
 [node name="VentPortal1" type="Area2D" parent="Portals"]
-position = Vector2(2377, 408)
+position = Vector2(2375, 408)
 script = ExtResource("18_8mly3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/VentPortal1"]
