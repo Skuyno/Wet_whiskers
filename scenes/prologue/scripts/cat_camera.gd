@@ -3,6 +3,9 @@ extends Camera2D
 var shake_intensity: float = 0.0
 var decay_rate: float = 2.0
 
+func _ready():
+	add_to_group("camera")
+
 func _process(delta):
 	shake_intensity = lerp(shake_intensity, 0.0, delta * decay_rate)
 	offset = Vector2(

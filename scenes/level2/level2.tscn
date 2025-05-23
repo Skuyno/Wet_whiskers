@@ -1,4 +1,4 @@
-[gd_scene load_steps=193 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=210 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -27,13 +27,17 @@
 [ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="17_xjwvj"]
 [ext_resource type="Texture2D" uid="uid://bkwjm3ulovx5m" path="res://assets/sprites/level2/спуск в метро.png" id="18_pyqev"]
 [ext_resource type="Texture2D" uid="uid://83o1f8y8rvix" path="res://assets/sprites/level2/мусорка.png" id="19_h6o8t"]
-[ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
+[ext_resource type="Texture2D" uid="uid://jo8m8od6smb0" path="res://assets/sprites/level2/af9965d4-0b4c-44d0-90b0-e1c3e2360a5a.png" id="19_n613e"]
+[ext_resource type="PackedScene" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="22_nld4c"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/NPC_walking.gd" id="24_0oo7j"]
 [ext_resource type="Texture2D" uid="uid://dm4f64ljdsdiw" path="res://assets/sprites/OldMan/OldMan_Idle.png" id="25_0tjac"]
 [ext_resource type="Texture2D" uid="uid://g7gq8ssfj4ja" path="res://assets/sprites/OldMan/OldMan_Walk.png" id="26_ob3tn"]
+[ext_resource type="AudioStream" uid="uid://c73duk7wrjkiu" path="res://assets/audioLayout/koshachiy-dom-zvuk-murlykaniya-koshki-ochen-rasslablyaet.mp3" id="27_05yur"]
 [ext_resource type="Texture2D" uid="uid://cds4uivrslo7n" path="res://assets/sprites/PeopleBoy3/PeopleBoy3_Talk.png" id="27_ls2n8"]
 [ext_resource type="Texture2D" uid="uid://bt4sy57uppgax" path="res://assets/sprites/FormalWoman/FormalWoman_Talk.png" id="27_r71wa"]
+[ext_resource type="AudioStream" uid="uid://cwhk3t2abylxb" path="res://assets/audioLayout/kot_-_myaukane.mp3" id="28_456u2"]
+[ext_resource type="AudioStream" uid="uid://dbufevdkwb2fn" path="res://assets/audioLayout/hope.mp3" id="29_guoa8"]
 [ext_resource type="Texture2D" uid="uid://o56qnk82k2v5" path="res://assets/sprites/FormalMan/FormalMan_Idle.png" id="29_lbsft"]
 [ext_resource type="Texture2D" uid="uid://bi318y7dut836" path="res://assets/sprites/FormalMan/FormalMan_Walk.png" id="30_o1ymr"]
 [ext_resource type="Texture2D" uid="uid://dcajxwa1llij6" path="res://assets/sprites/OldWoman/OldWoman_Idle.png" id="31_rbcx6"]
@@ -58,6 +62,15 @@
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="55_3iltf"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/Portal2.gd" id="56_i7iek"]
 [ext_resource type="Script" path="res://scenes/level2/finish_zone.gd" id="58_33f7h"]
+[ext_resource type="Texture2D" uid="uid://dbvuj8dwb234w" path="res://assets/sprites/level2/L_height.png" id="58_vop5s"]
+[ext_resource type="Texture2D" uid="uid://c5f2wv4hu4q4g" path="res://assets/sprites/level2/восп2.png" id="62_od6fk"]
+[ext_resource type="Texture2D" uid="uid://ce3vebhh177qn" path="res://assets/sprites/level2/восп3.png" id="63_wvcw6"]
+[ext_resource type="Texture2D" uid="uid://cwmcfick134km" path="res://assets/sprites/level2/восп4.png" id="64_vscaw"]
+[ext_resource type="Texture2D" uid="uid://lv1rgopkq3m4" path="res://assets/sprites/level2/восп5.png" id="65_2epkg"]
+[ext_resource type="Texture2D" uid="uid://6sagdeenea80" path="res://assets/sprites/level2/восп6.png" id="66_a8d3w"]
+[ext_resource type="Texture2D" uid="uid://u81bkpyoill" path="res://assets/sprites/level2/восп7.png" id="67_wu3iq"]
+[ext_resource type="Script" path="res://scenes/level2/ramka.gd" id="68_p50mf"]
+[ext_resource type="Texture2D" uid="uid://p148bs3hssvu" path="res://assets/sprites/level2/фото в рамке.png" id="69_81aky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2jy"]
 size = Vector2(275.303, 149.857)
@@ -3400,6 +3413,47 @@ size = Vector2(22.5, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nj7ai"]
 size = Vector2(52.25, 40.5)
 
+[sub_resource type="Animation" id="Animation_1itmu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v8mn3"]
+resource_name = "cletka"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.482353), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcn21"]
+_data = {
+"RESET": SubResource("Animation_1itmu"),
+"cletka": SubResource("Animation_v8mn3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ok61"]
+size = Vector2(26.625, 27.125)
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_j820d")
 
@@ -3413,8 +3467,8 @@ texture = ExtResource("2_lnwif")
 
 [node name="Фон3" type="Sprite2D" parent="Decorations"]
 z_index = -1
-position = Vector2(2365, 527)
-scale = Vector2(0.841192, 0.510812)
+position = Vector2(2382.74, 527)
+scale = Vector2(0.691846, 0.510812)
 texture = ExtResource("3_dycmv")
 
 [node name="Фон" type="Sprite2D" parent="Decorations"]
@@ -3487,7 +3541,7 @@ scale = Vector2(0.129964, 0.123291)
 texture = ExtResource("13_2vcag")
 
 [node name="Скамейка" type="Sprite2D" parent="Decorations"]
-position = Vector2(4169, 688)
+position = Vector2(4340, 687)
 scale = Vector2(0.210677, 0.231045)
 texture = ExtResource("14_7f56g")
 
@@ -3495,7 +3549,6 @@ texture = ExtResource("14_7f56g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Скамейка/Area2D"]
 position = Vector2(-0.00195313, -7.25122)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ma2jy")
 
 [node name="Киоск" type="Sprite2D" parent="Decorations"]
@@ -3515,7 +3568,7 @@ position = Vector2(0.78125, 0.616394)
 shape = SubResource("RectangleShape2D_l0cnk")
 
 [node name="Скамейка2" type="Sprite2D" parent="Decorations"]
-position = Vector2(4297, 688)
+position = Vector2(4515, 688)
 scale = Vector2(0.210677, 0.231045)
 texture = ExtResource("14_7f56g")
 
@@ -3523,7 +3576,6 @@ texture = ExtResource("14_7f56g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Скамейка2/Area2D"]
 position = Vector2(-0.00195313, -7.25122)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ma2jy")
 
 [node name="КофейняАхуенная" type="Sprite2D" parent="Decorations"]
@@ -3536,6 +3588,12 @@ texture = ExtResource("17_iy8h8")
 position = Vector2(5131, 622)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("18_pyqev")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Decorations"]
+z_index = -1
+position = Vector2(4291, 567)
+scale = Vector2(0.552944, 0.342495)
+texture = ExtResource("19_n613e")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kfkhg")
@@ -3553,6 +3611,19 @@ position = Vector2(-202, 605)
 
 [node name="Music" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("17_xjwvj")
+bus = &"Music"
+
+[node name="Murk" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("27_05yur")
+bus = &"Music"
+
+[node name="Myau" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("28_456u2")
+bus = &"Music"
+
+[node name="Memory" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("29_guoa8")
+bus = &"Music"
 
 [node name="Musoirka" type="Sprite2D" parent="."]
 z_index = 100
@@ -3745,7 +3816,7 @@ flip_h = true
 [node name="Skameuka_Businesmani" type="Node2D" parent="Peoplez"]
 
 [node name="FormalMan2" type="CharacterBody2D" parent="Peoplez/Skameuka_Businesmani"]
-position = Vector2(4233, 678)
+position = Vector2(4390, 678)
 script = ExtResource("44_rorpm")
 move_distance = 150.0
 
@@ -3766,7 +3837,7 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_1w3q4")
 
 [node name="FormalMan3" type="CharacterBody2D" parent="Peoplez/Skameuka_Businesmani"]
-position = Vector2(4238, 678)
+position = Vector2(4395, 678)
 script = ExtResource("44_rorpm")
 move_distance = 150.0
 
@@ -3787,7 +3858,7 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_1w3q4")
 
 [node name="FormalMan4" type="CharacterBody2D" parent="Peoplez/Skameuka_Businesmani"]
-position = Vector2(4243, 678)
+position = Vector2(4400, 678)
 script = ExtResource("44_rorpm")
 move_distance = 150.0
 
@@ -3808,7 +3879,7 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_1w3q4")
 
 [node name="FormalMan5" type="CharacterBody2D" parent="Peoplez/Skameuka_Businesmani"]
-position = Vector2(4248, 678)
+position = Vector2(4405, 678)
 script = ExtResource("44_rorpm")
 move_distance = 150.0
 
@@ -3829,7 +3900,7 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_1w3q4")
 
 [node name="FormalMan6" type="CharacterBody2D" parent="Peoplez/Skameuka_Businesmani"]
-position = Vector2(4253, 678)
+position = Vector2(4410, 678)
 script = ExtResource("44_rorpm")
 move_distance = 150.0
 
@@ -3907,6 +3978,11 @@ script = ExtResource("46_scdon")
 position = Vector2(-19.5, -10)
 shape = SubResource("RectangleShape2D_v4hue")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Dormitory"]
+position = Vector2(3181, 662)
+scale = Vector2(0.214999, 0.214999)
+texture = ExtResource("58_vop5s")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2045, 635)
 scale = Vector2(0.168688, 0.164179)
@@ -3968,6 +4044,45 @@ script = ExtResource("58_33f7h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
 position = Vector2(16.125, 0)
 shape = SubResource("RectangleShape2D_nj7ai")
+
+[node name="Ramka" type="Node2D" parent="."]
+position = Vector2(64, 533)
+script = ExtResource("68_p50mf")
+slides = Array[Texture2D]([ExtResource("62_od6fk"), ExtResource("63_wvcw6"), ExtResource("64_vscaw"), ExtResource("65_2epkg"), ExtResource("66_a8d3w"), ExtResource("67_wu3iq")])
+
+[node name="1" type="TextureRect" parent="Ramka"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -366.0
+offset_top = 3.0
+offset_right = 97.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("62_od6fk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Ramka"]
+position = Vector2(-124.625, 138.375)
+scale = Vector2(0.710938, 0.710938)
+texture = ExtResource("69_81aky")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ramka/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lcn21")
+}
+
+[node name="Area2D" type="Area2D" parent="Ramka"]
+position = Vector2(189, -302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramka/Area2D"]
+position = Vector2(-315, 444)
+shape = SubResource("RectangleShape2D_6ok61")
+one_way_collision_margin = 0.0
+debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 
 [connection signal="area_entered" from="Peoplez/Skameuka_Businesmani/FormalMan2/Area2D" to="Peoplez/Skameuka_Businesmani/FormalMan2" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Peoplez/Skameuka_Businesmani/FormalMan2/Area2D" to="Peoplez/Skameuka_Businesmani/FormalMan2" method="_on_area_2d_area_exited"]
