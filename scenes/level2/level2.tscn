@@ -1,4 +1,4 @@
-[gd_scene load_steps=210 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=226 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dxwqnti864863" path="res://assets/sprites/level2/image.png" id="8_wd2jg"]
 [ext_resource type="Texture2D" uid="uid://cyhospo6nuodx" path="res://assets/sprites/level2/Без-названия.jpg" id="9_b633t"]
 [ext_resource type="Texture2D" uid="uid://bqyy4xj0ofjip" path="res://assets/sprites/level2/аптека1.png" id="10_ai5cl"]
-[ext_resource type="Texture2D" uid="uid://d0amibrng72fg" path="res://assets/sprites/level2/переулок.png" id="12_dnp8c"]
+[ext_resource type="Texture2D" uid="uid://dvtd14hh72wp" path="res://assets/sprites/level2/Podvorotni-Peterburga.jpg" id="12_by6xl"]
 [ext_resource type="Texture2D" uid="uid://bhtp37n6oq016" path="res://assets/sprites/level2/бар.png" id="12_ly5ak"]
 [ext_resource type="Texture2D" uid="uid://cohf4cdul05cl" path="res://assets/sprites/level2/кофейня1.png" id="13_2vcag"]
 [ext_resource type="Texture2D" uid="uid://co4ujalr2bubu" path="res://assets/sprites/level2/скамейка.png" id="14_7f56g"]
@@ -28,12 +28,20 @@
 [ext_resource type="Texture2D" uid="uid://bkwjm3ulovx5m" path="res://assets/sprites/level2/спуск в метро.png" id="18_pyqev"]
 [ext_resource type="Texture2D" uid="uid://83o1f8y8rvix" path="res://assets/sprites/level2/мусорка.png" id="19_h6o8t"]
 [ext_resource type="Texture2D" uid="uid://jo8m8od6smb0" path="res://assets/sprites/level2/af9965d4-0b4c-44d0-90b0-e1c3e2360a5a.png" id="19_n613e"]
-[ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
+[ext_resource type="Texture2D" uid="uid://cxplvb1wjmkqf" path="res://assets/sprites/level2/куст1.png" id="20_yahq0"]
+[ext_resource type="Texture2D" uid="uid://6n43r0oaoxx8" path="res://assets/sprites/level2/дерево1.png" id="21_2ckhc"]
+[ext_resource type="PackedScene" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="22_nld4c"]
+[ext_resource type="Texture2D" uid="uid://pi8idohkh2xy" path="res://assets/sprites/level2/light1.png" id="22_t8cno"]
+[ext_resource type="Texture2D" uid="uid://8nrwlkjfsrg3" path="res://assets/sprites/level2/trashcan-pixel-art-vector.png" id="23_8dwe1"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/NPC_walking.gd" id="24_0oo7j"]
+[ext_resource type="Texture2D" uid="uid://dnascr7eyu3vx" path="res://assets/sprites/level2/мусорный пакет.png" id="24_e1won"]
 [ext_resource type="Texture2D" uid="uid://dm4f64ljdsdiw" path="res://assets/sprites/OldMan/OldMan_Idle.png" id="25_0tjac"]
+[ext_resource type="Texture2D" uid="uid://cuj5i0loxd2w2" path="res://assets/sprites/level2/662167a1905385802909bb537673e010.png" id="25_byfok"]
+[ext_resource type="Texture2D" uid="uid://dgkbmapuftuik" path="res://assets/sprites/level2/1.255.png" id="26_iu8kq"]
 [ext_resource type="Texture2D" uid="uid://g7gq8ssfj4ja" path="res://assets/sprites/OldMan/OldMan_Walk.png" id="26_ob3tn"]
 [ext_resource type="AudioStream" uid="uid://c73duk7wrjkiu" path="res://assets/audioLayout/koshachiy-dom-zvuk-murlykaniya-koshki-ochen-rasslablyaet.mp3" id="27_05yur"]
+[ext_resource type="Texture2D" uid="uid://xj2csufyxuo5" path="res://assets/sprites/level2/дерево3.png" id="27_fhvq6"]
 [ext_resource type="Texture2D" uid="uid://cds4uivrslo7n" path="res://assets/sprites/PeopleBoy3/PeopleBoy3_Talk.png" id="27_ls2n8"]
 [ext_resource type="Texture2D" uid="uid://bt4sy57uppgax" path="res://assets/sprites/FormalWoman/FormalWoman_Talk.png" id="27_r71wa"]
 [ext_resource type="AudioStream" uid="uid://cwhk3t2abylxb" path="res://assets/audioLayout/kot_-_myaukane.mp3" id="28_456u2"]
@@ -77,6 +85,30 @@ size = Vector2(275.303, 149.857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0cnk"]
 size = Vector2(145.313, 18.7671)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g33yv"]
+radius = 14.1421
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od30j"]
+size = Vector2(18.25, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sn6i"]
+size = Vector2(95.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q05us"]
+size = Vector2(55, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7rg3"]
+size = Vector2(59, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yca2j"]
+size = Vector2(20, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7l75"]
+size = Vector2(27, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_laumg"]
+radius = 7.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -3531,9 +3563,9 @@ texture = ExtResource("12_ly5ak")
 
 [node name="Переулок" type="Sprite2D" parent="Decorations"]
 z_index = -1
-position = Vector2(-77, 577)
-scale = Vector2(2.46, 3.025)
-texture = ExtResource("12_dnp8c")
+position = Vector2(-28, 564)
+scale = Vector2(0.71279, 0.8765)
+texture = ExtResource("12_by6xl")
 
 [node name="Кофейня1" type="Sprite2D" parent="Decorations"]
 position = Vector2(4644, 654)
@@ -3594,6 +3626,182 @@ z_index = -1
 position = Vector2(4291, 567)
 scale = Vector2(0.552944, 0.342495)
 texture = ExtResource("19_n613e")
+
+[node name="bush" type="StaticBody2D" parent="Decorations"]
+
+[node name="Sprite2D10" type="Sprite2D" parent="Decorations/bush"]
+z_index = 2
+position = Vector2(647, 691)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("20_yahq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/bush"]
+position = Vector2(646, 698)
+shape = SubResource("CircleShape2D_g33yv")
+
+[node name="bush2" type="StaticBody2D" parent="Decorations"]
+position = Vector2(-103, 0)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Decorations/bush2"]
+z_index = 2
+position = Vector2(647, 691)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("20_yahq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/bush2"]
+position = Vector2(645, 698)
+shape = SubResource("CircleShape2D_g33yv")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(397, 663)
+scale = Vector2(1, 1.19)
+texture = ExtResource("21_2ckhc")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(791, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations"]
+position = Vector2(936, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Decorations/StaticBody2D"]
+z_index = 2
+position = Vector2(1140, 682)
+scale = Vector2(0.0438774, 0.0438774)
+texture = ExtResource("23_8dwe1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D"]
+z_index = 2
+position = Vector2(1141, 681)
+shape = SubResource("RectangleShape2D_od30j")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(1066, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="fonar" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(1421, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="Pipe" parent="Decorations/fonar" instance=ExtResource("16_ty33p")]
+z_index = -1
+position = Vector2(-21.3502, -87.4339)
+scale = Vector2(0.508337, 0.404128)
+
+[node name="Pipe2" parent="Decorations/fonar" instance=ExtResource("16_ty33p")]
+z_index = -1
+position = Vector2(-21.3502, -61.0004)
+scale = Vector2(0.508337, 0.404128)
+
+[node name="Sprite2D14" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(2567, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(2330, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(1816, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(2815, 795)
+scale = Vector2(1.9672, 1.9672)
+texture = ExtResource("22_t8cno")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Decorations"]
+position = Vector2(2605, 693)
+scale = Vector2(0.178169, 0.178169)
+texture = ExtResource("24_e1won")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Decorations"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Decorations/StaticBody2D2"]
+z_index = 20
+position = Vector2(1257, 654)
+scale = Vector2(0.323878, 0.323878)
+texture = ExtResource("25_byfok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D2"]
+z_index = 2
+position = Vector2(1233.25, 692)
+shape = SubResource("RectangleShape2D_0sn6i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decorations/StaticBody2D2"]
+z_index = 2
+position = Vector2(1306, 625)
+rotation = -0.345575
+shape = SubResource("RectangleShape2D_q05us")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Decorations/StaticBody2D2"]
+z_index = 2
+position = Vector2(1261, 653)
+rotation = -0.692896
+shape = SubResource("RectangleShape2D_l7rg3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Decorations/StaticBody2D2"]
+z_index = 2
+position = Vector2(1318, 672)
+shape = SubResource("RectangleShape2D_yca2j")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Decorations"]
+position = Vector2(14, -10)
+
+[node name="Sprite2D19" type="Sprite2D" parent="Decorations/StaticBody2D3"]
+z_index = 20
+position = Vector2(1148.17, 711.075)
+scale = Vector2(0.0333555, 0.0333555)
+texture = ExtResource("26_iu8kq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D3"]
+z_index = 2
+position = Vector2(1147.5, 719)
+shape = SubResource("RectangleShape2D_k7l75")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decorations/StaticBody2D3"]
+z_index = 20
+position = Vector2(1148, 706)
+shape = SubResource("CircleShape2D_laumg")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Decorations"]
+z_index = 1
+position = Vector2(1897, 671)
+texture = ExtResource("27_fhvq6")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(1812, 680)
+texture = ExtResource("27_fhvq6")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Decorations"]
+z_index = 1
+position = Vector2(2115, 672)
+texture = ExtResource("27_fhvq6")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(2199, 679)
+texture = ExtResource("27_fhvq6")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(1976, 680)
+texture = ExtResource("27_fhvq6")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kfkhg")
@@ -3715,7 +3923,8 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_2fotm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/OldWoman"]
-position = Vector2(-38, -28)
+position = Vector2(1.25, -50)
+scale = Vector2(1.42578, 1.42578)
 sprite_frames = SubResource("SpriteFrames_fkvxv")
 animation = &"lezhit"
 autoplay = "lezhit"
@@ -3730,6 +3939,7 @@ script = ExtResource("24_0oo7j")
 shape = SubResource("RectangleShape2D_nxaq7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/Boy"]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_u2wl8")
 animation = &"walk"
 
@@ -3930,6 +4140,7 @@ position = Vector2(2.25, 3)
 shape = SubResource("RectangleShape2D_qbelt")
 
 [node name="Dormitory" type="Node2D" parent="."]
+position = Vector2(121, 0)
 script = ExtResource("40_ogepr")
 item_scenes = Array[PackedScene]([ExtResource("41_r3xb8"), ExtResource("41_3fmfw"), ExtResource("43_hbogo"), ExtResource("44_pxhdf")])
 
@@ -4055,9 +4266,9 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -366.0
+offset_left = -373.0
 offset_top = 3.0
-offset_right = 97.0
+offset_right = 90.0
 offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4066,7 +4277,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Ramka"]
-position = Vector2(-124.625, 138.375)
+position = Vector2(-133.625, 168.375)
 scale = Vector2(0.710938, 0.710938)
 texture = ExtResource("69_81aky")
 
@@ -4076,7 +4287,7 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="Ramka"]
-position = Vector2(189, -302)
+position = Vector2(180, -272)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramka/Area2D"]
 position = Vector2(-315, 444)
