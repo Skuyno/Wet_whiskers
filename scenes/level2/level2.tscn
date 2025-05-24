@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://jo8m8od6smb0" path="res://assets/sprites/level2/af9965d4-0b4c-44d0-90b0-e1c3e2360a5a.png" id="19_n613e"]
 [ext_resource type="Texture2D" uid="uid://cxplvb1wjmkqf" path="res://assets/sprites/level2/куст1.png" id="20_yahq0"]
 [ext_resource type="Texture2D" uid="uid://6n43r0oaoxx8" path="res://assets/sprites/level2/дерево1.png" id="21_2ckhc"]
-[ext_resource type="PackedScene" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
+[ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="22_nld4c"]
 [ext_resource type="Texture2D" uid="uid://pi8idohkh2xy" path="res://assets/sprites/level2/light1.png" id="22_t8cno"]
 [ext_resource type="Texture2D" uid="uid://8nrwlkjfsrg3" path="res://assets/sprites/level2/trashcan-pixel-art-vector.png" id="23_8dwe1"]
