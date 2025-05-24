@@ -29,7 +29,7 @@ func _on_body_exited(body):
 
 func start_teleport():
 	var cat = get_node("../../Cat")  # Или другой способ получить кота
-	var target = get_node("../VentPortal4")
+	var target = get_node("../VentPortal3")
 	
 	if cat and target:
 		# Анимация телепортации
