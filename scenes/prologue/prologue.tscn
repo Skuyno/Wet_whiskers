@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://dow4mhq7xg12"]
+[gd_scene load_steps=141 format=3 uid="uid://dow4mhq7xg12"]
 
 [ext_resource type="Script" path="res://scenes/prologue/scripts/prologue.gd" id="1_okm7e"]
 [ext_resource type="Texture2D" uid="uid://brs87ab8hc153" path="res://assets/sprites/back1.png" id="2_bgqa3"]
@@ -41,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://dolhgapgdjboy" path="res://assets/sounds/meow2.mp3" id="35_i6wkx"]
 [ext_resource type="AudioStream" uid="uid://bw8yfthlcnqgl" path="res://assets/audioLayout/my head is empty - i was only temporary 2 u.mp3" id="38_nwj3r"]
 [ext_resource type="Texture2D" uid="uid://cwe4fevi7q46c" path="res://assets/sprites/mocha1.jpg" id="40_a78tu"]
+[ext_resource type="AudioStream" uid="uid://b6u4vml7vr3jo" path="res://assets/sounds/level3/prostoy-korotkiy-shag-po-asfaltu.mp3" id="40_scd6t"]
 [ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="41_ckcyc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skvdy"]
@@ -2460,6 +2461,11 @@ bus = &"Sfx"
 stream = ExtResource("38_nwj3r")
 volume_db = -10.0
 bus = &"Music"
+
+[node name="Walk" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("40_scd6t")
+volume_db = 24.0
+parameters/looping = true
 
 [node name="Rains" type="Node2D" parent="."]
 

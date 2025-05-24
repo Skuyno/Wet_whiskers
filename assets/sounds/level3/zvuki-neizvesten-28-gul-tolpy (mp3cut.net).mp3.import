@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brujplws35jms"
+path="res://.godot/imported/zvuki-neizvesten-28-gul-tolpy (mp3cut.net).mp3-96b065044ce4478844f581fda4c2728b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/level3/zvuki-neizvesten-28-gul-tolpy (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/zvuki-neizvesten-28-gul-tolpy (mp3cut.net).mp3-96b065044ce4478844f581fda4c2728b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

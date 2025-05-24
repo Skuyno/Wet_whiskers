@@ -30,6 +30,7 @@ enum State {
 @onready var carry_position = $CarryPosition  # Маркер позиции в зубах
 @onready var cat_collision = $CatCollision
 @onready var item_parent = get_tree().current_scene
+@onready var footstep_sound = get_node_or_null("/root/prologue/AudioPlayers/Walk")
 
 # Системные переменные
 var is_climbing_possible = false
@@ -46,6 +47,7 @@ var carried_item: RigidBody2D = null
 var original_item_collision_layer: int
 var original_item_parent: Node
 var locked: bool = false
+var can_play_footstep = true
 
 func _ready():
 	# Инициализация таймера неуязвимости
@@ -80,12 +82,16 @@ func _physics_process(delta):
 			handle_damaged_state(global_position)
 		State.INTERACTION:
 			handle_interaction_state()
+	if is_on_floor() and (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
+		if footstep_sound and not footstep_sound.playing:
+			footstep_sound.play()
 	
 	# Применяем движение
 	move_and_slide()
 	
 	# Обновляем анимации
 	update_animations()
+	
 
 func handle_normal_state(delta):
 	if locked:
