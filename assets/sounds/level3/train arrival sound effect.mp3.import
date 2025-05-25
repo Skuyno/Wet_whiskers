@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dejeq8kkoaxeb"
+path="res://.godot/imported/train arrival sound effect.mp3-a06c528da560c5385375e4534d130b3a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/level3/train arrival sound effect.mp3"
+dest_files=["res://.godot/imported/train arrival sound effect.mp3-a06c528da560c5385375e4534d130b3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
