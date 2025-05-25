@@ -5,6 +5,7 @@ var save_path = "res://savegame.save"
 
 
 func _ready():
+	$Sounds/Music.play()
 	Global.game_over.connect(show_death_screen)
 	
 

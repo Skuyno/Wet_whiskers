@@ -3984,7 +3984,6 @@ script = ExtResource("37_60vb8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Sprite2D32/шишки"]
 position = Vector2(166.667, 606.668)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_upn1l")
 
 [node name="Фон5" type="Sprite2D" parent="Decorations"]
@@ -4062,6 +4061,7 @@ bus = &"Sfx"
 
 [node name="ecsc" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("47_rwc8f")
+volume_db = 0.108
 bus = &"Sfx"
 
 [node name="razgovor" type="AudioStreamPlayer" parent="Sounds"]
