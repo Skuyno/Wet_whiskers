@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsgn2khjdtvcf"]
+[gd_scene load_steps=4 format=3 uid="uid://dsgn2khjdtvcf"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/car.gd" id="1_ls2bw"]
+[ext_resource type="AudioStream" uid="uid://k0y4nqqwva86" path="res://assets/sounds/level2/237375__squareal__car-crash.mp3" id="2_jn51k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yga2"]
 
@@ -14,6 +15,9 @@ position = Vector2(8, 11)
 shape = SubResource("RectangleShape2D_7yga2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CrashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jn51k")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

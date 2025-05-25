@@ -46,4 +46,6 @@ func _update_scale(current_scale: float):
 
 func _on_body_entered(body):
 	if body.name == "Cat" and collision_active:
+		$CrashSound.play()
+		await get_tree().create_timer(0.25).timeout
 		Global.lose_life()

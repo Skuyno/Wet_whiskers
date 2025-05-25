@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bbbdamk3bu3a7"]
+[gd_scene load_steps=48 format=3 uid="uid://bbbdamk3bu3a7"]
 
 [ext_resource type="Texture2D" uid="uid://cljyk6uel2a0f" path="res://assets/sprites/level3/лярвы.png" id="1_48iu7"]
 [ext_resource type="Texture2D" uid="uid://cti8rbou3otnc" path="res://assets/sprites/level3/тайл1.png" id="1_eksye"]
@@ -28,6 +28,9 @@
 [ext_resource type="Script" path="res://scenes/level3/vent_portal_4.gd" id="23_ywqhu"]
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="27_r2vle"]
 [ext_resource type="Texture2D" uid="uid://cql27ncolmu5y" path="res://assets/sprites/level3/водка3.png" id="28_vnibv"]
+[ext_resource type="Script" path="res://scenes/level3/scripts/train.gd" id="29_ksbjy"]
+[ext_resource type="Texture2D" uid="uid://c48rbmr4ip0wv" path="res://assets/sprites/level3/carriage_v18_car7.png" id="30_a4d1t"]
+[ext_resource type="AudioStream" uid="uid://b66eegra4j38f" path="res://assets/sounds/level3/mixkit-distant-train-horn-1654.wav" id="31_dby7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7le0"]
 texture = ExtResource("1_eksye")
@@ -255,7 +258,7 @@ texture = ExtResource("4_3b2dh")
 
 [node name="Cat" parent="." instance=ExtResource("8_wp7j5")]
 z_index = 1
-position = Vector2(374, 90)
+position = Vector2(645, 705)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -381,3 +384,13 @@ shape = SubResource("RectangleShape2D_05t6m")
 position = Vector2(2255, 90)
 scale = Vector2(0.0230583, 0.0201923)
 texture = ExtResource("28_vnibv")
+
+[node name="Train" type="Path2D" parent="."]
+position = Vector2(-500, 845)
+script = ExtResource("29_ksbjy")
+
+[node name="TrainSprite" type="Sprite2D" parent="Train"]
+texture = ExtResource("30_a4d1t")
+
+[node name="HornPlayer" type="AudioStreamPlayer" parent="Train"]
+stream = ExtResource("31_dby7u")
