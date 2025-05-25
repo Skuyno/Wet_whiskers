@@ -407,7 +407,6 @@ texture = ExtResource("30_uvrag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Train/TrainSprite/Hitbox"]
 position = Vector2(-50.4, -60.8)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ss5ni")
 
 [node name="HornPlayer1" type="AudioStreamPlayer" parent="Train"]
