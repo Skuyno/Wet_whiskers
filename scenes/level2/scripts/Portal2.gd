@@ -33,6 +33,7 @@ func start_teleport():
 	
 	if cat and target:
 		# Анимация телепортации
+		$"../../Sounds/zvon".play()
 		cat.global_position = target.global_position
 	
 	reset_progress()

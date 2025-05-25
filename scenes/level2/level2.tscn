@@ -1,19 +1,18 @@
-[gd_scene load_steps=265 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=287 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
 [ext_resource type="Texture2D" uid="uid://dsbusfofaxuji" path="res://assets/sprites/level2/тайлсет (6).png" id="2_jk3wu"]
-[ext_resource type="Texture2D" uid="uid://c7craporcscww" path="res://assets/sprites/level2/1633877933_40-pro-dachnikov-com-p-doma-pitera-foto-45.jpg" id="2_lnwif"]
-[ext_resource type="Texture2D" uid="uid://b1fl0meiwdrfi" path="res://assets/sprites/level2/thumb0_597-611385.jpg" id="3_4idwb"]
+[ext_resource type="Texture2D" uid="uid://du5ng74rrd5ao" path="res://assets/sprites/level2/14.png" id="2_o35hu"]
 [ext_resource type="PackedScene" uid="uid://du8ctq3i01nna" path="res://scenes/objects/cat.tscn" id="3_ajq7l"]
-[ext_resource type="Texture2D" uid="uid://cke0lg5tocsow" path="res://assets/sprites/level2/1633877877_71-pro-dachnikov-com-p-doma-pitera-foto-78.jpg" id="3_dycmv"]
+[ext_resource type="Texture2D" uid="uid://c8nlgy4h665d6" path="res://assets/sprites/level2/18.png" id="3_dwief"]
 [ext_resource type="Texture2D" uid="uid://bsvjif6ww8igb" path="res://assets/sprites/level2/дом3тайл.png" id="3_hkv6t"]
-[ext_resource type="Texture2D" uid="uid://coe4f3s1gtuu8" path="res://assets/sprites/level2/жижа.jpg" id="3_kcptu"]
 [ext_resource type="Texture2D" uid="uid://bp3yhix7f2abb" path="res://assets/sprites/level2/дом1.png" id="4_fuiau"]
 [ext_resource type="Texture2D" uid="uid://bq0h7eunulsia" path="res://assets/sprites/level2/дом4.png" id="4_o7v12"]
 [ext_resource type="Texture2D" uid="uid://chnmhsi41p1lg" path="res://assets/sprites/level1/london_window.png" id="5_bv8ta"]
 [ext_resource type="Texture2D" uid="uid://e1ouah80padq" path="res://assets/sprites/level2/асв.png" id="5_e6tx4"]
 [ext_resource type="Texture2D" uid="uid://drkojs0m6wbcq" path="res://assets/sprites/level2/дом2.png" id="5_ro1t7"]
+[ext_resource type="Texture2D" uid="uid://bwdfsxj2qadpn" path="res://assets/sprites/level2/11.png" id="5_yc76p"]
 [ext_resource type="Texture2D" uid="uid://dxwqnti864863" path="res://assets/sprites/level2/image.png" id="8_wd2jg"]
 [ext_resource type="Texture2D" uid="uid://cyhospo6nuodx" path="res://assets/sprites/level2/Без-названия.jpg" id="9_b633t"]
 [ext_resource type="Texture2D" uid="uid://bqyy4xj0ofjip" path="res://assets/sprites/level2/аптека1.png" id="10_ai5cl"]
@@ -26,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://jt3k28vhwiol" path="res://assets/sprites/level2/кофейня ахуенная.png" id="17_iy8h8"]
 [ext_resource type="Texture2D" uid="uid://bkwjm3ulovx5m" path="res://assets/sprites/level2/спуск в метро.png" id="18_pyqev"]
 [ext_resource type="Texture2D" uid="uid://83o1f8y8rvix" path="res://assets/sprites/level2/мусорка.png" id="19_h6o8t"]
-[ext_resource type="Texture2D" uid="uid://jo8m8od6smb0" path="res://assets/sprites/level2/af9965d4-0b4c-44d0-90b0-e1c3e2360a5a.png" id="19_n613e"]
+[ext_resource type="Texture2D" uid="uid://b1rfl0foy8njd" path="res://assets/sprites/level2/12.png" id="19_k24qi"]
 [ext_resource type="Texture2D" uid="uid://cxplvb1wjmkqf" path="res://assets/sprites/level2/куст1.png" id="20_yahq0"]
 [ext_resource type="Texture2D" uid="uid://6n43r0oaoxx8" path="res://assets/sprites/level2/дерево1.png" id="21_2ckhc"]
 [ext_resource type="PackedScene" uid="uid://dpi7qmiburrdd" path="res://scenes/objects/car_spawner.tscn" id="21_oe3yw"]
@@ -40,29 +39,32 @@
 [ext_resource type="Texture2D" uid="uid://dgkbmapuftuik" path="res://assets/sprites/level2/1.255.png" id="26_iu8kq"]
 [ext_resource type="Texture2D" uid="uid://g7gq8ssfj4ja" path="res://assets/sprites/OldMan/OldMan_Walk.png" id="26_ob3tn"]
 [ext_resource type="AudioStream" uid="uid://c73duk7wrjkiu" path="res://assets/audioLayout/koshachiy-dom-zvuk-murlykaniya-koshki-ochen-rasslablyaet.mp3" id="27_05yur"]
+[ext_resource type="Texture2D" uid="uid://byk4pcmy52smh" path="res://assets/sprites/level2/15.png" id="27_ew65r"]
 [ext_resource type="Texture2D" uid="uid://xj2csufyxuo5" path="res://assets/sprites/level2/дерево3.png" id="27_fhvq6"]
 [ext_resource type="Texture2D" uid="uid://cds4uivrslo7n" path="res://assets/sprites/PeopleBoy3/PeopleBoy3_Talk.png" id="27_ls2n8"]
 [ext_resource type="Texture2D" uid="uid://bt4sy57uppgax" path="res://assets/sprites/FormalWoman/FormalWoman_Talk.png" id="27_r71wa"]
 [ext_resource type="AudioStream" uid="uid://cwhk3t2abylxb" path="res://assets/audioLayout/kot_-_myaukane.mp3" id="28_456u2"]
-[ext_resource type="Texture2D" uid="uid://drn5hhbfry2ka" path="res://assets/sprites/level2/ga11_104688_Мойка78 (1).jpg" id="28_hxsuk"]
+[ext_resource type="Texture2D" uid="uid://2yr8uwi8w6b6" path="res://assets/sprites/level2/13.png" id="29_4n4ck"]
 [ext_resource type="Texture2D" uid="uid://blicarbfn7u7f" path="res://assets/sprites/level2/адмиралка1.bmp" id="29_fxni5"]
 [ext_resource type="AudioStream" uid="uid://dbufevdkwb2fn" path="res://assets/audioLayout/hope.mp3" id="29_guoa8"]
 [ext_resource type="Texture2D" uid="uid://o56qnk82k2v5" path="res://assets/sprites/FormalMan/FormalMan_Idle.png" id="29_lbsft"]
-[ext_resource type="Texture2D" uid="uid://clkembuu3eo25" path="res://assets/sprites/level2/141m.jpg" id="29_s77e3"]
-[ext_resource type="Texture2D" uid="uid://cjrj1laqe1ov4" path="res://assets/sprites/level2/img_4809.jpg" id="30_mo6fa"]
+[ext_resource type="Texture2D" uid="uid://buuik0yrf7q62" path="res://assets/sprites/level2/16.png" id="30_n7sah"]
 [ext_resource type="Texture2D" uid="uid://bi318y7dut836" path="res://assets/sprites/FormalMan/FormalMan_Walk.png" id="30_o1ymr"]
 [ext_resource type="Texture2D" uid="uid://bas4chipgq3dv" path="res://assets/sprites/level2/1670786184_grizly-club-p-derevo-na-prozrachnom-fone-png-1.png" id="31_7g2dl"]
 [ext_resource type="Texture2D" uid="uid://dcajxwa1llij6" path="res://assets/sprites/OldWoman/OldWoman_Idle.png" id="31_rbcx6"]
 [ext_resource type="Texture2D" uid="uid://derdajvr1w4fq" path="res://assets/sprites/OldWoman/OldWoman_Death.png" id="32_8w0dh"]
+[ext_resource type="Texture2D" uid="uid://ccm1qqf8lnn5w" path="res://assets/sprites/level2/17.jpg" id="32_r11sb"]
 [ext_resource type="Texture2D" uid="uid://cpn7dnovk7i3p" path="res://assets/sprites/OldWoman/OldWoman_Walk.png" id="33_3b7xc"]
-[ext_resource type="Texture2D" uid="uid://yyt7kp8g8wpp" path="res://assets/sprites/level2/Moskovskij-vokzal.jpg" id="33_7ceoj"]
 [ext_resource type="Texture2D" uid="uid://detjtl1qwlfbx" path="res://assets/sprites/level2/foni-papik-pro-fzrk-p-kartinki-stolb-na-prozrachnom-fone-1.png" id="34_1l3tp"]
 [ext_resource type="Texture2D" uid="uid://dq04wacue40da" path="res://assets/sprites/PeopleBoy/PeopleBoy_Idle.png" id="34_2vs18"]
+[ext_resource type="Texture2D" uid="uid://b4ifs4nbew8kb" path="res://assets/sprites/level2/дерево2.png" id="35_dek6n"]
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="35_kjlgl"]
 [ext_resource type="Texture2D" uid="uid://btno8a4nabs25" path="res://assets/sprites/PeopleBoy2/PeopleBoy2_Talk.png" id="35_ktb52"]
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="36_6dbrd"]
 [ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="36_15sxf"]
 [ext_resource type="Texture2D" uid="uid://yj8v5mln768y" path="res://assets/sprites/OldWoman1/OldWoman1_Walk.png" id="36_bnpkb"]
+[ext_resource type="Texture2D" uid="uid://dx632v0hkcsmd" path="res://assets/sprites/level2/foni-papik-pro-tvf5-p-kartinki-radio-na-prozrachnom-fone-19.png" id="36_oep15"]
+[ext_resource type="Script" path="res://scenes/level2/шишки.gd" id="37_60vb8"]
 [ext_resource type="Texture2D" uid="uid://dftssc5hlntau" path="res://assets/sprites/OldWoman1/OldWoman1_Idle.png" id="37_ss8u4"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/dormitory.gd" id="40_ogepr"]
 [ext_resource type="AudioStream" uid="uid://c7m6ia34npkak" path="res://assets/audioLayout/birthofahero (mp3cut.net).mp3" id="40_v8sle"]
@@ -87,16 +89,26 @@
 [ext_resource type="Script" path="res://scenes/level2/scripts/Portal1.gd" id="54_b7pak"]
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="55_3iltf"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/Portal2.gd" id="56_i7iek"]
+[ext_resource type="AudioStream" uid="uid://b3fpxsfumtnep" path="res://assets/sounds/level2/zvuk-zvuki-hrapa-vcherashney-nochi.mp3" id="57_rkjjg"]
 [ext_resource type="Script" path="res://scenes/level2/finish_zone.gd" id="58_33f7h"]
+[ext_resource type="AudioStream" uid="uid://vxg2i81kfjc0" path="res://assets/sounds/level2/mujskoy-golos-20.mp3" id="58_fs11r"]
 [ext_resource type="Texture2D" uid="uid://dbvuj8dwb234w" path="res://assets/sprites/level2/L_height.png" id="58_vop5s"]
+[ext_resource type="AudioStream" uid="uid://dh6b2xnb1ynnq" path="res://assets/sounds/level3/летний вечер.mp3" id="61_rdd0q"]
+[ext_resource type="AudioStream" uid="uid://bfqng14s1n3ac" path="res://assets/sounds/level2/morning-meadow-birdsongs-looping_zyb7nhnu.mp3" id="62_55emt"]
 [ext_resource type="Texture2D" uid="uid://c5f2wv4hu4q4g" path="res://assets/sprites/level2/восп2.png" id="62_od6fk"]
+[ext_resource type="AudioStream" uid="uid://d3kq0p3vi4r5f" path="res://assets/sounds/level2/zvuki-cheloveka-beg-dvuh-lyudey.mp3" id="63_e1fje"]
 [ext_resource type="Texture2D" uid="uid://ce3vebhh177qn" path="res://assets/sprites/level2/восп3.png" id="63_wvcw6"]
+[ext_resource type="AudioStream" uid="uid://cn6gd8a3unwy" path="res://assets/sounds/level2/1df6aa89c959ce1.mp3" id="64_gix7x"]
+[ext_resource type="AudioStream" uid="uid://crobk6xbyufv5" path="res://assets/sounds/level2/salamisound-6919184-heavy-rain-with-thunderstorm.mp3" id="64_mgets"]
 [ext_resource type="Texture2D" uid="uid://cwmcfick134km" path="res://assets/sprites/level2/восп4.png" id="64_vscaw"]
 [ext_resource type="Texture2D" uid="uid://lv1rgopkq3m4" path="res://assets/sprites/level2/восп5.png" id="65_2epkg"]
+[ext_resource type="AudioStream" uid="uid://ob431pq0jpto" path="res://assets/sounds/level2/gluhoe-padenie-v-pesok.mp3" id="65_cyaxt"]
 [ext_resource type="Texture2D" uid="uid://6sagdeenea80" path="res://assets/sprites/level2/восп6.png" id="66_a8d3w"]
 [ext_resource type="Texture2D" uid="uid://u81bkpyoill" path="res://assets/sprites/level2/восп7.png" id="67_wu3iq"]
 [ext_resource type="Script" path="res://scenes/level2/ramka.gd" id="68_p50mf"]
 [ext_resource type="Texture2D" uid="uid://p148bs3hssvu" path="res://assets/sprites/level2/фото в рамке.png" id="69_81aky"]
+[ext_resource type="Script" path="res://scenes/level2/xraaaaap.gd" id="78_sdcjd"]
+[ext_resource type="Script" path="res://scenes/level2/krik.gd" id="80_sbv5c"]
 [ext_resource type="Texture2D" uid="uid://bqhb66wk3kcxe" path="res://assets/sprites/level2/восп_тарелкв.png" id="81_n1xvw"]
 [ext_resource type="Script" path="res://scenes/level2/plate.gd" id="81_yo4ud"]
 [ext_resource type="Texture2D" uid="uid://b8bbsrctntnwj" path="res://assets/sprites/level2/воспоминание с тарелкой1.png" id="82_yb48s"]
@@ -109,6 +121,10 @@
 [ext_resource type="Script" path="res://scenes/level2/escavator.gd" id="99_rr4qt"]
 [ext_resource type="Script" path="res://scenes/level2/biblmuzh.gd" id="101_7npvi"]
 [ext_resource type="Script" path="res://scenes/level2/kiosk.gd" id="106_43wq5"]
+[ext_resource type="Script" path="res://scenes/level2/ptitsi.gd" id="119_3froa"]
+[ext_resource type="Script" path="res://scenes/level2/topot.gd" id="121_0cubj"]
+[ext_resource type="PackedScene" uid="uid://cfech1f5l2ybb" path="res://scenes/objects/rain.tscn" id="122_whv62"]
+[ext_resource type="Script" path="res://scenes/level2/rainsound.gd" id="124_o5n37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2jy"]
 size = Vector2(275.303, 149.857)
@@ -139,6 +155,9 @@ size = Vector2(27, 8)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_laumg"]
 radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upn1l"]
+size = Vector2(1400, 1675.55)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -3454,8 +3473,14 @@ size = Vector2(30, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2ab"]
 size = Vector2(20, 9.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnqml"]
+size = Vector2(99, 38.125)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqr32"]
-size = Vector2(20, 52)
+size = Vector2(16, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4ig"]
+size = Vector2(18, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gt50"]
 size = Vector2(26, 50)
@@ -3543,6 +3568,15 @@ size = Vector2(299, 72)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2xe2"]
 size = Vector2(190, 98)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnxnq"]
+size = Vector2(934.5, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_371jk"]
+size = Vector2(343, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_648bx"]
+size = Vector2(5642.5, 321)
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_j820d")
 
@@ -3550,25 +3584,20 @@ script = ExtResource("1_j820d")
 
 [node name="Фон4" type="Sprite2D" parent="Decorations"]
 z_index = -1
-position = Vector2(717, 511)
-scale = Vector2(0.810418, 0.721801)
-texture = ExtResource("2_lnwif")
+position = Vector2(818, 564)
+scale = Vector2(0.373772, 0.332901)
+texture = ExtResource("2_o35hu")
 
 [node name="Фон3" type="Sprite2D" parent="Decorations"]
 z_index = -1
-position = Vector2(2382.74, 527)
-scale = Vector2(0.691846, 0.510812)
-texture = ExtResource("3_dycmv")
-
-[node name="Фон" type="Sprite2D" parent="Decorations"]
-z_index = -1
-position = Vector2(329, 537)
-scale = Vector2(1.92268, 1.67)
-texture = ExtResource("3_4idwb")
+position = Vector2(2416, 531)
+scale = Vector2(0.533203, 0.390625)
+texture = ExtResource("3_dwief")
 
 [node name="Фон2" type="Sprite2D" parent="Decorations"]
-position = Vector2(1659, 519)
-texture = ExtResource("3_kcptu")
+position = Vector2(1621.8, 529.531)
+scale = Vector2(0.385681, 0.385681)
+texture = ExtResource("5_yc76p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Decorations"]
 show_behind_parent = true
@@ -3686,7 +3715,7 @@ texture = ExtResource("18_pyqev")
 z_index = -1
 position = Vector2(4291, 567)
 scale = Vector2(0.552944, 0.342495)
-texture = ExtResource("19_n613e")
+texture = ExtResource("19_k24qi")
 
 [node name="bush" type="StaticBody2D" parent="Decorations"]
 
@@ -3866,32 +3895,33 @@ texture = ExtResource("27_fhvq6")
 
 [node name="Sprite2D23" type="Sprite2D" parent="Decorations"]
 z_index = -3
-position = Vector2(5182, 608)
-scale = Vector2(0.352339, 0.343199)
-texture = ExtResource("28_hxsuk")
+position = Vector2(5191, 619)
+scale = Vector2(0.258841, 0.252126)
+texture = ExtResource("27_ew65r")
 
 [node name="Sprite2D" type="Sprite2D" parent="Decorations/Sprite2D23"]
 z_index = 3
-position = Vector2(8.51498, 145.688)
-scale = Vector2(0.244301, 0.244301)
+position = Vector2(-27.0438, 154.685)
+scale = Vector2(0.290603, 0.290603)
 texture = ExtResource("29_fxni5")
 
 [node name="Sprite2D24" type="Sprite2D" parent="Decorations"]
 z_index = -3
-position = Vector2(998, 522)
-texture = ExtResource("3_kcptu")
+position = Vector2(1044, 522)
+scale = Vector2(0.369095, 0.369095)
+texture = ExtResource("5_yc76p")
 
 [node name="Sprite2D25" type="Sprite2D" parent="Decorations"]
 z_index = -3
-position = Vector2(2949, 631)
-scale = Vector2(0.278782, 0.278782)
-texture = ExtResource("29_s77e3")
+position = Vector2(2962, 639)
+scale = Vector2(0.245451, 0.245451)
+texture = ExtResource("29_4n4ck")
 
 [node name="Sprite2D26" type="Sprite2D" parent="Decorations"]
 z_index = -3
-position = Vector2(3586, 534)
-scale = Vector2(0.873134, 0.873134)
-texture = ExtResource("30_mo6fa")
+position = Vector2(3601, 508)
+scale = Vector2(0.631879, 0.631879)
+texture = ExtResource("30_n7sah")
 
 [node name="Sprite2D27" type="Sprite2D" parent="Decorations"]
 z_index = -1
@@ -3901,9 +3931,9 @@ texture = ExtResource("31_7g2dl")
 
 [node name="Sprite2D29" type="Sprite2D" parent="Decorations"]
 z_index = -5
-position = Vector2(4908, 606)
+position = Vector2(4895, 603)
 scale = Vector2(0.364748, 0.314017)
-texture = ExtResource("33_7ceoj")
+texture = ExtResource("32_r11sb")
 
 [node name="Sprite2D28" type="Sprite2D" parent="Decorations"]
 z_index = -1
@@ -3916,6 +3946,58 @@ z_index = -1
 position = Vector2(5069, 617)
 scale = Vector2(0.319293, 0.319293)
 texture = ExtResource("34_1l3tp")
+
+[node name="Sprite2D31" type="Sprite2D" parent="Decorations"]
+z_index = 1
+position = Vector2(2802, 673)
+texture = ExtResource("27_fhvq6")
+
+[node name="Sprite2D33" type="Sprite2D" parent="Decorations"]
+z_index = 1
+position = Vector2(3016, 673)
+texture = ExtResource("27_fhvq6")
+
+[node name="Sprite2D35" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(2893, 681)
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("35_dek6n")
+
+[node name="Sprite2D34" type="Sprite2D" parent="Decorations"]
+z_index = 1
+position = Vector2(3611, 670)
+texture = ExtResource("21_2ckhc")
+
+[node name="Sprite2D36" type="Sprite2D" parent="Decorations"]
+z_index = 2
+position = Vector2(3488, 684)
+scale = Vector2(1.72, 1.72)
+texture = ExtResource("35_dek6n")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Decorations"]
+position = Vector2(73, 677)
+scale = Vector2(0.015, 0.0173077)
+texture = ExtResource("36_oep15")
+
+[node name="шишки" type="Area2D" parent="Decorations/Sprite2D32"]
+script = ExtResource("37_60vb8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Sprite2D32/шишки"]
+position = Vector2(166.667, 606.668)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_upn1l")
+
+[node name="Фон5" type="Sprite2D" parent="Decorations"]
+z_index = -1
+position = Vector2(464, 564)
+scale = Vector2(0.373772, 0.332901)
+texture = ExtResource("2_o35hu")
+
+[node name="Фон6" type="Sprite2D" parent="Decorations"]
+z_index = -10
+position = Vector2(2104.8, 544.531)
+scale = Vector2(0.385681, 0.385681)
+texture = ExtResource("5_yc76p")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kfkhg")
@@ -3990,6 +4072,39 @@ bus = &"Sfx"
 stream = ExtResource("52_y2y7b")
 bus = &"Sfx"
 parameters/looping = true
+
+[node name="xrap" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("57_rkjjg")
+bus = &"Sfx"
+
+[node name="krik" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("58_fs11r")
+bus = &"Sfx"
+parameters/looping = true
+
+[node name="шишки" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("61_rdd0q")
+bus = &"Sfx"
+parameters/looping = false
+
+[node name="ptitsi" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("62_55emt")
+parameters/looping = true
+
+[node name="topot" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("63_e1fje")
+parameters/looping = true
+
+[node name="zvon" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("64_gix7x")
+
+[node name="rain" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("64_mgets")
+bus = &"Sfx"
+parameters/looping = true
+
+[node name="udar" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("65_cyaxt")
 
 [node name="Musoirka" type="Sprite2D" parent="."]
 z_index = 100
@@ -4162,16 +4277,31 @@ shape = SubResource("RectangleShape2D_fqyw0")
 position = Vector2(2713, 706)
 shape = SubResource("RectangleShape2D_ae2ab")
 
+[node name="xraaaaap" type="Area2D" parent="Peoplez/Бич у пивнухи"]
+script = ExtResource("78_sdcjd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Peoplez/Бич у пивнухи/xraaaaap"]
+position = Vector2(2698.5, 696.063)
+shape = SubResource("RectangleShape2D_mnqml")
+
 [node name="OldMan2" type="CharacterBody2D" parent="Peoplez"]
 position = Vector2(3736, 679)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Peoplez/OldMan2"]
+position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_sqr32")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Peoplez/OldMan2"]
 sprite_frames = SubResource("SpriteFrames_0rujy")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="KRIK" type="Area2D" parent="Peoplez/OldMan2"]
+script = ExtResource("80_sbv5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peoplez/OldMan2/KRIK"]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_tf4ig")
 
 [node name="FormalWomen2" type="CharacterBody2D" parent="Peoplez"]
 z_index = -1
@@ -4431,9 +4561,9 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -373.0
+offset_left = -379.0
 offset_top = 3.0
-offset_right = 90.0
+offset_right = 84.0
 offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -4551,6 +4681,46 @@ script = ExtResource("106_43wq5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kiosk"]
 position = Vector2(3769, 659)
 shape = SubResource("RectangleShape2D_l2xe2")
+
+[node name="ptitsi" type="Area2D" parent="."]
+script = ExtResource("119_3froa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ptitsi"]
+position = Vector2(2924.75, 668)
+shape = SubResource("RectangleShape2D_rnxnq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ptitsi"]
+position = Vector2(3858.5, 640)
+shape = SubResource("RectangleShape2D_rnxnq")
+
+[node name="topot" type="Area2D" parent="."]
+script = ExtResource("121_0cubj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topot"]
+position = Vector2(4499.5, 669.5)
+shape = SubResource("RectangleShape2D_371jk")
+
+[node name="Rain" parent="." instance=ExtResource("122_whv62")]
+position = Vector2(0, -99)
+
+[node name="Rain2" parent="." instance=ExtResource("122_whv62")]
+position = Vector2(1595, -99)
+
+[node name="Rain3" parent="." instance=ExtResource("122_whv62")]
+position = Vector2(3205, -99)
+
+[node name="Rain4" parent="." instance=ExtResource("122_whv62")]
+position = Vector2(4029, -99)
+
+[node name="Rain5" parent="." instance=ExtResource("122_whv62")]
+position = Vector2(-437, -99)
+
+[node name="RAINSOUND" type="Area2D" parent="."]
+script = ExtResource("124_o5n37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RAINSOUND"]
+position = Vector2(2594.75, 547.5)
+shape = SubResource("RectangleShape2D_648bx")
 
 [connection signal="area_entered" from="Peoplez/Skameuka_Businesmani/FormalMan2/Area2D" to="Peoplez/Skameuka_Businesmani/FormalMan2" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Peoplez/Skameuka_Businesmani/FormalMan2/Area2D" to="Peoplez/Skameuka_Businesmani/FormalMan2" method="_on_area_2d_area_exited"]

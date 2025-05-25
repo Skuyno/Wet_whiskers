@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://q80wha2v2bl6"]
+[gd_scene load_steps=7 format=3 uid="uid://q80wha2v2bl6"]
 
 [ext_resource type="Script" path="res://scenes/objects/FallenItems/falling_item.gd" id="1_cw4hi"]
 [ext_resource type="Texture2D" uid="uid://y6bokidb5pfs" path="res://assets/sprites/level2/горшок.png" id="1_en8vl"]
 [ext_resource type="Script" path="res://scenes/objects/FallenItems/area_2d.gd" id="3_tul3s"]
+[ext_resource type="AudioStream" uid="uid://ob431pq0jpto" path="res://assets/sounds/level2/gluhoe-padenie-v-pesok.mp3" id="4_b7ht8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmnrh"]
 size = Vector2(14, 15)
@@ -26,5 +27,8 @@ script = ExtResource("3_tul3s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_awp1v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_b7ht8")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

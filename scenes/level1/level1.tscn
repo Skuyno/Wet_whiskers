@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=171 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -72,6 +72,7 @@
 [ext_resource type="Script" path="res://scenes/level1/вентиляция_звук.gd" id="69_5uwgu"]
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="70_wo1yv"]
 [ext_resource type="Script" path="res://scenes/level1/шахта.gd" id="72_g6age"]
+[ext_resource type="PackedScene" uid="uid://cfech1f5l2ybb" path="res://scenes/objects/rain.tscn" id="73_6nxd7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -11415,6 +11416,17 @@ script = ExtResource("67_0r15o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="talksound2"]
 position = Vector2(3103, 329)
 shape = SubResource("RectangleShape2D_eqciv")
+
+[node name="Rain" parent="." instance=ExtResource("73_6nxd7")]
+
+[node name="Rain2" parent="." instance=ExtResource("73_6nxd7")]
+position = Vector2(1472, 4)
+
+[node name="Rain3" parent="." instance=ExtResource("73_6nxd7")]
+position = Vector2(2948, 4)
+
+[node name="Rain4" parent="." instance=ExtResource("73_6nxd7")]
+position = Vector2(4371, 3)
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
