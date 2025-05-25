@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=164 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -28,6 +28,8 @@
 [ext_resource type="AudioStream" uid="uid://cb7f63wfoktkh" path="res://assets/audioLayout/Autumn Allure _ unminus.com (mp3cut.net).mp3" id="19_3iaco"]
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="19_11k3g"]
 [ext_resource type="AudioStream" uid="uid://rg4wd0qyr4n5" path="res://assets/sounds/level1/c67441164110f45.mp3" id="20_b4vx5"]
+[ext_resource type="AudioStream" uid="uid://doavb3upcmwwm" path="res://assets/sounds/level3/talkking.mp3" id="21_kidg8"]
+[ext_resource type="AudioStream" uid="uid://bf4r6fxjsibit" path="res://assets/sounds/level3/вентиль.mp3" id="22_1mdh0"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_574w4"]
 [ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="22_aeq13"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/bread_zone.gd" id="23_ujg1b"]
@@ -65,6 +67,8 @@
 [ext_resource type="Texture2D" uid="uid://cx3v08jjl1l2n" path="res://assets/sprites/level1/straycats/cat№3/walk3-Sheet.png" id="58_sdjmu"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/finish_zone.gd" id="60_cphj5"]
 [ext_resource type="Texture2D" uid="uid://c2v05e3mn538s" path="res://assets/sprites/первое воспоминание.png" id="63_1755f"]
+[ext_resource type="Script" path="res://scenes/level1/talksound.gd" id="67_0r15o"]
+[ext_resource type="Script" path="res://scenes/level1/вентиляция_звук.gd" id="69_5uwgu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -10377,6 +10381,12 @@ point_count = 40
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyche"]
 size = Vector2(841, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqciv"]
+size = Vector2(197, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxkc8"]
+size = Vector2(52.5, 40)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_2ymuc")
 
@@ -10503,6 +10513,13 @@ stream = ExtResource("19_3iaco")
 
 [node name="ChaseMusic" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("20_b4vx5")
+
+[node name="talking" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_kidg8")
+
+[node name="ventilation" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("22_1mdh0")
+volume_db = -9.874
 
 [node name="Pigeons#Pigeon2" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
 position = Vector2(1177, 297)
@@ -11288,6 +11305,41 @@ script = ExtResource("60_cphj5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
 position = Vector2(5398.5, 727)
 shape = SubResource("RectangleShape2D_kyche")
+
+[node name="talksound" type="Area2D" parent="."]
+script = ExtResource("67_0r15o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="talksound"]
+position = Vector2(1741.5, 325.5)
+shape = SubResource("RectangleShape2D_eqciv")
+
+[node name="вентиляция звук" type="Area2D" parent="."]
+script = ExtResource("69_5uwgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="вентиляция звук"]
+position = Vector2(1039, 384)
+shape = SubResource("RectangleShape2D_yxkc8")
+
+[node name="вентиляция звук2" type="Area2D" parent="."]
+script = ExtResource("69_5uwgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="вентиляция звук2"]
+position = Vector2(3367, 398)
+shape = SubResource("RectangleShape2D_yxkc8")
+
+[node name="вентиляция звук3" type="Area2D" parent="."]
+script = ExtResource("69_5uwgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="вентиляция звук3"]
+position = Vector2(3523, 405)
+shape = SubResource("RectangleShape2D_yxkc8")
+
+[node name="вентиляция звук4" type="Area2D" parent="."]
+script = ExtResource("69_5uwgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="вентиляция звук4"]
+position = Vector2(3523, 405)
+shape = SubResource("RectangleShape2D_yxkc8")
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
