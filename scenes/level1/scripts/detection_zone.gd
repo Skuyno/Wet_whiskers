@@ -23,7 +23,7 @@ func _process(delta):
 	var target_intensity = 1.0 if (is_cat_detected) else 0.0
 	shake_intensity = lerp(shake_intensity, target_intensity, delta * 3.0)
 	
-	$"../Cat"/Camera2D.add_shake(shake_intensity/8)
+	$"../Cat"/Camera2D.add_shake(shake_intensity/16)
 
 func _on_body_exited(body):
 	if body.name == "Cat":

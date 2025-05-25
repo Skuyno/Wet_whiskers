@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://cm4lrw2l8gdh1"]
+[gd_scene load_steps=170 format=3 uid="uid://cm4lrw2l8gdh1"]
 
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://bf4r6fxjsibit" path="res://assets/sounds/level3/вентиль.mp3" id="22_1mdh0"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/angry_pigeon.gd" id="22_574w4"]
 [ext_resource type="PackedScene" uid="uid://dxjqi64qeecbp" path="res://scenes/objects/pipe.tscn" id="22_aeq13"]
+[ext_resource type="AudioStream" uid="uid://c7e03ltvwo3d7" path="res://assets/sounds/level3/gul.mp3" id="23_ueg4v"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/bread_zone.gd" id="23_ujg1b"]
 [ext_resource type="Texture2D" uid="uid://dq6ti3cd2igpu" path="res://assets/sprites/petuhi4.jpg" id="25_s38gv"]
 [ext_resource type="Texture2D" uid="uid://dtrnf01x5ulvl" path="res://assets/sprites/petuhi3.png" id="26_cvvhr"]
@@ -69,6 +70,8 @@
 [ext_resource type="Texture2D" uid="uid://c2v05e3mn538s" path="res://assets/sprites/первое воспоминание.png" id="63_1755f"]
 [ext_resource type="Script" path="res://scenes/level1/talksound.gd" id="67_0r15o"]
 [ext_resource type="Script" path="res://scenes/level1/вентиляция_звук.gd" id="69_5uwgu"]
+[ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="70_wo1yv"]
+[ext_resource type="Script" path="res://scenes/level1/шахта.gd" id="72_g6age"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2mn6"]
 texture = ExtResource("1_2d51u")
@@ -10387,6 +10390,15 @@ size = Vector2(197, 181)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxkc8"]
 size = Vector2(52.5, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvgkf"]
+size = Vector2(30, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh0gs"]
+size = Vector2(20, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av7av"]
+size = Vector2(67.5, 51)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_2ymuc")
 
@@ -10516,10 +10528,14 @@ stream = ExtResource("20_b4vx5")
 
 [node name="talking" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("21_kidg8")
+volume_db = 13.459
 
 [node name="ventilation" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("22_1mdh0")
 volume_db = -9.874
+
+[node name="гул" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("23_ueg4v")
 
 [node name="Bread" type="RigidBody2D" parent="." groups=["Items", "bread"]]
 position = Vector2(2191, 809)
@@ -11015,7 +11031,7 @@ shape = SubResource("RectangleShape2D_kyche")
 script = ExtResource("67_0r15o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="talksound"]
-position = Vector2(1741.5, 325.5)
+position = Vector2(1742, 334)
 shape = SubResource("RectangleShape2D_eqciv")
 
 [node name="вентиляция звук" type="Area2D" parent="."]
@@ -11342,6 +11358,63 @@ animation = &"nervous"
 frame = 1
 frame_progress = 0.563518
 script = ExtResource("15_ose14")
+
+[node name="Бич у пивнухи" type="StaticBody2D" parent="."]
+
+[node name="Бомж" type="Sprite2D" parent="Бич у пивнухи"]
+position = Vector2(3141, 411)
+scale = Vector2(0.354666, 0.354666)
+texture = ExtResource("70_wo1yv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Бич у пивнухи"]
+position = Vector2(3133, 412)
+shape = SubResource("RectangleShape2D_uvgkf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Бич у пивнухи"]
+position = Vector2(3156, 412)
+shape = SubResource("RectangleShape2D_gh0gs")
+
+[node name="шахта" type="Area2D" parent="."]
+script = ExtResource("72_g6age")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="шахта"]
+position = Vector2(284, 317)
+shape = SubResource("RectangleShape2D_av7av")
+
+[node name="шахта2" type="Area2D" parent="."]
+script = ExtResource("72_g6age")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="шахта2"]
+position = Vector2(1480, 407)
+shape = SubResource("RectangleShape2D_av7av")
+
+[node name="шахта3" type="Area2D" parent="."]
+script = ExtResource("72_g6age")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="шахта3"]
+position = Vector2(1686, 411)
+shape = SubResource("RectangleShape2D_av7av")
+
+[node name="шахта4" type="Area2D" parent="."]
+script = ExtResource("72_g6age")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="шахта4"]
+position = Vector2(2200, 405)
+shape = SubResource("RectangleShape2D_av7av")
+
+[node name="шахта5" type="Area2D" parent="."]
+script = ExtResource("72_g6age")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="шахта5"]
+position = Vector2(3432, 411)
+shape = SubResource("RectangleShape2D_av7av")
+
+[node name="talksound2" type="Area2D" parent="."]
+script = ExtResource("67_0r15o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="talksound2"]
+position = Vector2(3103, 329)
+shape = SubResource("RectangleShape2D_eqciv")
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]

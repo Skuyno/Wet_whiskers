@@ -62,7 +62,7 @@ func _process(delta):
 	var target_intensity = 1.0 if (is_cat_detected && !has_bread) else 0.0
 	shake_intensity = lerp(shake_intensity, target_intensity, delta * 3.0)
 	
-	$"../Cat"/Camera2D.add_shake(shake_intensity/8)
+	$"../Cat"/Camera2D.add_shake(shake_intensity/16)
 
 func _on_attack_start():
 	if is_cat_detected && !has_bread:
