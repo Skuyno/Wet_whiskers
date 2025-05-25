@@ -1,4 +1,4 @@
-[gd_scene load_steps=253 format=3 uid="uid://crjv3oxk6xlvs"]
+[gd_scene load_steps=265 format=3 uid="uid://crjv3oxk6xlvs"]
 
 [ext_resource type="Script" path="res://scenes/level2/scripts/level_2.gd" id="1_j820d"]
 [ext_resource type="Texture2D" uid="uid://wbfr45cfym7n" path="res://assets/sprites/level2/тайлсет1 (3).png" id="1_xanp3"]
@@ -45,17 +45,23 @@
 [ext_resource type="Texture2D" uid="uid://bt4sy57uppgax" path="res://assets/sprites/FormalWoman/FormalWoman_Talk.png" id="27_r71wa"]
 [ext_resource type="AudioStream" uid="uid://cwhk3t2abylxb" path="res://assets/audioLayout/kot_-_myaukane.mp3" id="28_456u2"]
 [ext_resource type="Texture2D" uid="uid://drn5hhbfry2ka" path="res://assets/sprites/level2/ga11_104688_Мойка78 (1).jpg" id="28_hxsuk"]
+[ext_resource type="Texture2D" uid="uid://blicarbfn7u7f" path="res://assets/sprites/level2/адмиралка1.bmp" id="29_fxni5"]
 [ext_resource type="AudioStream" uid="uid://dbufevdkwb2fn" path="res://assets/audioLayout/hope.mp3" id="29_guoa8"]
 [ext_resource type="Texture2D" uid="uid://o56qnk82k2v5" path="res://assets/sprites/FormalMan/FormalMan_Idle.png" id="29_lbsft"]
+[ext_resource type="Texture2D" uid="uid://clkembuu3eo25" path="res://assets/sprites/level2/141m.jpg" id="29_s77e3"]
+[ext_resource type="Texture2D" uid="uid://cjrj1laqe1ov4" path="res://assets/sprites/level2/img_4809.jpg" id="30_mo6fa"]
 [ext_resource type="Texture2D" uid="uid://bi318y7dut836" path="res://assets/sprites/FormalMan/FormalMan_Walk.png" id="30_o1ymr"]
+[ext_resource type="Texture2D" uid="uid://bas4chipgq3dv" path="res://assets/sprites/level2/1670786184_grizly-club-p-derevo-na-prozrachnom-fone-png-1.png" id="31_7g2dl"]
 [ext_resource type="Texture2D" uid="uid://dcajxwa1llij6" path="res://assets/sprites/OldWoman/OldWoman_Idle.png" id="31_rbcx6"]
 [ext_resource type="Texture2D" uid="uid://derdajvr1w4fq" path="res://assets/sprites/OldWoman/OldWoman_Death.png" id="32_8w0dh"]
 [ext_resource type="Texture2D" uid="uid://cpn7dnovk7i3p" path="res://assets/sprites/OldWoman/OldWoman_Walk.png" id="33_3b7xc"]
+[ext_resource type="Texture2D" uid="uid://yyt7kp8g8wpp" path="res://assets/sprites/level2/Moskovskij-vokzal.jpg" id="33_7ceoj"]
+[ext_resource type="Texture2D" uid="uid://detjtl1qwlfbx" path="res://assets/sprites/level2/foni-papik-pro-fzrk-p-kartinki-stolb-na-prozrachnom-fone-1.png" id="34_1l3tp"]
 [ext_resource type="Texture2D" uid="uid://dq04wacue40da" path="res://assets/sprites/PeopleBoy/PeopleBoy_Idle.png" id="34_2vs18"]
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="35_kjlgl"]
 [ext_resource type="Texture2D" uid="uid://btno8a4nabs25" path="res://assets/sprites/PeopleBoy2/PeopleBoy2_Talk.png" id="35_ktb52"]
-[ext_resource type="AudioStream" uid="uid://dh6b2xnb1ynnq" path="res://assets/sounds/level3/летний вечер.mp3" id="36_1c3ek"]
 [ext_resource type="Texture2D" uid="uid://qn4jernmm1ga" path="res://assets/sprites/level2/бич1.png" id="36_6dbrd"]
+[ext_resource type="AudioStream" uid="uid://msvk6d5jxb10" path="res://assets/sounds/level2/zateryannyiy-v-mechtah.mp3" id="36_15sxf"]
 [ext_resource type="Texture2D" uid="uid://yj8v5mln768y" path="res://assets/sprites/OldWoman1/OldWoman1_Walk.png" id="36_bnpkb"]
 [ext_resource type="Texture2D" uid="uid://dftssc5hlntau" path="res://assets/sprites/OldWoman1/OldWoman1_Idle.png" id="37_ss8u4"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/dormitory.gd" id="40_ogepr"]
@@ -75,7 +81,9 @@
 [ext_resource type="AudioStream" uid="uid://h8m6wfpgmi20" path="res://assets/sounds/level3/машины.mp3" id="46_ns78l"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/disappear_zone.gd" id="46_scdon"]
 [ext_resource type="AudioStream" uid="uid://bhuelwcd0av4g" path="res://assets/sounds/level3/экскаватор.mp3" id="47_rwc8f"]
+[ext_resource type="AudioStream" uid="uid://dml1mvvp6naya" path="res://assets/sounds/level2/zvuk-mujskogo-razgovora-nebolshaya-gruppa-angl-31479.mp3" id="48_ays16"]
 [ext_resource type="Texture2D" uid="uid://dcti5wdpxckov" path="res://assets/sprites/level2/бблб1.png" id="48_ilka8"]
+[ext_resource type="AudioStream" uid="uid://bj1lwumjiar4r" path="res://assets/sounds/level2/man-giggling_zktb7ped.mp3" id="52_y2y7b"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/Portal1.gd" id="54_b7pak"]
 [ext_resource type="Texture2D" uid="uid://b8vm0v1yb3t0j" path="res://assets/sprites/level1/progress bar most rounded progress tan.png" id="55_3iltf"]
 [ext_resource type="Script" path="res://scenes/level2/scripts/Portal2.gd" id="56_i7iek"]
@@ -99,12 +107,14 @@
 [ext_resource type="Script" path="res://scenes/level2/road_2.gd" id="96_qvx4j"]
 [ext_resource type="Script" path="res://scenes/level2/road_3.gd" id="97_u78jp"]
 [ext_resource type="Script" path="res://scenes/level2/escavator.gd" id="99_rr4qt"]
+[ext_resource type="Script" path="res://scenes/level2/biblmuzh.gd" id="101_7npvi"]
+[ext_resource type="Script" path="res://scenes/level2/kiosk.gd" id="106_43wq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma2jy"]
 size = Vector2(275.303, 149.857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0cnk"]
-size = Vector2(145.313, 18.7671)
+size = Vector2(132.813, 18.7671)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g33yv"]
 radius = 14.1421
@@ -3527,6 +3537,12 @@ size = Vector2(388, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0lo4"]
 size = Vector2(233, 137.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjrl1"]
+size = Vector2(299, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2xe2"]
+size = Vector2(190, 98)
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_j820d")
 
@@ -3637,8 +3653,12 @@ scale = Vector2(1, 0.795)
 position = Vector2(-4.6875, -45.2968)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Киоск/StaticBody2D"]
-position = Vector2(0.78125, 0.616394)
+position = Vector2(0.78125, 0.616455)
 shape = SubResource("RectangleShape2D_l0cnk")
+
+[node name="Pipe2" parent="Decorations/Киоск" instance=ExtResource("16_ty33p")]
+position = Vector2(70.3127, -16.0731)
+scale = Vector2(1, 0.795)
 
 [node name="Скамейка2" type="Sprite2D" parent="Decorations"]
 position = Vector2(4515, 688)
@@ -3845,15 +3865,57 @@ position = Vector2(1976, 680)
 texture = ExtResource("27_fhvq6")
 
 [node name="Sprite2D23" type="Sprite2D" parent="Decorations"]
-z_index = -1
-position = Vector2(5190, 594)
-scale = Vector2(0.482586, 0.470066)
+z_index = -3
+position = Vector2(5182, 608)
+scale = Vector2(0.352339, 0.343199)
 texture = ExtResource("28_hxsuk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Decorations/Sprite2D23"]
+z_index = 3
+position = Vector2(8.51498, 145.688)
+scale = Vector2(0.244301, 0.244301)
+texture = ExtResource("29_fxni5")
 
 [node name="Sprite2D24" type="Sprite2D" parent="Decorations"]
 z_index = -3
 position = Vector2(998, 522)
 texture = ExtResource("3_kcptu")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Decorations"]
+z_index = -3
+position = Vector2(2949, 631)
+scale = Vector2(0.278782, 0.278782)
+texture = ExtResource("29_s77e3")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Decorations"]
+z_index = -3
+position = Vector2(3586, 534)
+scale = Vector2(0.873134, 0.873134)
+texture = ExtResource("30_mo6fa")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Decorations"]
+z_index = -1
+position = Vector2(3839, 534)
+scale = Vector2(0.315629, 0.315628)
+texture = ExtResource("31_7g2dl")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Decorations"]
+z_index = -5
+position = Vector2(4908, 606)
+scale = Vector2(0.364748, 0.314017)
+texture = ExtResource("33_7ceoj")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Decorations"]
+z_index = -1
+position = Vector2(4725, 608)
+scale = Vector2(0.319293, 0.319293)
+texture = ExtResource("34_1l3tp")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Decorations"]
+z_index = -1
+position = Vector2(5069, 617)
+scale = Vector2(0.319293, 0.319293)
+texture = ExtResource("34_1l3tp")
 
 [node name="PlatformsAndBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kfkhg")
@@ -3870,7 +3932,7 @@ position = Vector2(-202, 605)
 [node name="Sounds" type="Node2D" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("36_1c3ek")
+stream = ExtResource("36_15sxf")
 bus = &"Music"
 parameters/looping = true
 
@@ -3901,19 +3963,33 @@ bus = &"Music"
 
 [node name="padenievgovno" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("43_edv2y")
+bus = &"Sfx"
 
 [node name="letit" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("44_6ukqe")
+bus = &"Sfx"
 
 [node name="cafe" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("45_rp7cg")
+bus = &"Sfx"
 parameters/looping = true
 
 [node name="traffic" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("46_ns78l")
+bus = &"Sfx"
 
 [node name="ecsc" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("47_rwc8f")
+bus = &"Sfx"
+
+[node name="razgovor" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("48_ays16")
+bus = &"Sfx"
+
+[node name="smex" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("52_y2y7b")
+bus = &"Sfx"
+parameters/looping = true
 
 [node name="Musoirka" type="Sprite2D" parent="."]
 z_index = 100
@@ -4234,7 +4310,7 @@ script = ExtResource("40_ogepr")
 item_scenes = Array[PackedScene]([ExtResource("41_r3xb8"), ExtResource("41_3fmfw"), ExtResource("43_hbogo"), ExtResource("44_pxhdf")])
 
 [node name="Sprite2D" type="Sprite2D" parent="Dormitory"]
-position = Vector2(3232, 510)
+position = Vector2(3232, 512)
 scale = Vector2(0.509766, 0.509766)
 texture = ExtResource("42_loyim")
 
@@ -4385,13 +4461,13 @@ one_way_collision_margin = 0.0
 debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 
 [node name="Plate" type="Node2D" parent="."]
-visible = false
 z_index = 3
 position = Vector2(5065, 1035)
 script = ExtResource("81_yo4ud")
 slides = Array[Texture2D]([ExtResource("82_yb48s"), ExtResource("83_xr423")])
 
 [node name="1" type="TextureRect" parent="Plate"]
+visible = false
 offset_left = -400.0
 offset_top = -8.0
 offset_right = 63.0
@@ -4431,7 +4507,7 @@ shape = SubResource("RectangleShape2D_d2cp4")
 script = ExtResource("93_nk1j8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Кофейня"]
-position = Vector2(4732, 1142)
+position = Vector2(4854, 1142)
 shape = SubResource("RectangleShape2D_xyx46")
 
 [node name="road1" type="Area2D" parent="."]
@@ -4461,6 +4537,20 @@ script = ExtResource("99_rr4qt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="escavator"]
 position = Vector2(1255, 657)
 shape = SubResource("RectangleShape2D_c0lo4")
+
+[node name="biblmuzh" type="Area2D" parent="."]
+script = ExtResource("101_7npvi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="biblmuzh"]
+position = Vector2(2075.5, 676)
+shape = SubResource("RectangleShape2D_xjrl1")
+
+[node name="kiosk" type="Area2D" parent="."]
+script = ExtResource("106_43wq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kiosk"]
+position = Vector2(3769, 659)
+shape = SubResource("RectangleShape2D_l2xe2")
 
 [connection signal="area_entered" from="Peoplez/Skameuka_Businesmani/FormalMan2/Area2D" to="Peoplez/Skameuka_Businesmani/FormalMan2" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Peoplez/Skameuka_Businesmani/FormalMan2/Area2D" to="Peoplez/Skameuka_Businesmani/FormalMan2" method="_on_area_2d_area_exited"]
