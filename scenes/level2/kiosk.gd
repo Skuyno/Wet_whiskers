@@ -10,7 +10,7 @@ var sound_playing := false  # Флаг состояния звука
 func _on_body_entered(body):
 	if body.name == "Cat" or body.is_in_group("player"):
 		# Получаем звук по абсолютному пути
-		road_sound = get_node_or_null("/root/Level2/Sounds/ecsc")
+		road_sound = get_node_or_null("/root/Level2/Sounds/smex")
 		
 		if road_sound and not sound_playing:
 			road_sound.play()

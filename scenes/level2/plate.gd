@@ -67,6 +67,7 @@ func interact():
 
 func start_cutscene():
 	$"../Sounds/Music".stop()
+	$"../Sounds/cafe".stop()
 	$"../Sounds/Mem2".play()
 	
 	# Показываем TextureRect
@@ -120,6 +121,7 @@ func end_cutscene():
 	is_cutscene_playing = false
 	$"../Sounds/Mem2".stop()
 	$"../Sounds/Music".play()
+	$"../Sounds/cafe".play()
 	
 	if player:
 		player.set_process_input(true)
