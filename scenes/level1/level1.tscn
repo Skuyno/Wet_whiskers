@@ -9771,6 +9771,15 @@ size = Vector2(82, 66)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lchvi"]
 size = Vector2(1106, 35)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pnfd"]
+size = Vector2(14, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqu44"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddusa"]
+size = Vector2(16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_olc42"]
 atlas = ExtResource("15_qqfa8")
 region = Rect2(0, 0, 128, 128)
@@ -9823,15 +9832,6 @@ animations = [{
 "name": &"nervous",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pnfd"]
-size = Vector2(14, 8.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqu44"]
-size = Vector2(14, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddusa"]
-size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i1q5"]
 size = Vector2(949, 101)
@@ -10402,7 +10402,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(75, 339)
+position = Vector2(2432, 377)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1004, 334)
@@ -10520,301 +10520,6 @@ stream = ExtResource("21_kidg8")
 [node name="ventilation" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("22_1mdh0")
 volume_db = -9.874
-
-[node name="Pigeons#Pigeon2" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1177, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon3" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1293, 274)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon4" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1255, 292)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon5" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1356, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon6" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1427, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon7" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1379, 288)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon8" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1487, 293)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon9" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1458, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon10" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1532, 274)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon11" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1556, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon12" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1609, 288)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon13" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1656, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon14" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1721, 292)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon15" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1687, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon16" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1789, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon17" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1820, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon18" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1870, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon19" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1843, 288)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon20" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1954, 293)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon21" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1913, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon22" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1989, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon23" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2020, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon24" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2052, 274)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon25" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2086, 292)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon26" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2126, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon27" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2184, 293)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon28" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2156, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon29" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(2218, 275)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon30" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1234, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-flip_h = true
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon31" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1150, 287)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
-
-[node name="Pigeons#Pigeon32" type="AnimatedSprite2D" parent="." groups=["pigeons"]]
-position = Vector2(1208, 297)
-scale = Vector2(0.6875, 0.6875)
-sprite_frames = SubResource("SpriteFrames_iwqsh")
-animation = &"nervous"
-frame = 1
-frame_progress = 0.563518
-script = ExtResource("15_ose14")
 
 [node name="Bread" type="RigidBody2D" parent="." groups=["Items", "bread"]]
 position = Vector2(2191, 809)
@@ -11340,6 +11045,303 @@ script = ExtResource("69_5uwgu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="вентиляция звук4"]
 position = Vector2(3523, 405)
 shape = SubResource("RectangleShape2D_yxkc8")
+
+[node name="Pigeons" type="Node2D" parent="."]
+
+[node name="Pigeon2" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1177, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon3" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1293, 274)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon4" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1255, 292)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+script = ExtResource("15_ose14")
+
+[node name="Pigeon5" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1356, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon6" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1427, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon7" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1379, 288)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon8" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1487, 293)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon9" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1458, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon10" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1532, 274)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon11" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1556, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon12" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1609, 288)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon13" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1656, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon14" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1721, 292)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon15" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1687, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon16" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1789, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon17" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1820, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon18" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1870, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon19" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1843, 288)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon20" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1954, 293)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon21" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1913, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon22" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1989, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon23" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2020, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon24" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2052, 274)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon25" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2086, 292)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon26" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2126, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon27" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2184, 293)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon28" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2156, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon29" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(2218, 275)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon30" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1234, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+flip_h = true
+script = ExtResource("15_ose14")
+
+[node name="Pigeon31" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1150, 287)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
+
+[node name="Pigeon32" type="AnimatedSprite2D" parent="Pigeons" groups=["pigeons"]]
+position = Vector2(1208, 297)
+scale = Vector2(0.6875, 0.6875)
+sprite_frames = SubResource("SpriteFrames_iwqsh")
+animation = &"nervous"
+frame = 1
+frame_progress = 0.563518
+script = ExtResource("15_ose14")
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_body_exited"]
