@@ -67,8 +67,7 @@ func interact():
 
 func start_cutscene():
 	$"../Sounds/Music".stop()
-	$"../Sounds/cafe".stop()
-	$"../Sounds/Mem2".play()
+
 	
 	# Показываем TextureRect
 	texture_rect.visible = true
@@ -76,7 +75,7 @@ func start_cutscene():
 	current_slide_index = 0
 	
 	# Проигрываем звук для первого слайда
-	$"../Sounds/arguing".play()
+	$"../Sounds/butil".play()
 	
 	# Плавное появление первого слайда
 	var appear_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -96,8 +95,9 @@ func start_cutscene():
 	current_slide_index = 1
 	
 	# Проигрываем звук для второго слайда
-	$"../Sounds/arguing".stop()
-	$"../Sounds/Plateboom".play()
+	$"../Sounds/butil".stop()
+	$"../Sounds/myau".play()
+	$"../Sounds/huynya".play()
 	
 	# Возвращаем полную видимость
 	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -119,9 +119,9 @@ func end_cutscene():
 	animation_player.stop()
 	print("Slideshow finished")
 	is_cutscene_playing = false
-	$"../Sounds/Mem2".stop()
+	$"../Sounds/myau".stop()
+	$"../Sounds/huynya".stop()
 	$"../Sounds/Music".play()
-	$"../Sounds/cafe".play()
 	
 	if player:
 		player.set_process_input(true)
