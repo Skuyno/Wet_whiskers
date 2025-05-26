@@ -1183,9 +1183,9 @@ scale = Vector2(0.5625, 0.609375)
 sprite_frames = SubResource("SpriteFrames_xe3kb")
 autoplay = "default"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="старость рамсит" type="CharacterBody2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="старость рамсит"]
 position = Vector2(965, 74)
 scale = Vector2(-0.542359, 0.46875)
 sprite_frames = SubResource("SpriteFrames_uocld")
