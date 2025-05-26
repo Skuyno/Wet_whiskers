@@ -4597,7 +4597,6 @@ script = ExtResource("81_yo4ud")
 slides = Array[Texture2D]([ExtResource("82_yb48s"), ExtResource("83_xr423")])
 
 [node name="1" type="TextureRect" parent="Plate"]
-visible = false
 offset_left = -400.0
 offset_top = -8.0
 offset_right = 63.0

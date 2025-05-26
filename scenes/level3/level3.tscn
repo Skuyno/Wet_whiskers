@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://bbbdamk3bu3a7"]
+[gd_scene load_steps=162 format=3 uid="uid://bbbdamk3bu3a7"]
 
 [ext_resource type="Texture2D" uid="uid://cljyk6uel2a0f" path="res://assets/sprites/level3/лярвы.png" id="1_48iu7"]
 [ext_resource type="Script" path="res://scenes/level3/scripts/level_3.gd" id="1_247hi"]
@@ -826,6 +826,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaor5"]
 size = Vector2(56, 39)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a16tt"]
+size = Vector2(18.5, 20)
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_247hi")
 metadata/_edit_horizontal_guides_ = [-10.0]
@@ -1029,11 +1032,6 @@ shape = SubResource("RectangleShape2D_sr45b")
 position = Vector2(2314, 91)
 shape = SubResource("RectangleShape2D_05t6m")
 
-[node name="Sprite2D14" type="Sprite2D" parent="."]
-position = Vector2(2255, 90)
-scale = Vector2(0.0230583, 0.0201923)
-texture = ExtResource("28_vnibv")
-
 [node name="Train" type="Path2D" parent="."]
 position = Vector2(-500, 915)
 script = ExtResource("29_ksbjy")
@@ -1207,6 +1205,25 @@ texture = ExtResource("55_rw2uv")
 position = Vector2(1408, 59)
 scale = Vector2(0.103683, 0.0778067)
 texture = ExtResource("56_vfiat")
+
+[node name="vodka" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="vodka"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="vodkasprite" type="Sprite2D" parent="vodka"]
+position = Vector2(2255, 90)
+scale = Vector2(0.0230583, 0.0201923)
+texture = ExtResource("28_vnibv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="vodka/vodkasprite"]
+
+[node name="Area2D" type="Area2D" parent="vodka"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vodka/Area2D"]
+position = Vector2(2255, 94)
+shape = SubResource("RectangleShape2D_a16tt")
 
 [connection signal="body_entered" from="Train/Area2D" to="Train" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Train/Area2D" to="Train" method="_on_area_2d_body_exited"]
