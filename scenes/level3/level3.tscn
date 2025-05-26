@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://bbbdamk3bu3a7"]
+[gd_scene load_steps=175 format=3 uid="uid://bbbdamk3bu3a7"]
 
 [ext_resource type="Texture2D" uid="uid://cljyk6uel2a0f" path="res://assets/sprites/level3/лярвы.png" id="1_48iu7"]
 [ext_resource type="Script" path="res://scenes/level3/scripts/level_3.gd" id="1_247hi"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://cm5m22qww2dtn" path="res://assets/sprites/PeopleBoy/PeopleBoy_Walk.png" id="46_noc30"]
 [ext_resource type="AudioStream" uid="uid://d0wb5x3ii1l6n" path="res://assets/sounds/level3/kot_-_myaukane (mp3cut.net).mp3" id="46_noom6"]
 [ext_resource type="AudioStream" uid="uid://k2vcltpkidid" path="res://assets/sounds/level3/sigh-male-thirties-weary-forced-mono_m.mp3" id="47_7oqir"]
+[ext_resource type="AudioStream" uid="uid://cqsxyb730mffu" path="res://assets/sounds/level3/longtrip (mp3cut.net).mp3" id="47_hwsri"]
 [ext_resource type="Texture2D" uid="uid://xfvjf8c3tsiu" path="res://assets/sprites/PeopleBoy4/idle.png" id="47_lhhlt"]
 [ext_resource type="Texture2D" uid="uid://ei7h2pfeq604" path="res://assets/sprites/man/NormalMan_LeftKick.png" id="48_ffksv"]
 [ext_resource type="Texture2D" uid="uid://4mo1hyhmyfcl" path="res://assets/sprites/man/NormalMan_RightKick.png" id="49_tdgbr"]
@@ -63,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://qvr2np62cp6w" path="res://assets/sprites/level2/ВОСП ВОДЯРА2.png" id="58_obwjt"]
 [ext_resource type="Texture2D" uid="uid://dx632v0hkcsmd" path="res://assets/sprites/level2/foni-papik-pro-tvf5-p-kartinki-radio-na-prozrachnom-fone-19.png" id="63_35yug"]
 [ext_resource type="Texture2D" uid="uid://dag5l6k4lpl5a" path="res://assets/sprites/level3/кукла.png" id="63_anuop"]
+[ext_resource type="Script" path="res://scenes/level3/kukla.gd" id="63_jbi7s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7le0"]
 texture = ExtResource("1_eksye")
@@ -1213,6 +1215,9 @@ parameters/looping = true
 [node name="huynya" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("47_7oqir")
 
+[node name="kukla" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("47_hwsri")
+
 [node name="шибздел" type="CharacterBody2D" parent="."]
 script = ExtResource("44_xaogh")
 
@@ -1299,6 +1304,7 @@ one_way_collision_margin = 0.0
 debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 
 [node name="kukla" type="Node2D" parent="."]
+script = ExtResource("63_jbi7s")
 
 [node name="TextureRect" type="TextureRect" parent="kukla"]
 offset_right = 40.0

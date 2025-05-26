@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqsxyb730mffu"
+path="res://.godot/imported/longtrip (mp3cut.net).mp3-e82ef9db3fb8de41eb538d043cd5e00e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/level3/longtrip (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/longtrip (mp3cut.net).mp3-e82ef9db3fb8de41eb538d043cd5e00e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
