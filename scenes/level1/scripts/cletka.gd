@@ -11,6 +11,13 @@ var has_interacted = false
 
 var is_cutscene_playing = false
 @export var cutscene_duration = 10
+
+var save_path = "res://savegame.save"
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(player.position.x)
+	file.store_var(player.position.y)
+	
 func _ready():
 	cletka.play("cletka")
 	texture_rect.z_index = 100  # Делаем поверх всех элементов
@@ -35,6 +42,7 @@ func interact():
 	if has_interacted :  # Проверяем, было ли уже взаимодействие
 		return
 		
+	save_game()
 	has_interacted = true
 	
 	is_cutscene_playing = true

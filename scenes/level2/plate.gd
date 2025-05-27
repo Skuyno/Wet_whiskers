@@ -18,6 +18,12 @@ var current_slide_index := 0
 var camera_size: Vector2
 var tween: Tween
 
+var save_path = "res://savegame.save"
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(player.position.x)
+	file.store_var(player.position.y)
+	
 func _ready():
 	animation_player.play("cletka")
 	if player_camera:
@@ -55,6 +61,7 @@ func interact():
 	if has_interacted or slides.size() != 2:  # Проверяем что есть ровно 2 слайда
 		return
 	
+	save_game()
 	has_interacted = true
 	print("Starting slideshow with 2 slides")
 	is_cutscene_playing = true
@@ -67,6 +74,8 @@ func interact():
 
 func start_cutscene():
 	$"../Sounds/Music".stop()
+	$"../Sounds/cafe".stop()
+	$"../Sounds/Mem2".play()
 
 	
 	# Показываем TextureRect
@@ -75,7 +84,7 @@ func start_cutscene():
 	current_slide_index = 0
 	
 	# Проигрываем звук для первого слайда
-	$"../Sounds/butil".play()
+	$"../Sounds/arguing".play()
 	
 	# Плавное появление первого слайда
 	var appear_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -95,10 +104,9 @@ func start_cutscene():
 	current_slide_index = 1
 	
 	# Проигрываем звук для второго слайда
-	$"../Sounds/butil".stop()
-	$"../Sounds/myau".play()
-	$"../Sounds/huynya".play()
-	
+	$"../Sounds/arguing".stop()
+	$"../Sounds/Plateboom".play()
+		
 	# Возвращаем полную видимость
 	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
@@ -119,8 +127,8 @@ func end_cutscene():
 	animation_player.stop()
 	print("Slideshow finished")
 	is_cutscene_playing = false
-	$"../Sounds/myau".stop()
-	$"../Sounds/huynya".stop()
+	$"../Sounds/Mem2".stop()
+	$"../Sounds/cafe".play()
 	$"../Sounds/Music".play()
 	
 	if player:

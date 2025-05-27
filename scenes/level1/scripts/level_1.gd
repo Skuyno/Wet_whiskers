@@ -2,6 +2,11 @@
 extends Node2D
 @onready var anim_player: AnimationPlayer = $Launching/AnimationPlayer
 var save_path = "res://savegame.save"
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(player.position.x)
+	file.store_var(player.position.y)
+	
 @onready var player = $Cat
 
 func _ready():

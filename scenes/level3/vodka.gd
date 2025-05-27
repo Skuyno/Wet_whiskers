@@ -9,14 +9,14 @@ var has_interacted = false
 @onready var animation_player = $Sprite2D/AnimationPlayer
 
 var is_cutscene_playing = false
-@export var slide_duration: float = 4.0  # Длительность каждого слайда
+@export var first_slide_duration: float = 3.0  # Длительность первого слайда
+@export var second_slide_duration: float = 7.0  # Длительность второго слайда
 @export var fade_duration: float = 1.0
-@export var slides: Array[Texture2D] = []  # Должно содержать 3 текстуры
+@export var slides: Array[Texture2D] = []  # Должно содержать 2 текстуры
 
 var current_slide_index := 0
 var camera_size: Vector2
 var tween: Tween
-
 
 var save_path = "res://savegame.save"
 func save_game():
@@ -58,12 +58,12 @@ func _input(event):
 		interact()
 
 func interact():
-	if has_interacted or slides.size() < 3:  # Проверяем что есть минимум 3 слайда
+	if has_interacted or slides.size() != 2:  # Проверяем что есть ровно 2 слайда
 		return
 	
 	save_game()
 	has_interacted = true
-	print("Starting slideshow with 3 slides")
+	print("Starting slideshow with 2 slides")
 	is_cutscene_playing = true
 	
 	if player:
@@ -74,23 +74,28 @@ func interact():
 
 func start_cutscene():
 	$"../Sounds/Music".stop()
-	$"../Sounds/kukla".play()
+	
+
+	
 	# Показываем TextureRect
 	texture_rect.visible = true
 	texture_rect.texture = slides[0]
 	current_slide_index = 0
+	
+	# Проигрываем звук для первого слайда
+	$"../Sounds/butil".play()
 	
 	# Плавное появление первого слайда
 	var appear_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	appear_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration)
 	await appear_tween.finished
 	
-	# Ждем перед вторым слайдом
-	await get_tree().create_timer(slide_duration).timeout
+	# Ждем перед вторым слайдом (первый слайд длится first_slide_duration секунд)
+	await get_tree().create_timer(first_slide_duration).timeout
 	
-	# Переход ко второму слайду
+	# Плавный переход ко второму слайду
 	var change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
+	change_tween.tween_property(texture_rect, "modulate:a", 1, fade_duration/2)
 	await change_tween.finished
 	
 	# Меняем на второй слайд
@@ -98,32 +103,17 @@ func start_cutscene():
 	current_slide_index = 1
 	
 	# Проигрываем звук для второго слайда
+	$"../Sounds/butil".stop()
+	$"../Sounds/huynya".play()
 	$"../Sounds/myau".play()
-	
-	# Возвращаем видимость
+		
+	# Возвращаем полную видимость
 	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
 	await change_tween.finished
 	
-	# Ждем перед третьим слайдом
-	await get_tree().create_timer(slide_duration).timeout
-	
-	# Переход к третьему слайду
-	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
-	await change_tween.finished
-	$"../Sounds/myau".stop()
-	# Меняем на третий слайд
-	texture_rect.texture = slides[2]
-	current_slide_index = 2
-	
-	# Возвращаем видимость
-	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
-	await change_tween.finished
-	
-	# Ждем перед завершением
-	await get_tree().create_timer(slide_duration).timeout
+	# Ждем перед завершением (второй слайд длится second_slide_duration секунд)
+	await get_tree().create_timer(second_slide_duration).timeout
 	
 	# Плавное исчезновение
 	var disappear_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -137,8 +127,9 @@ func end_cutscene():
 	animation_player.stop()
 	print("Slideshow finished")
 	is_cutscene_playing = false
+	$"../Sounds/myau".stop()
+	$"../Sounds/huynya".stop()
 	
-	$"../Sounds/kukla".stop()
 	$"../Sounds/Music".play()
 	
 	if player:

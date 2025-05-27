@@ -157,7 +157,7 @@ size = Vector2(27, 8)
 radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upn1l"]
-size = Vector2(1400, 1675.55)
+size = Vector2(1400, 1906.67)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n575g"]
 texture = ExtResource("1_xanp3")
@@ -3983,7 +3983,7 @@ texture = ExtResource("36_oep15")
 script = ExtResource("37_60vb8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Sprite2D32/шишки"]
-position = Vector2(166.667, 606.668)
+position = Vector2(166.667, 606.66)
 shape = SubResource("RectangleShape2D_upn1l")
 
 [node name="Фон5" type="Sprite2D" parent="Decorations"]
@@ -4085,7 +4085,7 @@ parameters/looping = true
 [node name="шишки" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("61_rdd0q")
 bus = &"Sfx"
-parameters/looping = false
+parameters/looping = true
 
 [node name="ptitsi" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("62_55emt")
@@ -4597,6 +4597,7 @@ script = ExtResource("81_yo4ud")
 slides = Array[Texture2D]([ExtResource("82_yb48s"), ExtResource("83_xr423")])
 
 [node name="1" type="TextureRect" parent="Plate"]
+visible = false
 offset_left = -400.0
 offset_top = -8.0
 offset_right = 63.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://bbbdamk3bu3a7"]
+[gd_scene load_steps=179 format=3 uid="uid://bbbdamk3bu3a7"]
 
 [ext_resource type="Texture2D" uid="uid://cljyk6uel2a0f" path="res://assets/sprites/level3/лярвы.png" id="1_48iu7"]
 [ext_resource type="Script" path="res://scenes/level3/scripts/level_3.gd" id="1_247hi"]
@@ -58,13 +58,17 @@
 [ext_resource type="Texture2D" uid="uid://c3wh1pqh58f5t" path="res://assets/sprites/OldWoman/OldWoman_RightPunch.png" id="51_qvdjy"]
 [ext_resource type="Script" path="res://scenes/level3/рамс.gd" id="53_u8to6"]
 [ext_resource type="Texture2D" uid="uid://if7bvdus5upd" path="res://assets/sprites/level3/aa.png" id="55_rw2uv"]
-[ext_resource type="Script" path="res://scenes/level2/plate.gd" id="56_24gt5"]
 [ext_resource type="Texture2D" uid="uid://823lndgq7pnv" path="res://assets/sprites/level3/danger.png" id="56_vfiat"]
 [ext_resource type="Texture2D" uid="uid://df1q2qg5dkrsn" path="res://assets/sprites/level2/ВОСП ВОДЯРА1.png" id="57_ebuqh"]
 [ext_resource type="Texture2D" uid="uid://qvr2np62cp6w" path="res://assets/sprites/level2/ВОСП ВОДЯРА2.png" id="58_obwjt"]
 [ext_resource type="Texture2D" uid="uid://dx632v0hkcsmd" path="res://assets/sprites/level2/foni-papik-pro-tvf5-p-kartinki-radio-na-prozrachnom-fone-19.png" id="63_35yug"]
 [ext_resource type="Texture2D" uid="uid://dag5l6k4lpl5a" path="res://assets/sprites/level3/кукла.png" id="63_anuop"]
 [ext_resource type="Script" path="res://scenes/level3/kukla.gd" id="63_jbi7s"]
+[ext_resource type="Texture2D" uid="uid://q17i8pvop5b0" path="res://assets/sprites/level3/безымянный_0002.png" id="64_hwkhx"]
+[ext_resource type="Texture2D" uid="uid://ce5xd1o4absn3" path="res://assets/sprites/level3/безымянный_0003.png" id="65_n7d10"]
+[ext_resource type="Texture2D" uid="uid://cr062dfd6vepl" path="res://assets/sprites/level3/восп с куклой.png" id="66_5m5ga"]
+[ext_resource type="Script" path="res://scenes/level3/vodkaa.gd" id="66_w0f00"]
+[ext_resource type="PackedScene" uid="uid://bxc4obtdffn4" path="res://scenes/pause_menu/pause_menu.tscn" id="69_3ab0s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7le0"]
 texture = ExtResource("1_eksye")
@@ -837,6 +841,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaor5"]
 size = Vector2(56, 39)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5v5l"]
+size = Vector2(11.5, 14)
+
 [sub_resource type="Animation" id="Animation_1itmu"]
 length = 0.001
 tracks/0/type = "value"
@@ -875,11 +882,8 @@ _data = {
 "cletka": SubResource("Animation_v8mn3")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp15v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtmbq"]
 size = Vector2(19, 18.5625)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5v5l"]
-size = Vector2(11.5, 14)
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_247hi")
@@ -1217,6 +1221,7 @@ stream = ExtResource("47_7oqir")
 
 [node name="kukla" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("47_hwsri")
+parameters/looping = true
 
 [node name="шибздел" type="CharacterBody2D" parent="."]
 script = ExtResource("44_xaogh")
@@ -1268,51 +1273,21 @@ position = Vector2(1408, 59)
 scale = Vector2(0.103683, 0.0778067)
 texture = ExtResource("56_vfiat")
 
-[node name="vodka" type="Node2D" parent="."]
-z_index = 3
-position = Vector2(2386, -76)
-script = ExtResource("56_24gt5")
-slides = Array[Texture2D]([ExtResource("57_ebuqh"), ExtResource("58_obwjt")])
-
-[node name="1" type="TextureRect" parent="vodka"]
-visible = false
-offset_left = -381.0
-offset_top = 6.0
-offset_right = 97.0
-offset_bottom = 252.0
-texture = ExtResource("57_ebuqh")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="vodka"]
-position = Vector2(-132, 165)
-scale = Vector2(0.0209059, 0.0209059)
-texture = ExtResource("28_vnibv")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="vodka/Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_lcn21")
-}
-
-[node name="Area2D" type="Area2D" parent="vodka"]
-position = Vector2(180, -272)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="vodka/Area2D"]
-position = Vector2(-314, 440)
-shape = SubResource("RectangleShape2D_sp15v")
-one_way_collision_margin = 0.0
-debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
-
 [node name="kukla" type="Node2D" parent="."]
 script = ExtResource("63_jbi7s")
+slides = Array[Texture2D]([ExtResource("64_hwkhx"), ExtResource("65_n7d10"), ExtResource("66_5m5ga")])
 
-[node name="TextureRect" type="TextureRect" parent="kukla"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="1" type="TextureRect" parent="kukla"]
+visible = false
+offset_left = 1057.0
+offset_top = -61.0
+offset_right = 1529.0
+offset_bottom = 175.0
+texture = ExtResource("64_hwkhx")
 
 [node name="Sprite2D" type="Sprite2D" parent="kukla"]
 position = Vector2(1313, 91)
-scale = Vector2(0.187499, 0.171875)
+scale = Vector2(0.265625, 0.24349)
 texture = ExtResource("63_anuop")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="kukla/Sprite2D"]
@@ -1330,6 +1305,48 @@ texture = ExtResource("63_35yug")
 
 [node name="шишки" type="Area2D" parent="Sprite2D32"]
 position = Vector2(0, 115.556)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("69_3ab0s")]
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = -4.0
+
+[node name="vodkaa" type="Node2D" parent="."]
+z_index = 3
+position = Vector2(2370, -75)
+script = ExtResource("66_w0f00")
+slides = Array[Texture2D]([ExtResource("57_ebuqh"), ExtResource("58_obwjt")])
+
+[node name="1" type="TextureRect" parent="vodkaa"]
+offset_left = -415.0
+offset_top = 11.0
+offset_right = 48.0
+offset_bottom = 249.0
+texture = ExtResource("57_ebuqh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="vodkaa"]
+position = Vector2(-132, 165)
+scale = Vector2(0.0233017, 0.0233017)
+texture = ExtResource("28_vnibv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="vodkaa/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lcn21")
+}
+
+[node name="Area2D" type="Area2D" parent="vodkaa"]
+position = Vector2(180, -272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vodkaa/Area2D"]
+position = Vector2(-314, 440)
+shape = SubResource("RectangleShape2D_qtmbq")
+one_way_collision_margin = 0.0
+debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 
 [connection signal="body_entered" from="Train/Area2D" to="Train" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Train/Area2D" to="Train" method="_on_area_2d_body_exited"]

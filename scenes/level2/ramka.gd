@@ -17,6 +17,12 @@ var current_slide_index := 0
 var camera_size: Vector2
 var tween: Tween
 
+var save_path = "res://savegame.save"
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(player.position.x)
+	file.store_var(player.position.y)
+	
 func _ready():
 	animation_player.play("cletka")
 	if player_camera:
@@ -60,6 +66,7 @@ func interact():
 		push_error("No slides added to slideshow!")
 		return
 	
+	save_game()
 	has_interacted = true  # Помечаем, что взаимодействие произошло
 	print("Starting slideshow with ", slides.size(), " slides")
 	is_cutscene_playing = true
