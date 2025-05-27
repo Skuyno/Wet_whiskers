@@ -1,0 +1,137 @@
+extends Node2D
+
+var has_interacted = false
+@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player_camera = get_tree().get_first_node_in_group("camera")
+@onready var collision_shape = $Area2D/CollisionShape2D
+@onready var texture_rect = $"1"
+
+
+var is_cutscene_playing = false
+@export var slide_duration: float = 4.0
+@export var fade_duration: float = 1.0
+@export var slides: Array[Texture2D] = []
+
+var current_slide_index := 0
+var camera_size: Vector2
+var tween: Tween
+
+var save_path = "res://savegame.save"
+
+func save_game():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(player.position.x)
+	file.store_var(player.position.y)
+	
+func _ready():
+
+	if player_camera:
+		camera_size = player_camera.get_viewport_rect().size
+	else:
+		camera_size = get_viewport_rect().size
+		push_warning("Player camera not found, using viewport size")
+	
+	if texture_rect:
+		texture_rect.z_index = 100
+		texture_rect.modulate.a = 0
+		texture_rect.visible = false
+		texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	else:
+		push_error("TextureRect not found!")
+	
+	$Area2D.body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if body.is_in_group("player") and not has_interacted and not is_cutscene_playing:
+		interact()
+
+func interact():
+	if has_interacted or slides.size() < 3:
+		return
+	
+	save_game()
+	has_interacted = true
+	print("Starting slideshow with 3 slides")
+	is_cutscene_playing = true
+	
+	if player:
+		player.set_process_input(false)
+		player.set_physics_process(false)
+	
+	start_cutscene()
+
+# Остальные функции (start_cutscene, end_cutscene и т.д.) остаются без изменений
+
+func start_cutscene():
+	$"../Sounds/Music".stop()
+	$"../Sounds/kukla".play()
+	# Показываем TextureRect
+	texture_rect.visible = true
+	texture_rect.texture = slides[0]
+	current_slide_index = 0
+	
+	# Плавное появление первого слайда
+	var appear_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	appear_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration)
+	await appear_tween.finished
+	
+	# Ждем перед вторым слайдом
+	await get_tree().create_timer(slide_duration).timeout
+	
+	# Переход ко второму слайду
+	var change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
+	await change_tween.finished
+	
+	# Меняем на второй слайд
+	texture_rect.texture = slides[1]
+	current_slide_index = 1
+	
+	# Проигрываем звук для второго слайда
+	$"../Sounds/myau".play()
+	
+	# Возвращаем видимость
+	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
+	await change_tween.finished
+	
+	# Ждем перед третьим слайдом
+	await get_tree().create_timer(slide_duration).timeout
+	
+	# Переход к третьему слайду
+	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
+	await change_tween.finished
+	$"../Sounds/myau".stop()
+	# Меняем на третий слайд
+	texture_rect.texture = slides[2]
+	current_slide_index = 2
+	
+	# Возвращаем видимость
+	change_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	change_tween.tween_property(texture_rect, "modulate:a", 1.0, fade_duration/2)
+	await change_tween.finished
+	
+	# Ждем перед завершением
+	await get_tree().create_timer(slide_duration).timeout
+	
+	# Плавное исчезновение
+	var disappear_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	disappear_tween.tween_property(texture_rect, "modulate:a", 0.0, fade_duration)
+	await disappear_tween.finished
+	
+	texture_rect.visible = false
+	end_cutscene()
+
+func end_cutscene():
+
+	print("Slideshow finished")
+	is_cutscene_playing = false
+	
+	$"../Sounds/kukla".stop()
+	$"../Sounds/Music".play()
+	
+	if player:
+		player.set_process_input(true)
+		player.set_physics_process(true)
