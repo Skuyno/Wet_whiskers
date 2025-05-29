@@ -69,6 +69,8 @@ func interact():
 	if player:
 		player.set_process_input(false)
 		player.set_physics_process(false)
+		
+	Global.collected_memories.append("Kukla")
 	
 	start_cutscene()
 

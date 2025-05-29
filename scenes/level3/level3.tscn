@@ -1359,6 +1359,7 @@ debug_color = Color(0.870034, 0.290418, 0.510521, 0.42)
 z_index = 1000
 
 [node name="1" type="TextureRect" parent="ENDING"]
+visible = false
 z_index = 1000
 offset_left = 2153.0
 offset_top = -61.0
@@ -1373,7 +1374,7 @@ slides = Array[Texture2D]([ExtResource("72_13mej"), ExtResource("73_gqy8o"), Ext
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ENDING/end"]
 z_index = 1
-position = Vector2(2439, 14.5)
+position = Vector2(2438, 13)
 shape = SubResource("RectangleShape2D_fln1c")
 
 [connection signal="body_entered" from="Train/Area2D" to="Train" method="_on_area_2d_body_entered"]

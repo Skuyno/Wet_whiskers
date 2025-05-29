@@ -16,6 +16,7 @@ func _on_pressed():
 	sound.play()
 	anim.play("pressed")
 	await get_tree().create_timer(0.3).timeout  # Даем звуку проиграться
+	Global.collected_memories = []
 	get_tree().change_scene_to_file("res://scenes/prologue/prologue.tscn")
 
 func _on_button_up():

@@ -31,7 +31,10 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and not is_cutscene_playing and not has_played:
-		start_slideshow()
+		if Global.collected_memories.size() == 5:
+			print("pipiska")
+		else:
+			start_slideshow()
 
 func start_slideshow():
 	$"../../Sounds/Music".stop()

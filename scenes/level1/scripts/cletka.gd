@@ -57,6 +57,8 @@ func interact():
 	
 	# Ждем окончания катсцены
 	await get_tree().create_timer(cutscene_duration).timeout
+	
+	Global.collected_memories.append("Kletka")
 	end_cutscene()
 
 func start_cutscene():

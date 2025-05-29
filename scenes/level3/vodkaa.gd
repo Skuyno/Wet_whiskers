@@ -70,6 +70,8 @@ func interact():
 		player.set_process_input(false)
 		player.set_physics_process(false)
 	
+	Global.collected_memories.append("vodka")
+	
 	start_cutscene()
 
 func start_cutscene():
