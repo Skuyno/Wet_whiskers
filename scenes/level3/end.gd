@@ -32,7 +32,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("player") and not is_cutscene_playing and not has_played:
 		if Global.collected_memories.size() == 5:
-			print("pipiska")
+			get_tree().change_scene_to_file("res://scenes/secret_ending/secret_ending.tscn")
 		else:
 			start_slideshow()
 
