@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crlar5wcen8sk" path="res://assets/sprites/level1/EmperorOutside2.png" id="1_2d51u"]
 [ext_resource type="Script" path="res://scenes/level1/scripts/level_1.gd" id="1_2ymuc"]
 [ext_resource type="Texture2D" uid="uid://clxp4gb7h2hfu" path="res://assets/sprites/level1/first_level.png" id="2_no566"]
-[ext_resource type="Texture2D" uid="uid://dqvndf6sep6fg" path="res://assets/sprites/level3/тайлсет (6).png" id="3_mr1t0"]
+[ext_resource type="Texture2D" uid="uid://dqvndf6sep6fg" path="res://assets/sprites/level1/тайлсет (6).png" id="3_mr1t0"]
 [ext_resource type="Texture2D" uid="uid://b7jk2g4imy030" path="res://assets/sprites/level1/fsm_Town01_Da.png" id="3_sc1jt"]
 [ext_resource type="Texture2D" uid="uid://hvkmmv3an0gq" path="res://assets/sprites/level1/london_C.png" id="4_yq78v"]
 [ext_resource type="Texture2D" uid="uid://chnmhsi41p1lg" path="res://assets/sprites/level1/london_window.png" id="5_oi2p1"]
@@ -10415,7 +10415,7 @@ layer_2/tile_data = PackedInt32Array(1572868, 2752516, 0, 1638404, 2752516, 1, 1
 
 [node name="Cat" parent="." instance=ExtResource("8_svbfw")]
 z_index = 1
-position = Vector2(4009, 355)
+position = Vector2(116, 329)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1004, 334)

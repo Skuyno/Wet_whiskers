@@ -3,6 +3,7 @@ extends Node2D
 func _ready() -> void:
 	$UI/BlackSquare.visible = true
 	$Sounds/Rain.play()
+	$Sounds/Music.play()
 	create_fade_tween_outside(3.0)
 	$Cat/AnimatedSprite2D.play("walk")
 	$AnimationPlayer.play("walk")
@@ -32,7 +33,12 @@ func _ready() -> void:
 	$AnimationPlayer.play("cat_walk3")
 	await get_tree().create_timer(4.0).timeout
 	create_fade_out_tween_outside(3.0)
+	await get_tree().create_timer(10.0).timeout
+	change_to_main_menu()
 
+func change_to_main_menu():
+	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")  
+	
 func create_fade_tween_outside(duration: float):
 	var tween = create_tween().set_parallel(true)
 	

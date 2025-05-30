@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bs3ng5j7krhmu"]
+[gd_scene load_steps=52 format=3 uid="uid://bs3ng5j7krhmu"]
 
 [ext_resource type="Script" path="res://scenes/menu/scripts/menu.gd" id="1_1tytn"]
 [ext_resource type="Texture2D" uid="uid://ca58b0pm4kj60" path="res://assets/sprites/BackMenu.png" id="2_j5bq8"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://cfgsddnxrlvtr" path="res://assets/sprites/backqwe.png" id="20_amn4y"]
 [ext_resource type="Script" path="res://scenes/menu/option_button.gd" id="21_1k4o3"]
 [ext_resource type="Texture2D" uid="uid://dsr501h6p2f6" path="res://assets/sprites/arrow.png" id="22_oro6t"]
-[ext_resource type="Texture2D" uid="uid://cxh253hm4mjy" path="res://assets/sprites/ебла.bmp" id="25_rq0j1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgbh2"]
 atlas = ExtResource("4_dc04f")
@@ -516,11 +515,6 @@ position = Vector2(93, 16)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_fo3gt")
 animation = &"aimed"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(245, 331)
-scale = Vector2(0.464876, 0.44181)
-texture = ExtResource("25_rq0j1")
 
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
 [connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
